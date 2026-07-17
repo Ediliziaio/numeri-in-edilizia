@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/ContactForm";
+import { EicForm } from "@/components/EicForm";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 import { SectionHeading, ProcessSteps, FaqSection } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
@@ -69,8 +69,8 @@ export default function ContattiPage() {
               </div>
             </div>
 
-            <div className="rounded-[1.75rem] bg-white border border-line p-7 sm:p-9 shadow-card">
-              <ContactForm />
+            <div className="rounded-[1.75rem] bg-white border border-line p-4 sm:p-6 shadow-card">
+              <EicForm title="Prenota l'analisi gratuita" />
             </div>
           </div>
         </div>

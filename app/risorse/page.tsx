@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { NewsletterForm } from "@/components/NewsletterForm";
+import { EicForm } from "@/components/EicForm";
 import { AdEic } from "@/components/AdEic";
 import { IconArrow } from "@/components/Icons";
 import { articles } from "@/lib/articles";
@@ -75,22 +75,19 @@ export default function RisorsePage() {
           <div className="relative overflow-hidden rounded-[2rem] bg-navy-900 px-7 py-14 sm:px-14">
             <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-50" />
             <div aria-hidden className="pointer-events-none absolute -right-16 -top-20 h-72 w-72 rounded-full bg-brand-500/25 blur-3xl" />
-            <div className="relative grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div className="relative grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-center">
               <div>
-                <span className="eyebrow eyebrow-light">Newsletter</span>
+                <span className="eyebrow eyebrow-light">Analisi gratuita</span>
                 <h2 className="mt-4 text-[1.9rem] sm:text-[2.3rem] font-bold text-white leading-tight">
-                  Un'idea concreta sui numeri, ogni settimana
+                  Leggere gli articoli è un inizio. Parti dai tuoi numeri veri
                 </h2>
                 <p className="mt-4 text-brand-100/85 leading-relaxed">
-                  Consigli pratici di controllo di gestione per imprese edili. Niente spam: solo cose
-                  che puoi applicare in cantiere. Disiscrizione in un clic.
+                  Prenota 30 minuti gratuiti: guardiamo insieme i numeri della tua impresa edile e ti
+                  diciamo, dati alla mano, dove stai lasciando margine. Nessun impegno.
                 </p>
               </div>
-              <div>
-                <NewsletterForm />
-                <p className="mt-3 text-xs text-brand-100/60">
-                  Iscrivendoti accetti la nostra privacy policy. Zero spam.
-                </p>
+              <div className="rounded-2xl bg-white p-4 sm:p-5">
+                <EicForm title="Prenota l'analisi gratuita" />
               </div>
             </div>
           </div>

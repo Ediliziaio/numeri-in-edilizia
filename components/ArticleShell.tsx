@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
 import { AdEic } from "./AdEic";
+import { EicForm } from "./EicForm";
 import type { Article } from "@/lib/articles";
 
 export function ArticleShell({
@@ -72,6 +73,17 @@ export function ArticleShell({
             </div>
           </section>
         )}
+
+        {/* Form richiesta analisi gratuita */}
+        <section className="mt-14 rounded-2xl border border-line bg-bg-soft p-6 sm:p-8">
+          <h2 className="text-center text-2xl font-bold text-navy-900">Richiedi la tua analisi gratuita</h2>
+          <p className="mt-2 text-center text-muted">
+            30 minuti sui numeri della tua impresa edile, senza impegno.
+          </p>
+          <div className="mt-6">
+            <EicForm title="Richiedi la tua analisi gratuita" />
+          </div>
+        </section>
       </article>
 
       <CtaBand />
