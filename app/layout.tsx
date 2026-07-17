@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Wix_Madefor_Display, Wix_Madefor_Text, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -70,6 +70,11 @@ export const metadata: Metadata = {
     ? { verification: { google: site.googleVerification } }
     : {}),
   category: "business",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0f2440",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
