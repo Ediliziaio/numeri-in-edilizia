@@ -10,6 +10,7 @@ import {
   IllustrazioneImpianti, IllustrazioneRistrutturazioni,
 } from "@/components/IllustrationsSettori";
 import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { AdEic } from "@/components/AdEic";
 import { IconCheck, IconArrow, IconExternal, IconChart } from "@/components/Icons";
 import { settori, getSettore } from "@/lib/settori";
 import { site } from "@/lib/site";
@@ -240,6 +241,13 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* Spot EdiliziaInCloud */}
+      <section className="container-nie pb-4">
+        <Reveal>
+          <AdEic desktop="leaderboard" mobile="box" />
+        </Reveal>
       </section>
 
       <FaqSection

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
+import { AdEic } from "./AdEic";
 import type { Article } from "@/lib/articles";
 
 export function ArticleShell({
@@ -51,6 +52,9 @@ export function ArticleShell({
         </p>
 
         <div className="prose-nie mt-10">{children}</div>
+
+        {/* Spot EdiliziaInCloud — fine lettura, alta intenzione */}
+        <AdEic className="mt-12" desktop="leaderboard" mobile="box" />
 
         {faq && (
           <section className="mt-14 border-t border-line pt-10">

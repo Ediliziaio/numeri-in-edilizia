@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { AdEic } from "@/components/AdEic";
 import { IconArrow } from "@/components/Icons";
 import { articles } from "@/lib/articles";
 
@@ -59,6 +60,13 @@ export default function RisorsePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Spot EdiliziaInCloud */}
+      <section className="container-nie pb-8">
+        <Reveal>
+          <AdEic desktop="hero" mobile="box" />
+        </Reveal>
       </section>
 
       {/* NEWSLETTER / LEAD MAGNET */}
