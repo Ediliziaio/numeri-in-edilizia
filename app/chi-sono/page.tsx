@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { StatRow, CtaBand, SectionHeading, FaqSection } from "@/components/ui";
+import { StatRow, CtaBand, SectionHeading, FaqSection, ProcessSteps } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
+import { AdEic } from "@/components/AdEic";
 import { SiteScene } from "@/components/Graphics";
-import { IconBuilding, IconSearch, IconCompass, IconWallet, IconCheck } from "@/components/Icons";
+import { IconBuilding, IconSearch, IconCompass, IconWallet, IconCheck, IconArrow } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Chi siamo",
@@ -27,6 +29,13 @@ const comparison = [
   { voce: "Pensato per l'edilizia", commercialista: "No", gestionale: "Raramente", noi: "Solo per l'edilizia" },
 ];
 
+const comeLavoriamo = [
+  { n: "1", title: "Partiamo dai tuoi numeri", text: "Non da esempi da manuale. Nell'analisi gratuita mettiamo sul tavolo i dati veri della tua impresa e vediamo dove il margine si perde." },
+  { n: "2", title: "Mettiamo ordine", text: "Riclassifichiamo costi e ricavi in logica di cantiere. Pochi indicatori chiari, non un cruscotto da ingegnere gestionale." },
+  { n: "3", title: "Leggiamo il margine insieme", text: "Commessa per commessa, contro il preventivo. Vedi quali cantieri guadagnano e quali erodono utile, mentre puoi ancora intervenire." },
+  { n: "4", title: "Ti rendiamo autonomo", text: "L'obiettivo non è renderti dipendente da noi. È lasciarti in mano un metodo che usi da solo, ogni settimana." },
+];
+
 const faq = [
   {
     q: "Chi è Numeri in Edilizia?",
@@ -43,6 +52,18 @@ const faq = [
   {
     q: "Serve essere bravi con i numeri per lavorare con voi?",
     a: "No. Il metodo è pensato per l'imprenditore edile, non per il ragioniere. Ti diamo pochi indicatori chiari da leggere in dieci minuti e ti accompagniamo finché non li usi con naturalezza.",
+  },
+  {
+    q: "Lavorate con il mio commercialista?",
+    a: "Volentieri. Non gli togliamo lavoro: gli parliamo. Il commercialista tiene la contabilità, noi la trasformiamo in numeri di gestione che tu puoi usare per decidere. Quando i due ruoli dialogano, tu ci guadagni due volte.",
+  },
+  {
+    q: "Serve un software o un gestionale per lavorare con voi?",
+    a: "Per partire no: il metodo funziona sui dati che già hai, anche su un foglio. Se poi vuoi tenere margini, SAL e scadenze collegati alle commesse in automatico, usiamo EdiliziaInCloud, il gestionale per imprese edili. Ma prima viene il modo di leggere i numeri, poi lo strumento.",
+  },
+  {
+    q: "Quanto è grande deve essere la mia impresa?",
+    a: "Il metodo serve tanto all'impresa da 3 persone quanto a quella da 50. Anzi, nelle imprese più piccole ogni commessa in perdita pesa di più: è lì che leggere il margine in tempo cambia davvero l'anno.",
   },
 ];
 
@@ -171,6 +192,30 @@ export default function ChiSonoPage() {
         </Reveal>
       </section>
 
+      {/* COME LAVORIAMO CON TE */}
+      <section className="bg-navy-900 py-20 sm:py-28">
+        <div className="container-nie">
+          <Reveal>
+            <SectionHeading
+              align="center"
+              tone="dark"
+              eyebrow="Come lavoriamo con te"
+              title="Nessuna magia. Un percorso lineare, sui tuoi numeri"
+              intro="Non ti consegniamo un report e ti salutiamo. Ti stiamo accanto finché i numeri non li leggi da solo."
+              className="mb-14"
+            />
+          </Reveal>
+          <ProcessSteps steps={comeLavoriamo} />
+          <Reveal>
+            <div className="mt-12 text-center">
+              <Link href="/contatti" className="btn btn-primary">
+                Prenota l'analisi gratuita <IconArrow className="arrow h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* VALORI */}
       <section className="bg-bg-soft py-20 sm:py-28">
         <div className="container-nie">
@@ -200,6 +245,19 @@ export default function ChiSonoPage() {
               «Un'impresa edile non fallisce perché lavora poco. Fallisce perché non sa quanto guadagna
               mentre lavora. Il nostro compito è fartelo sapere — in tempo, e nella tua lingua.»
             </blockquote>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Spot EdiliziaInCloud */}
+      <section className="container-nie pb-8">
+        <Reveal>
+          <div className="mx-auto max-w-3xl">
+            <p className="mb-4 text-center text-muted">
+              Noi ti diamo il metodo. Il gestionale che lo mette in pratica ogni giorno — commesse,
+              margini, DDT, fatturazione — è <strong className="text-navy-900">EdiliziaInCloud</strong>.
+            </p>
+            <AdEic desktop="hero" mobile="box" />
           </div>
         </Reveal>
       </section>
