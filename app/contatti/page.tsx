@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EicForm } from "@/components/EicForm";
+import { PageImage } from "@/components/PageImage";
 import { JsonLd, breadcrumbSchema } from "@/components/JsonLd";
 import { SectionHeading, ProcessSteps, FaqSection } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
@@ -66,6 +67,9 @@ export default function ContattiPage() {
                 <a href={`mailto:${site.email}`} className="mt-1 block font-display font-semibold text-navy-900 hover:text-brand-600">
                   {site.email}
                 </a>
+              </div>
+              <div className="mt-8 hidden overflow-hidden rounded-2xl border border-line lg:block">
+                <PageImage src="/images/pages/hero-contatti.jpg" alt="Imprenditore edile con casco che guarda i numeri della sua impresa su un tablet" />
               </div>
             </div>
 

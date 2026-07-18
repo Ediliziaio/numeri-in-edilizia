@@ -6,7 +6,7 @@ import { JsonLd, serviceSchema } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { AreaTrend } from "@/components/Graphics";
 import { EicLogo } from "@/components/EicLogo";
-import { IllustrazioneControllo } from "@/components/Illustrations";
+import { PageImage } from "@/components/PageImage";
 import { site } from "@/lib/site";
 import { IconSearch, IconCompass, IconTrend, IconCheck, IconArrow, IconShield, IconWallet, IconClock, IconExternal } from "@/components/Icons";
 
@@ -60,7 +60,7 @@ export default function MetodoPage() {
         eyebrow="Il metodo Numeri in Edilizia"
         title={<>Da «quanto ho fatturato?» a «quanto ho guadagnato, su ogni cantiere»</>}
         intro="Non è teoria da manuale. È un sistema in tre passi per far parlare i numeri della tua impresa e trasformarli in decisioni che aumentano il margine."
-        visual={<IllustrazioneControllo />}
+        visual={<PageImage src="/images/pages/hero-metodo.jpg" alt="Imprenditore edile che analizza i numeri della sua impresa su un tablet in cantiere" priority />}
       />
 
       {/* 3 PILASTRI dettagliati */}

@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { CtaBand, FaqSection, SectionHeading, ProcessSteps } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { AdEic } from "@/components/AdEic";
-import { IllustrazioneAffiancamento } from "@/components/Illustrations";
+import { PageImage } from "@/components/PageImage";
 import { IconCheck, IconArrow, IconTrend, IconWallet, IconCompass, IconShield } from "@/components/Icons";
 import { site } from "@/lib/site";
 
@@ -110,7 +110,7 @@ export default function PercorsiPage() {
         eyebrow="Formazione e consulenza"
         title={<>Scegli quanto vuoi essere accompagnato</>}
         intro="Dalla formazione che ti insegna a leggere i numeri, all'affiancamento in cui costruiamo il controllo di gestione sui tuoi cantieri. Un percorso per ogni fase della tua impresa."
-        visual={<IllustrazioneAffiancamento />}
+        visual={<PageImage src="/images/pages/hero-percorsi.jpg" alt="Consulente e imprenditore edile che analizzano insieme i numeri su un laptop in cantiere" priority />}
       />
 
       <section className="container-nie py-20 sm:py-24">

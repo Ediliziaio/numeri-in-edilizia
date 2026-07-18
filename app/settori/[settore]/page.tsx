@@ -4,25 +4,13 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand, FaqSection, SectionHeading, ProcessSteps } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
-import { DonutStat, AreaTrend, SiteScene } from "@/components/Graphics";
-import {
-  IllustrazioneSerramenti, IllustrazioneMovimentoTerra, IllustrazioneCarpenteria,
-  IllustrazioneImpianti, IllustrazioneRistrutturazioni,
-} from "@/components/IllustrationsSettori";
+import { DonutStat, AreaTrend } from "@/components/Graphics";
+import { PageImage } from "@/components/PageImage";
 import { JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { AdEic } from "@/components/AdEic";
 import { IconCheck, IconArrow, IconExternal, IconChart } from "@/components/Icons";
 import { settori, getSettore } from "@/lib/settori";
 import { site } from "@/lib/site";
-
-const heroVisuals: Record<string, React.ComponentType> = {
-  "imprese-edili": SiteScene,
-  "ristrutturazioni": IllustrazioneRistrutturazioni,
-  "serramentisti": IllustrazioneSerramenti,
-  "impiantisti": IllustrazioneImpianti,
-  "carpenteria-metallica": IllustrazioneCarpenteria,
-  "movimento-terra": IllustrazioneMovimentoTerra,
-};
 
 export function generateStaticParams() {
   return settori.map((s) => ({ settore: s.slug }));
@@ -48,7 +36,6 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
 
   const url = `${site.domain}/settori/${s.slug}`;
   const altri = settori.filter((x) => x.slug !== s.slug);
-  const HeroVisual = heroVisuals[s.slug] ?? SiteScene;
   const donutPct = typeof s.esempio.metric === "string" && s.esempio.metric.includes("%")
     ? parseInt(s.esempio.metric) : 100;
 
@@ -71,7 +58,7 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
         eyebrow={`Per ${s.nome}`}
         title={s.h1}
         intro={s.heroIntro}
-        visual={<HeroVisual />}
+        visual={<PageImage src={`/images/pages/settore-${s.slug}.jpg`} alt={s.h1} priority />}
       />
 
       {/* APPROFONDIMENTO + CHART */}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { SectionHeading, StatRow, CtaBand, FaqSection, Pill, TrustBar, ProcessSteps } from "@/components/ui";
 import { JsonLd, serviceSchema } from "@/components/JsonLd";
-import { DashboardMock } from "@/components/DashboardMock";
+import { PageImage } from "@/components/PageImage";
 import { DonutStat, AreaTrend, CompareBars } from "@/components/Graphics";
 import { EicLogo } from "@/components/EicLogo";
 import { Reveal } from "@/components/Reveal";
@@ -92,7 +92,9 @@ export default function HomePage() {
             </div>
 
             <div className="reveal lg:pl-6" style={{ animationDelay: "0.1s" }}>
-              <DashboardMock />
+              <div className="rounded-[1.75rem] border border-line bg-white p-4 shadow-card">
+                <PageImage src="/images/pages/hero-home.jpg" alt="Dashboard di controllo di gestione per imprese edili su laptop e smartphone" priority />
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { StatRow, CtaBand, SectionHeading, FaqSection, ProcessSteps } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { AdEic } from "@/components/AdEic";
-import { SiteScene } from "@/components/Graphics";
+import { PageImage } from "@/components/PageImage";
 import { IconBuilding, IconSearch, IconCompass, IconWallet, IconCheck, IconArrow } from "@/components/Icons";
 
 export const metadata: Metadata = {
@@ -103,7 +103,7 @@ export default function ChiSonoPage() {
           </Reveal>
           <Reveal delay={120}>
             <div className="overflow-hidden rounded-[1.75rem] border border-line bg-white p-3">
-              <SiteScene className="w-full" />
+              <PageImage src="/images/pages/hero-chisono.jpg" alt="Cantiere edile con gru: l'impresa che mette i numeri sotto controllo" />
             </div>
             <div className="mt-6 rounded-[1.75rem] bg-navy-900 text-white p-8">
               <h3 className="text-lg font-bold">In sintesi</h3>

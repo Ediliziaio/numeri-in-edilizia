@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { CtaBand, StatRow } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { DonutStat } from "@/components/Graphics";
-import { IllustrazioneCrescita } from "@/components/Illustrations";
+import { PageImage } from "@/components/PageImage";
 
 export const metadata: Metadata = {
   title: "Casi studio di imprese edili",
@@ -48,7 +48,7 @@ export default function CasiStudioPage() {
         eyebrow="Risultati reali"
         title={<>Numeri veri di imprese edili vere</>}
         intro="Non promesse: risultati misurabili di imprenditori edili che hanno smesso di navigare a vista e hanno messo i numeri sotto controllo."
-        visual={<IllustrazioneCrescita />}
+        visual={<PageImage src="/images/pages/hero-casi-studio.jpg" alt="Report e grafici in crescita: risultati reali di imprese edili" priority />}
       />
 
       {/* BANDA STATISTICHE */}

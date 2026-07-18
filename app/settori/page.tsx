@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand, FaqSection } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
-import { SiteScene } from "@/components/Graphics";
+import { PageImage } from "@/components/PageImage";
 import { IconArrow } from "@/components/Icons";
 import { settori } from "@/lib/settori";
 
@@ -35,7 +35,7 @@ export default function SettoriPage() {
         title={<>Controllo di gestione, calibrato sul tuo settore</>}
         intro="Ogni impresa edile ha i suoi numeri critici. Scegli il tuo settore: ti mostriamo dove si nasconde il margine e come metterlo sotto controllo."
         cta={false}
-        visual={<SiteScene />}
+        visual={<PageImage src="/images/pages/settore-imprese-edili.jpg" alt="Cantiere edile con gru: controllo di gestione per ogni settore dell'edilizia" priority />}
       />
 
       <section className="container-nie py-20 sm:py-24">
