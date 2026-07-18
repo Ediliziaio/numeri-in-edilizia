@@ -93,6 +93,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" className={`${wixDisplay.variable} ${wixText.variable} ${lora.variable}`}>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${site.analytics.gtm}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <Script id="consent-default" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT }} />
         <GoogleTagManager gtmId={site.analytics.gtm} />
         <JsonLd data={[organizationSchema, websiteSchema]} />
