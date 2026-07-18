@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CookiePrefsButton } from "@/components/CookiePrefsButton";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -31,20 +32,35 @@ export default function CookiePage() {
         <h2>Cookie utilizzati da questo sito</h2>
         <ul>
           <li>
-            <strong>Cookie tecnici</strong>: necessari al funzionamento del sito (es. preferenze di
-            navigazione). Non richiedono consenso.
+            <strong>Cookie tecnici (necessari)</strong>: indispensabili al funzionamento del sito e al
+            salvataggio delle tue preferenze sui cookie. Non richiedono consenso e sono sempre attivi.
           </li>
           <li>
-            <strong>Cookie di terze parti</strong>: al momento questo sito non utilizza cookie di
-            profilazione o di marketing. Qualora venissero introdotti strumenti di analisi o
-            marketing, questa pagina sarà aggiornata e sarà richiesto il consenso preventivo.
+            <strong>Cookie analitici</strong>: usiamo <strong>Google Analytics 4</strong> per
+            raccogliere statistiche anonime e aggregate sull'utilizzo del sito (pagine viste,
+            provenienza, dispositivo). Vengono installati <strong>solo dopo il tuo consenso</strong>.
+          </li>
+          <li>
+            <strong>Cookie di marketing</strong>: eventuali strumenti di misurazione delle campagne o
+            retargeting (es. Meta, Google Ads). Vengono attivati <strong>solo dopo il tuo consenso</strong>.
           </li>
         </ul>
 
-        <h2>Come gestire i cookie</h2>
+        <h2>Consenso e Google Consent Mode</h2>
         <p>
-          Puoi gestire o disabilitare i cookie dalle impostazioni del tuo browser. La disabilitazione
-          dei cookie tecnici può compromettere alcune funzionalità del sito.
+          Al primo accesso ti mostriamo un banner per accettare, rifiutare o scegliere quali categorie
+          di cookie attivare. Fino alla tua scelta, i cookie analitici e di marketing restano
+          disattivati (Google Consent Mode v2, stato predefinito «negato»). Puoi modificare la tua
+          decisione in qualsiasi momento:
+        </p>
+        <p className="not-prose my-6">
+          <CookiePrefsButton className="btn btn-primary">Gestisci le preferenze cookie</CookiePrefsButton>
+        </p>
+
+        <h2>Come gestire i cookie dal browser</h2>
+        <p>
+          Oltre al nostro banner, puoi gestire o eliminare i cookie dalle impostazioni del tuo browser.
+          La disabilitazione dei cookie tecnici può compromettere alcune funzionalità del sito.
         </p>
 
         <h2>Contatti</h2>

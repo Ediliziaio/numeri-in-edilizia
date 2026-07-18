@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { EicLogo } from "./EicLogo";
+import { CookiePrefsButton } from "./CookiePrefsButton";
 import { IconExternal } from "./Icons";
 import { nav, site } from "@/lib/site";
 import { settori } from "@/lib/settori";
@@ -92,6 +93,7 @@ export function Footer() {
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/cookie" className="hover:text-white transition-colors">Cookie</Link>
+            <CookiePrefsButton className="hover:text-white transition-colors">Preferenze cookie</CookiePrefsButton>
           </div>
         </div>
       </div>
