@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Wix_Madefor_Display, Wix_Madefor_Text, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -94,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it" className={`${wixDisplay.variable} ${wixText.variable} ${lora.variable}`}>
       <body>
         <Script id="consent-default" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT }} />
+        <GoogleTagManager gtmId={site.analytics.gtm} />
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <Header />
         <main>{children}</main>

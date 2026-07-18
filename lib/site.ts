@@ -15,7 +15,8 @@ export const site = {
   googleVerification: "",
   // Tracciamento
   analytics: {
-    ga4: "G-ZRCY2YM87E", // Google Analytics 4 Measurement ID
+    ga4: "G-ZRCY2YM87E", // Google Analytics 4 Measurement ID (tag diretto)
+    gtm: "GTM-52NPQPRC", // Google Tag Manager container (hub per gli altri pixel)
   },
   email: "info@numerinedilizia.com",
   phone: "+39 000 000 0000",
