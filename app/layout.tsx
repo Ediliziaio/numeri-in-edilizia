@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Wix_Madefor_Display, Wix_Madefor_Text, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId={site.analytics.ga4} />
     </html>
   );
 }

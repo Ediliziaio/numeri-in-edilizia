@@ -13,6 +13,10 @@ export const site = {
   // Codice di verifica Google Search Console (metodo "tag HTML").
   // Incolla qui SOLO il valore del content="..." fornito da GSC, poi rideploya.
   googleVerification: "",
+  // Tracciamento
+  analytics: {
+    ga4: "G-ZRCY2YM87E", // Google Analytics 4 Measurement ID
+  },
   email: "info@numerinedilizia.com",
   phone: "+39 000 000 0000",
   social: {
