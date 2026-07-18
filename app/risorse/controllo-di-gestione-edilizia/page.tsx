@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: article.title,
   description: article.description,
   alternates: { canonical: "/risorse/controllo-di-gestione-edilizia" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

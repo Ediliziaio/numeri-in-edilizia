@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "programma per preventivi edili",
   ],
   alternates: { canonical: "/risorse/software-per-imprese-edili" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

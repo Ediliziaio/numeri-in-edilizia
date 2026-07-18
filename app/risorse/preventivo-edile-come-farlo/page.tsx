@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "preventivo impresa edile",
   ],
   alternates: { canonical: "/risorse/preventivo-edile-come-farlo" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

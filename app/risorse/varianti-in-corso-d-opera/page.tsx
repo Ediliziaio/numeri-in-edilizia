@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "lavori aggiuntivi non fatturati",
   ],
   alternates: { canonical: "/risorse/varianti-in-corso-d-opera" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

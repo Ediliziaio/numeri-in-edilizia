@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
@@ -25,6 +26,7 @@ export function ArticleShell({
             description: article.description,
             url,
             datePublished: article.date,
+            image: article.cover ? `${site.domain}${article.cover}` : undefined,
           }),
           breadcrumbSchema([
             { name: "Home", url: site.domain },
@@ -51,6 +53,20 @@ export function ArticleShell({
           {article.readingTime} di lettura · aggiornato il{" "}
           {new Date(article.date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
         </p>
+
+        {article.cover && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-line">
+            <Image
+              src={article.cover}
+              alt={article.h1 ?? article.title}
+              width={1200}
+              height={630}
+              sizes="(min-width: 768px) 768px, 100vw"
+              priority
+              className="h-auto w-full"
+            />
+          </div>
+        )}
 
         <div className="prose-nie mt-10">{children}</div>
 

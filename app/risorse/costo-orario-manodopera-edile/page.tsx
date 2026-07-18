@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "quanto costa un operaio edile all'ora",
   ],
   alternates: { canonical: "/risorse/costo-orario-manodopera-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

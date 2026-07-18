@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "compenso imprenditore edile",
   ],
   alternates: { canonical: "/risorse/budget-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: ["/opengraph-image"] },
+  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

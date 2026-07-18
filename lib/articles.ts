@@ -7,9 +7,10 @@ export type Article = {
   date: string; // ISO
   readingTime: string;
   category: string;
+  cover?: string; // copertina/OG (iniettata da convenzione /images/blog/<slug>.png)
 };
 
-export const articles: Article[] = [
+const rawArticles: Article[] = [
   {
     slug: "margine-impresa-edile",
     title: "Impresa edile: fatturi tanto, guadagni poco",
@@ -143,6 +144,11 @@ export const articles: Article[] = [
     category: "Cantiere",
   },
 ];
+
+export const articles: Article[] = rawArticles.map((a) => ({
+  ...a,
+  cover: `/images/blog/${a.slug}.png`,
+}));
 
 export function getArticle(slug: string) {
   return articles.find((a) => a.slug === slug);
