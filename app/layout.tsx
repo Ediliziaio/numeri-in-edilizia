@@ -6,6 +6,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
+import { MetaPixel } from "@/components/MetaPixel";
 import { JsonLd, organizationSchema, websiteSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <MetaPixel />
         <GoogleAnalytics gaId={site.analytics.ga4} />
       </body>
     </html>

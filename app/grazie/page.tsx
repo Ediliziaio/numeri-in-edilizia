@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MetaLead } from "@/components/MetaLead";
 
 export const metadata: Metadata = {
   title: "Grazie — richiesta ricevuta",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function GraziePage() {
   return (
     <section className="container-nie py-28 sm:py-36 text-center">
+      <MetaLead />
       <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-brand-100 text-brand-600 text-4xl">
         ✓
       </div>

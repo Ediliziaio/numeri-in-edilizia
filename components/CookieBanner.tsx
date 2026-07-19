@@ -61,6 +61,8 @@ export function CookieBanner() {
       /* ignore */
     }
     updateGtag(c);
+    // Avvisa gli altri script (es. Meta Pixel) che il consenso è cambiato.
+    window.dispatchEvent(new CustomEvent("nie:consent-updated", { detail: c }));
     setOpen(false);
     setShowPrefs(false);
   }
