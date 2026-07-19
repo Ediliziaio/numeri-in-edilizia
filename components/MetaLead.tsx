@@ -12,7 +12,7 @@ export function MetaLead() {
     const fire = () => {
       const w = window as unknown as { fbq?: (...a: unknown[]) => void };
       if (typeof w.fbq === "function") {
-        w.fbq("track", "Lead");
+        w.fbq("track", "Lead", { site: "numerinedilizia.com", site_name: "Numeri in Edilizia" });
         return true;
       }
       return false;
