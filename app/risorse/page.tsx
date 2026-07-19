@@ -49,14 +49,21 @@ export default function RisorsePage() {
             <Reveal key={a.slug} delay={i * 90} className="h-full">
               <Link href={`/risorse/${a.slug}`} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-line bg-white card-hover">
                 <div className="aspect-[1200/630] overflow-hidden border-b border-line bg-navy-900">
-                  <Image
-                    src={a.cover ?? `/images/blog/${a.slug}.png`}
-                    alt={a.title}
-                    width={1200}
-                    height={630}
-                    sizes="(min-width: 768px) 400px, 100vw"
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
-                  />
+                  {a.cover ? (
+                    <Image
+                      src={a.cover}
+                      alt={a.title}
+                      width={1200}
+                      height={630}
+                      sizes="(min-width: 768px) 400px, 100vw"
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="relative flex h-full w-full items-center justify-center bg-navy-900 p-6 text-center">
+                      <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-40" />
+                      <span className="relative font-display text-lg font-bold leading-snug text-white">{a.title}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-8">
                   <span className="text-sm font-semibold text-brand-600">{a.category}</span>

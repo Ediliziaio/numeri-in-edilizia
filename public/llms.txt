@@ -22,37 +22,44 @@
 Numeri in Edilizia (metodo e consulenza) si applica ogni giorno con EdiliziaInCloud, il gestionale per imprese edili: margine di commessa, preventivi, DDT, magazzino, fatturazione elettronica e cantieri. Sito: https://ediliziaincloud.com/
 
 ## Pagine principali
-- Home: https://www.numeriinedilizia.it/
-- Il metodo: https://www.numeriinedilizia.it/metodo
-- Settori (controllo di gestione per tipo di impresa): https://www.numeriinedilizia.it/settori
-- Percorsi (formazione + consulenza): https://www.numeriinedilizia.it/percorsi
-- EdiliziaInCloud (il gestionale): https://www.numeriinedilizia.it/edilizia-in-cloud
-- Casi studio: https://www.numeriinedilizia.it/casi-studio
-- Chi siamo: https://www.numeriinedilizia.it/chi-sono
-- Risorse (guide): https://www.numeriinedilizia.it/risorse
-- Contatti / analisi gratuita: https://www.numeriinedilizia.it/contatti
+- Home: https://numerinedilizia.com/
+- Il metodo: https://numerinedilizia.com/metodo
+- Settori (controllo di gestione per tipo di impresa): https://numerinedilizia.com/settori
+- Percorsi (formazione + consulenza): https://numerinedilizia.com/percorsi
+- EdiliziaInCloud (il gestionale): https://numerinedilizia.com/edilizia-in-cloud
+- Casi studio: https://numerinedilizia.com/casi-studio
+- Chi siamo: https://numerinedilizia.com/chi-sono
+- Risorse (guide): https://numerinedilizia.com/risorse
+- Contatti / analisi gratuita: https://numerinedilizia.com/contatti
 
 ## Controllo di gestione per settore (pagine verticali)
-- Imprese edili e costruzioni: https://www.numeriinedilizia.it/settori/imprese-edili
-- Imprese di ristrutturazioni: https://www.numeriinedilizia.it/settori/ristrutturazioni
-- Serramentisti e infissi: https://www.numeriinedilizia.it/settori/serramentisti
-- Impiantisti (termoidraulici ed elettrici): https://www.numeriinedilizia.it/settori/impiantisti
-- Carpenterie metalliche: https://www.numeriinedilizia.it/settori/carpenteria-metallica
-- Imprese di movimento terra e scavi: https://www.numeriinedilizia.it/settori/movimento-terra
+- Imprese edili e costruzioni: https://numerinedilizia.com/settori/imprese-edili
+- Imprese di ristrutturazioni: https://numerinedilizia.com/settori/ristrutturazioni
+- Serramentisti e infissi: https://numerinedilizia.com/settori/serramentisti
+- Impiantisti (termoidraulici ed elettrici): https://numerinedilizia.com/settori/impiantisti
+- Carpenterie metalliche: https://numerinedilizia.com/settori/carpenteria-metallica
+- Imprese di movimento terra e scavi: https://numerinedilizia.com/settori/movimento-terra
 
 ## Risorse (guide long-form)
-- Perché la tua impresa edile fattura tanto ma guadagna poco: https://www.numeriinedilizia.it/risorse/margine-impresa-edile
-- Controllo di gestione in edilizia, la guida per iniziare: https://www.numeriinedilizia.it/risorse/controllo-di-gestione-edilizia
-- Preventivo edile: come farlo bene e difendere il margine: https://www.numeriinedilizia.it/risorse/preventivo-edile-come-farlo
-- Costi di cantiere, la guida completa: https://www.numeriinedilizia.it/risorse/costi-di-cantiere-guida
-- Varianti in corso d'opera: come tracciarle e farsele pagare: https://www.numeriinedilizia.it/risorse/varianti-in-corso-d-opera
-- Costo orario della manodopera edile: come calcolarlo: https://www.numeriinedilizia.it/risorse/costo-orario-manodopera-edile
-- SAL (Stato Avanzamento Lavori): cosa sono e come gestirli: https://www.numeriinedilizia.it/risorse/sal-stato-avanzamento-lavori
-- Budget di un'impresa edile: come costruirlo: https://www.numeriinedilizia.it/risorse/budget-impresa-edile
-- Quanto deve guadagnare un'impresa edile: https://www.numeriinedilizia.it/risorse/quanto-guadagna-impresa-edile
-- Software per imprese edili: come scegliere il gestionale: https://www.numeriinedilizia.it/risorse/software-per-imprese-edili
-- Liquidità nell'impresa edile: perché fatturi ma non hai cassa: https://www.numeriinedilizia.it/risorse/liquidita-impresa-edile
+- Perché la tua impresa edile fattura tanto ma guadagna poco: https://numerinedilizia.com/risorse/margine-impresa-edile
+- Controllo di gestione in edilizia, la guida per iniziare: https://numerinedilizia.com/risorse/controllo-di-gestione-edilizia
+- Preventivo edile: come farlo bene e difendere il margine: https://numerinedilizia.com/risorse/preventivo-edile-come-farlo
+- Costi di cantiere, la guida completa: https://numerinedilizia.com/risorse/costi-di-cantiere-guida
+- Varianti in corso d'opera: come tracciarle e farsele pagare: https://numerinedilizia.com/risorse/varianti-in-corso-d-opera
+- Costo orario della manodopera edile: come calcolarlo: https://numerinedilizia.com/risorse/costo-orario-manodopera-edile
+- SAL (Stato Avanzamento Lavori): cosa sono e come gestirli: https://numerinedilizia.com/risorse/sal-stato-avanzamento-lavori
+- Budget di un'impresa edile: come costruirlo: https://numerinedilizia.com/risorse/budget-impresa-edile
+- Quanto deve guadagnare un'impresa edile: https://numerinedilizia.com/risorse/quanto-guadagna-impresa-edile
+- Software per imprese edili: come scegliere il gestionale: https://numerinedilizia.com/risorse/software-per-imprese-edili
+- Liquidità nell'impresa edile: perché fatturi ma non hai cassa: https://numerinedilizia.com/risorse/liquidita-impresa-edile
+- Gestione della commessa edile: la guida completa: https://numerinedilizia.com/risorse/gestione-commessa-edile
+- I KPI dell'impresa edile: gli indicatori che contano: https://numerinedilizia.com/risorse/kpi-impresa-edile
+- Come aumentare la redditività della tua impresa edile: https://numerinedilizia.com/risorse/aumentare-redditivita-impresa-edile
+- Margine di contribuzione e margine di commessa in edilizia: https://numerinedilizia.com/risorse/margine-di-contribuzione-edilizia
+- Gestione dei subappalti in edilizia: costi, margini e controllo: https://numerinedilizia.com/risorse/gestione-subappalti-edilizia
+- DURC di congruità della manodopera: cos'è e come gestirlo: https://numerinedilizia.com/risorse/durc-di-congruita-manodopera
+- Costi di struttura e spese generali dell'impresa edile: https://numerinedilizia.com/risorse/costi-di-struttura-impresa-edile
 
 ## Contatti
-- Analisi gratuita dei numeri (30 minuti, senza impegno): https://www.numeriinedilizia.it/contatti
-- Email: info@numeriinedilizia.it
+- Analisi gratuita dei numeri (30 minuti, senza impegno): https://numerinedilizia.com/contatti
+- Email: info@numerinedilizia.com

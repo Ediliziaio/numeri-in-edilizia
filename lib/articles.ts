@@ -143,11 +143,109 @@ const rawArticles: Article[] = [
     readingTime: "14 min",
     category: "Cantiere",
   },
+  {
+    slug: "gestione-commessa-edile",
+    title: "Gestione commessa edile: la guida",
+    h1: "Gestione della commessa edile: la guida completa",
+    description:
+      "Come gestire una commessa edile dal preventivo al consuntivo: costi, ricavi, SAL, margine e il modo per tenere ogni cantiere sotto controllo.",
+    excerpt:
+      "Una commessa non si «segue a memoria». Ecco come governare costi, ricavi e margine di ogni cantiere, dall'inizio alla chiusura.",
+    date: "2026-07-19",
+    readingTime: "15 min",
+    category: "Controllo di gestione",
+  },
+  {
+    slug: "kpi-impresa-edile",
+    title: "KPI impresa edile: gli indicatori chiave",
+    h1: "I KPI dell'impresa edile: gli indicatori che contano davvero",
+    description:
+      "Quali KPI deve monitorare un'impresa edile: margine di commessa, produttività, cassa e scostamenti. Pochi indicatori giusti, letti ogni settimana.",
+    excerpt:
+      "Non servono cento numeri: ne servono pochi, quelli giusti. Ecco i KPI che dicono davvero come sta la tua impresa edile.",
+    date: "2026-07-19",
+    readingTime: "14 min",
+    category: "Controllo di gestione",
+  },
+  {
+    slug: "aumentare-redditivita-impresa-edile",
+    title: "Aumentare la redditività impresa edile",
+    h1: "Come aumentare la redditività della tua impresa edile",
+    description:
+      "Sette leve concrete per aumentare margine e utile di un'impresa edile senza aumentare il fatturato: preventivi, varianti, costi e produttività.",
+    excerpt:
+      "Più fatturato non significa più utile. Ecco le leve che alzano davvero la redditività, a parità di cantieri.",
+    date: "2026-07-19",
+    readingTime: "14 min",
+    category: "Marginalità",
+  },
+  {
+    slug: "margine-di-contribuzione-edilizia",
+    title: "Margine di contribuzione in edilizia",
+    h1: "Margine di contribuzione e margine di commessa in edilizia",
+    description:
+      "Cos'è il margine di contribuzione per un'impresa edile, come si calcola per commessa e perché è il numero che decide se un cantiere conviene.",
+    excerpt:
+      "È il numero che ti dice quanto ogni cantiere contribuisce a coprire i costi fissi e a fare utile. Come si calcola e come si usa.",
+    date: "2026-07-19",
+    readingTime: "13 min",
+    category: "Marginalità",
+  },
+  {
+    slug: "gestione-subappalti-edilizia",
+    title: "Gestione subappalti in edilizia",
+    h1: "Gestione dei subappalti in edilizia: costi, margini e controllo",
+    description:
+      "Come gestire i subappalti in edilizia senza perdere margine: selezione, contratti, SAL e controllo. I subappalti valgono il 30-50% del cantiere.",
+    excerpt:
+      "I subappalti sono spesso metà del costo di un cantiere. Se non li governi, il margine se ne va lì. Ecco come tenerli sotto controllo.",
+    date: "2026-07-19",
+    readingTime: "14 min",
+    category: "Cantiere",
+  },
+  {
+    slug: "durc-di-congruita-manodopera",
+    title: "DURC di congruità: cos'è e come funziona",
+    h1: "DURC di congruità della manodopera: cos'è e come gestirlo",
+    description:
+      "Cos'è il DURC di congruità, quando serve, come si calcola l'incidenza della manodopera e come evitare il blocco del SAL e dei pagamenti.",
+    excerpt:
+      "Manodopera sotto la soglia di congruità e il SAL si blocca. Cos'è il DURC di congruità e come arrivarci senza sorprese.",
+    date: "2026-07-19",
+    readingTime: "13 min",
+    category: "Cantiere",
+  },
+  {
+    slug: "costi-di-struttura-impresa-edile",
+    title: "Costi di struttura impresa edile",
+    h1: "Costi di struttura e spese generali dell'impresa edile",
+    description:
+      "Quali sono i costi di struttura di un'impresa edile, quanto incidono e come ribaltarli sulle commesse per non lavorare in «pareggio apparente».",
+    excerpt:
+      "Sede, amministrazione, mezzi, il tuo stipendio: costi che ci sono comunque. Se non li carichi sui preventivi, regali margine su ogni cantiere.",
+    date: "2026-07-19",
+    readingTime: "13 min",
+    category: "Controllo di gestione",
+  },
 ];
+
+const COVERS = new Set([
+  "margine-impresa-edile",
+  "controllo-di-gestione-edilizia",
+  "preventivo-edile-come-farlo",
+  "costi-di-cantiere-guida",
+  "varianti-in-corso-d-opera",
+  "sal-stato-avanzamento-lavori",
+  "budget-impresa-edile",
+  "quanto-guadagna-impresa-edile",
+  "software-per-imprese-edili",
+  "liquidita-impresa-edile",
+  "costo-orario-manodopera-edile",
+]);
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
-  cover: `/images/blog/${a.slug}.png`,
+  cover: COVERS.has(a.slug) ? `/images/blog/${a.slug}.png` : undefined,
 }));
 
 export function getArticle(slug: string) {
