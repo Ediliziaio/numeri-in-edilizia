@@ -4,20 +4,11 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 
-/* Meta (Facebook) Pixel — caricato SOLO dopo il consenso "marketing" (GDPR).
+/* Meta (Facebook) Pixel — caricato subito al primo render (NON gated dal consenso).
    PageView iniziale + su ogni cambio pagina della navigazione SPA. */
 
 // Parametri per attribuire gli eventi A QUESTO sito (Pixel condiviso tra più siti).
 const SITE_PARAMS = { site: "numerinedilizia.com", site_name: site.name };
-
-function marketingGranted(): boolean {
-  try {
-    const c = JSON.parse(localStorage.getItem("nie_consent") || "null");
-    return !!(c && c.marketing);
-  } catch {
-    return false;
-  }
-}
 
 function initPixel(id: string) {
   const w = window as unknown as { fbq?: (...a: unknown[]) => void };
@@ -50,16 +41,11 @@ export function MetaPixel() {
   const lastPath = useRef<string | null>(null);
 
   useEffect(() => {
-    const load = () => {
-      if (!loaded.current && marketingGranted()) {
-        initPixel(site.analytics.metaPixel);
-        loaded.current = true;
-        lastPath.current = window.location.pathname;
-      }
-    };
-    load();
-    window.addEventListener("nie:consent-updated", load);
-    return () => window.removeEventListener("nie:consent-updated", load);
+    if (!loaded.current) {
+      initPixel(site.analytics.metaPixel);
+      loaded.current = true;
+      lastPath.current = window.location.pathname;
+    }
   }, []);
 
   useEffect(() => {
