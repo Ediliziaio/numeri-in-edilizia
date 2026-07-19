@@ -5,7 +5,17 @@ import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
 import { AdEic } from "./AdEic";
 import { EicForm } from "./EicForm";
-import type { Article } from "@/lib/articles";
+import { articles, type Article } from "@/lib/articles";
+
+// Articoli correlati: stessa categoria prima, poi gli altri, i più recenti in testa.
+// Deterministico (niente random) → i 7 articoli nuovi (più recenti) ricevono link interni ovunque.
+function relatedArticles(current: Article, n = 3): Article[] {
+  const others = articles.filter((a) => a.slug !== current.slug);
+  const byDateDesc = (a: Article, b: Article) => (a.date < b.date ? 1 : -1);
+  const sameCat = others.filter((a) => a.category === current.category).sort(byDateDesc);
+  const rest = others.filter((a) => a.category !== current.category).sort(byDateDesc);
+  return [...sameCat, ...rest].slice(0, n);
+}
 
 export function ArticleShell({
   article,
@@ -17,6 +27,7 @@ export function ArticleShell({
   children: React.ReactNode;
 }) {
   const url = `${site.domain}/risorse/${article.slug}`;
+  const related = relatedArticles(article);
   return (
     <>
       <JsonLd
@@ -101,6 +112,38 @@ export function ArticleShell({
           </div>
         </section>
       </article>
+
+      {related.length > 0 && (
+        <section className="container-nie max-w-5xl pb-4">
+          <h2 className="text-2xl font-bold text-navy-900">Continua a leggere</h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-3">
+            {related.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/risorse/${a.slug}`}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white card-hover"
+              >
+                <div className="aspect-[1200/630] overflow-hidden border-b border-line bg-navy-900">
+                  {a.cover && (
+                    <Image
+                      src={a.cover}
+                      alt={a.title}
+                      width={1200}
+                      height={630}
+                      sizes="(min-width: 640px) 300px, 100vw"
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="text-xs font-semibold text-brand-600">{a.category}</span>
+                  <h3 className="mt-2 font-bold leading-snug text-navy-900 group-hover:text-brand-700">{a.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <CtaBand />
       <div className="h-20" />

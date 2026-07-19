@@ -229,23 +229,9 @@ const rawArticles: Article[] = [
   },
 ];
 
-const COVERS = new Set([
-  "margine-impresa-edile",
-  "controllo-di-gestione-edilizia",
-  "preventivo-edile-come-farlo",
-  "costi-di-cantiere-guida",
-  "varianti-in-corso-d-opera",
-  "sal-stato-avanzamento-lavori",
-  "budget-impresa-edile",
-  "quanto-guadagna-impresa-edile",
-  "software-per-imprese-edili",
-  "liquidita-impresa-edile",
-  "costo-orario-manodopera-edile",
-]);
-
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
-  cover: COVERS.has(a.slug) ? `/images/blog/${a.slug}.png` : undefined,
+  cover: `/images/blog/${a.slug}.png`,
 }));
 
 export function getArticle(slug: string) {
