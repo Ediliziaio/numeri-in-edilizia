@@ -86,12 +86,15 @@ export default function Page() {
       </p>
 
       <h2>I pochi indicatori che contano</h2>
-      <p>Non ti servono cento numeri. Te ne bastano quattro, letti con costanza:</p>
+      <p>
+        Non ti servono cento numeri. Te ne bastano quattro, letti con costanza (li approfondisco nella
+        guida ai <Link href="/risorse/kpi-impresa-edile">KPI dell'impresa edile</Link>):
+      </p>
       <ul>
-        <li><strong>Margine per commessa</strong> — quanto guadagni su ogni cantiere.</li>
+        <li><strong><Link href="/risorse/margine-di-contribuzione-edilizia">Margine per commessa</Link></strong> — quanto guadagni su ogni cantiere.</li>
         <li><strong>Preventivo vs consuntivo</strong> — dove sei andato fuori rotta e perché.</li>
-        <li><strong>Incidenza dei costi di struttura</strong> — quanto pesa la «macchina» impresa.</li>
-        <li><strong>Liquidità</strong> — se e quando i soldi entrano davvero in cassa.</li>
+        <li><strong><Link href="/risorse/costi-di-struttura-impresa-edile">Incidenza dei costi di struttura</Link></strong> — quanto pesa la «macchina» impresa.</li>
+        <li><strong><Link href="/risorse/liquidita-impresa-edile">Liquidità</Link></strong> — se e quando i soldi entrano davvero in cassa.</li>
       </ul>
       <p>
         A seconda del mestiere, a questi si aggiunge un indicatore critico specifico: il costo reale
@@ -103,7 +106,7 @@ export default function Page() {
       <h2>Come iniziare, passo per passo</h2>
       <ol>
         <li>Riclassifica i costi in logica di cantiere (diretti vs struttura).</li>
-        <li>Calcola il margine reale delle commesse aperte, non solo del totale.</li>
+        <li>Calcola il margine reale delle <Link href="/risorse/gestione-commessa-edile">commesse aperte</Link>, non solo del totale.</li>
         <li>Confronta ogni commessa con il suo preventivo e leggi gli scostamenti.</li>
         <li>Usa quei dati per il prossimo preventivo e per decidere quali gare fare.</li>
       </ol>

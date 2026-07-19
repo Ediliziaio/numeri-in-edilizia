@@ -67,7 +67,7 @@ export default function Page() {
         <li><strong>Materiali</strong> — dal cemento ai serramenti, incluso lo sfrido (gli scarti si pagano come il resto).</li>
         <li><strong>Manodopera</strong> — le ore dei tuoi operai impiegate sul cantiere, al costo aziendale reale (non alla paga oraria: vedi la <Link href="/risorse/costo-orario-manodopera-edile">guida al costo orario</Link>).</li>
         <li><strong>Mezzi e attrezzature</strong> — quota di ammortamento e gestione dei mezzi usati, o costo del nolo.</li>
-        <li><strong>Subappalti</strong> — le lavorazioni affidate a terzi.</li>
+        <li><strong><Link href="/risorse/gestione-subappalti-edilizia">Subappalti</Link></strong> — le lavorazioni affidate a terzi.</li>
         <li><strong>Trasporti e smaltimenti</strong> — voce spesso dimenticata e sempre più pesante.</li>
         <li><strong>Oneri di sicurezza</strong> — apprestamenti e adempimenti specifici del cantiere.</li>
       </ul>
@@ -84,7 +84,7 @@ export default function Page() {
       <p>
         La «macchina» che gira comunque: sede, amministrazione, assicurazioni, consulenti, commerciale,
         direzione — e il <strong>compenso dell'imprenditore</strong>, che è un costo aziendale a tutti
-        gli effetti, non un avanzo. Se i preventivi non includono una quota di struttura, l'impresa
+        gli effetti, non un avanzo. Se i preventivi non includono una <Link href="/risorse/costi-di-struttura-impresa-edile">quota di struttura</Link>, l'impresa
         lavora «in pareggio apparente»: ogni cantiere sembra guadagnare, l'azienda no.
       </p>
 

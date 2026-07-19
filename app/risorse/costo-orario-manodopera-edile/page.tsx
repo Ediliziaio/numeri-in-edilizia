@@ -151,7 +151,9 @@ export default function Page() {
       <p>
         Conoscere il costo orario è metà del lavoro; l'altra metà è sapere <strong>dove finiscono le
         ore</strong>. Rapportini per commessa, anche semplicissimi, trasformano il costo orario in
-        margine per cantiere: ore reali × costo reale, imputate al lavoro giusto. È la stessa
+        margine per cantiere: ore reali × costo reale, imputate al lavoro giusto. Tenere tracciata la
+        manodopera è anche la base per il{" "}
+        <Link href="/risorse/durc-di-congruita-manodopera">DURC di congruità</Link>. È la stessa
         disciplina dei <Link href="/risorse/costi-di-cantiere-guida">costi di cantiere</Link>, e con
         uno strumento come <a href="https://ediliziaincloud.com/" target="_blank" rel="noopener noreferrer">EdiliziaInCloud</a> i rapportini
         finiscono direttamente sulla commessa.

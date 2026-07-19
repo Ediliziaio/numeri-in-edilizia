@@ -61,6 +61,7 @@ export function ArticleShell({
         </h1>
         <p className="mt-5 text-lg text-muted">{article.excerpt}</p>
         <p className="mt-4 text-sm text-muted">
+          di <span className="font-semibold text-navy-900">{site.author}</span> ·{" "}
           {article.readingTime} di lettura · aggiornato il{" "}
           {new Date(article.date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
         </p>

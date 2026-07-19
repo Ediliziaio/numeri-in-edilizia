@@ -101,7 +101,7 @@ export function articleSchema(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     inLanguage: "it-IT",
-    author: { "@id": `${site.domain}/#organization` },
+    author: { "@type": "Person", name: site.author },
     publisher: { "@id": `${site.domain}/#organization` },
     mainEntityOfPage: opts.url,
   };

@@ -51,7 +51,8 @@ export default function Page() {
         bilancio. Il problema è che pochi hanno un termine di paragone serio: si confrontano col
         vicino («lui ha tre furgoni nuovi»), col passato («l'anno scorso è andata meglio»), o non si
         confrontano affatto. In questa guida mettiamo <strong>numeri di riferimento concreti</strong>{" "}
-        — margini, utile, compenso — e soprattutto il metodo per capire dove sei tu e come salire.
+        — margini, utile, compenso — e soprattutto il metodo per capire dove sei tu e{" "}
+        <Link href="/risorse/aumentare-redditivita-impresa-edile">come salire</Link>.
       </p>
 
       <h2>I tre numeri che definiscono «quanto guadagni»</h2>
