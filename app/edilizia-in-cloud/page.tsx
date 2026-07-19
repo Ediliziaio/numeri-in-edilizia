@@ -19,13 +19,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/edilizia-in-cloud" },
 };
 
+const FN = "https://ediliziaincloud.com/funzionalita";
+
 const features = [
-  { icon: IconCompass, t: "Commesse e margini", d: "Ricavi, costi e margine per ogni cantiere, in tempo reale. Il cuore del metodo, operativo ogni giorno." },
-  { icon: IconLayers, t: "Preventivi", d: "Costruiti sui costi reali e su un margine obiettivo, non più a intuito." },
-  { icon: IconTruck, t: "DDT e magazzino", d: "Materiali, arrivi e movimenti tracciati e collegati alla commessa giusta." },
-  { icon: IconReceipt, t: "Fatturazione elettronica", d: "Fatture, note di credito e SDI integrati, senza saltare tra software diversi." },
-  { icon: IconBuilding, t: "Cantieri", d: "Fasi, squadre, subappalti e avanzamento sotto controllo dal primo giorno." },
-  { icon: IconWallet, t: "Utile e liquidità", d: "Vedi dove va il margine e quando i soldi entrano davvero in cassa." },
+  { icon: IconCompass, t: "Commesse e margini", d: "Ricavi, costi e margine per ogni cantiere, in tempo reale. Il cuore del metodo, operativo ogni giorno.", href: `${FN}/margini-cantiere/` },
+  { icon: IconLayers, t: "Preventivi", d: "Costruiti sui costi reali e su un margine obiettivo, non più a intuito.", href: `${FN}/preventivi-edilizia/` },
+  { icon: IconTruck, t: "DDT e magazzino", d: "Materiali, arrivi e movimenti tracciati e collegati alla commessa giusta.", href: `${FN}/magazzino-cantiere/` },
+  { icon: IconReceipt, t: "Fatturazione elettronica", d: "Fatture, note di credito e SDI integrati, senza saltare tra software diversi.", href: `${FN}/fatturazione-elettronica/` },
+  { icon: IconBuilding, t: "Cantieri", d: "Fasi, squadre, subappalti e avanzamento sotto controllo dal primo giorno.", href: `${FN}/gestione-cantieri/` },
+  { icon: IconWallet, t: "Utile e liquidità", d: "Vedi dove va il margine e quando i soldi entrano davvero in cassa.", href: `${FN}/cassa-cantiere/` },
 ];
 
 const faq = [
@@ -124,10 +126,13 @@ export default function EdiliziaInCloudPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((f, i) => (
               <Reveal key={f.t} delay={i * 80}>
-                <a href={eic.url} target="_blank" rel="noopener noreferrer" className="block h-full rounded-[1.5rem] bg-white p-7 border border-line card-hover">
+                <a href={f.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col rounded-[1.5rem] bg-white p-7 border border-line card-hover">
                   <span className="icon-badge"><f.icon /></span>
                   <h3 className="mt-5 font-bold text-navy-900">{f.t}</h3>
                   <p className="mt-2 text-sm text-muted leading-relaxed">{f.d}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:gap-2.5 transition-all">
+                    Scopri la funzione <IconExternal className="h-3.5 w-3.5" />
+                  </span>
                 </a>
               </Reveal>
             ))}
