@@ -227,11 +227,43 @@ const rawArticles: Article[] = [
     readingTime: "13 min",
     category: "Controllo di gestione",
   },
+  {
+    slug: "controllo-gestione-o-commercialista",
+    title: "Controllo di gestione o commercialista?",
+    h1: "Controllo di gestione o commercialista: chi fa cosa",
+    description:
+      "Commercialista e controllo di gestione non sono alternativi: uno certifica il passato, l'altro governa il margine mentre il cantiere è ancora aperto.",
+    excerpt:
+      "«Ho già il commercialista, mi serve davvero altro?» Sì, ma non al posto suo: fanno due lavori diversi. Ecco chi fa cosa, e quando.",
+    date: "2026-07-20",
+    readingTime: "13 min",
+    category: "Controllo di gestione",
+  },
+  {
+    slug: "margine-medio-impresa-edile",
+    title: "Margine medio di un'impresa edile",
+    h1: "Qual è il margine medio di un'impresa edile in Italia",
+    description:
+      "Margini di riferimento per le imprese edili italiane: margine di commessa, margine netto e utile. I numeri tipici e come capire dove sei tu.",
+    excerpt:
+      "Margine di commessa, margine netto, utile: tre numeri diversi che vengono sempre confusi. Ecco i valori di riferimento e dove ti collochi.",
+    date: "2026-07-20",
+    readingTime: "14 min",
+    category: "Marginalità",
+  },
 ];
+
+/* Articoli la cui copertina non è ancora stata prodotta: niente <Image> rotta,
+   la card in /risorse mostra il placeholder col titolo. Rimuovi lo slug da qui
+   appena il file /images/blog/<slug>.png esiste. */
+const SENZA_COVER = new Set<string>([
+  "controllo-gestione-o-commercialista",
+  "margine-medio-impresa-edile",
+]);
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
-  cover: `/images/blog/${a.slug}.png`,
+  cover: SENZA_COVER.has(a.slug) ? undefined : `/images/blog/${a.slug}.png`,
 }));
 
 export function getArticle(slug: string) {
