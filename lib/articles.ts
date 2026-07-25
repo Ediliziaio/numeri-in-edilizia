@@ -268,11 +268,7 @@ const rawArticles: Article[] = [
 /* Articoli la cui copertina non è ancora stata prodotta: niente <Image> rotta,
    la card in /risorse mostra il placeholder col titolo. Rimuovi lo slug da qui
    appena il file /images/blog/<slug>.png esiste. */
-const SENZA_COVER = new Set<string>([
-  "controllo-gestione-o-commercialista",
-  "margine-medio-impresa-edile",
-  "quanto-costa-controllo-di-gestione",
-]);
+const SENZA_COVER = new Set<string>([]);
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,

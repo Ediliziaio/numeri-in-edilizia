@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { JsonLd, articleSchema, breadcrumbSchema, faqSchema, howToSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
 import { AdEic } from "./AdEic";
+import { AuthorBox } from "./AuthorBox";
 import { EicForm } from "./EicForm";
 import { articles, type Article } from "@/lib/articles";
 
@@ -111,6 +112,9 @@ export function ArticleShell({
             </div>
           </section>
         )}
+
+        {/* Author box — segnale visibile dell'entità autore (vedi AuthorBox) */}
+        <AuthorBox className="mt-14" />
 
         {/* Form richiesta analisi gratuita */}
         <section className="mt-14 rounded-2xl border border-line bg-bg-soft p-6 sm:p-8">

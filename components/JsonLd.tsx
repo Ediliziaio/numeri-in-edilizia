@@ -21,6 +21,9 @@ export const organizationSchema: Json = {
   description: site.description,
   email: site.email,
   areaServed: "IT",
+  // Chiude il cerchio dell'entità: il brand dichiara chi l'ha fondato, puntando
+  // allo stesso @id usato su florinandriciuc.com (collegamento bidirezionale).
+  founder: { "@id": site.authorEntityId },
   knowsAbout: [
     "Controllo di gestione edilizia",
     "Margine di commessa",
@@ -43,13 +46,16 @@ export const websiteSchema: Json = {
 
 /* Entità autore — E-E-A-T: un contenuto gestionale/finanziario senza autore
    identificabile vale meno per Google e per gli LLM. @id stabile e riusabile. */
+/* Person — NON è un'entità locale: è la STESSA entità che vive su florinandriciuc.com.
+   Usare qui il suo @id (e non uno di dominio) è ciò che fa leggere a Google e agli LLM
+   gli otto domini dell'ecosistema come una sola persona. */
 export const personSchema: Json = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${site.domain}/chi-sono#florin-andriciuc`,
+  "@id": site.authorEntityId,
   name: site.author,
-  url: `${site.domain}/chi-sono`,
-  jobTitle: "Fondatore di Numeri in Edilizia",
+  url: site.authorUrl,
+  jobTitle: "Founder & CEO di AEDIX",
   description: site.authorBio,
   knowsAbout: [
     "Controllo di gestione per imprese edili",
@@ -122,8 +128,13 @@ export function articleSchema(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     inLanguage: "it-IT",
-    // Stessa entità di personSchema (@id): consolida l'autore agli occhi di Google e degli LLM.
-    author: { "@type": "Person", "@id": `${site.domain}/chi-sono#florin-andriciuc`, name: site.author },
+    // Autore = entità centrale su florinandriciuc.com (stesso @id su tutti i domini AEDIX).
+    author: {
+      "@type": "Person",
+      "@id": site.authorEntityId,
+      name: site.author,
+      url: site.authorUrl,
+    },
     publisher: { "@id": `${site.domain}/#organization` },
     mainEntityOfPage: opts.url,
   };
