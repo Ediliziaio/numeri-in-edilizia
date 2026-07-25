@@ -41,6 +41,27 @@ export const websiteSchema: Json = {
   publisher: { "@id": `${site.domain}/#organization` },
 };
 
+/* Entità autore — E-E-A-T: un contenuto gestionale/finanziario senza autore
+   identificabile vale meno per Google e per gli LLM. @id stabile e riusabile. */
+export const personSchema: Json = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${site.domain}/chi-sono#florin-andriciuc`,
+  name: site.author,
+  url: `${site.domain}/chi-sono`,
+  jobTitle: "Fondatore di Numeri in Edilizia",
+  description: site.authorBio,
+  knowsAbout: [
+    "Controllo di gestione per imprese edili",
+    "Margine di commessa",
+    "Costi di cantiere",
+    "Redditività delle imprese di costruzioni",
+    "Preventivi e budget in edilizia",
+  ],
+  worksFor: { "@id": `${site.domain}/#organization` },
+  ...(site.authorSameAs.length ? { sameAs: site.authorSameAs } : {}),
+};
+
 export function serviceSchema(name: string, description: string, url: string): Json {
   return {
     "@context": "https://schema.org",
@@ -101,8 +122,32 @@ export function articleSchema(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     inLanguage: "it-IT",
-    author: { "@type": "Person", name: site.author },
+    // Stessa entità di personSchema (@id): consolida l'autore agli occhi di Google e degli LLM.
+    author: { "@type": "Person", "@id": `${site.domain}/chi-sono#florin-andriciuc`, name: site.author },
     publisher: { "@id": `${site.domain}/#organization` },
     mainEntityOfPage: opts.url,
+  };
+}
+
+/* HowTo — per le guide procedurali (preventivo, budget, costo orario…). */
+export function howToSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+}): Json {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    description: opts.description,
+    inLanguage: "it-IT",
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${opts.url}#step-${i + 1}`,
+    })),
   };
 }

@@ -10,8 +10,13 @@ export const site = {
     name: "Numeri in Edilizia",
     role: "Formazione e consulenza di controllo di gestione per imprese edili",
   },
-  // Autore degli articoli (byline + schema Article)
+  // Autore degli articoli (byline + schema Article/Person)
   author: "Florin Andriciuc",
+  authorBio:
+    "Florin Andriciuc, fondatore di AEDIX e di Numeri in Edilizia, lavora da oltre 8 anni con le imprese edili italiane sul controllo dei margini di commessa.",
+  // Profili PERSONALI di Florin (non del brand) per il sameAs dello schema Person.
+  // Vuoto finché non sono confermati: meglio nessun sameAs che uno sbagliato.
+  authorSameAs: [] as string[],
   // Codice di verifica Google Search Console (metodo "tag HTML").
   // Incolla qui SOLO il valore del content="..." fornito da GSC, poi rideploya.
   googleVerification: "",

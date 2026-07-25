@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
-import { JsonLd, articleSchema, breadcrumbSchema, faqSchema } from "./JsonLd";
+import { JsonLd, articleSchema, breadcrumbSchema, faqSchema, howToSchema } from "./JsonLd";
 import { CtaBand } from "./ui";
 import { AdEic } from "./AdEic";
 import { EicForm } from "./EicForm";
@@ -20,10 +20,13 @@ function relatedArticles(current: Article, n = 3): Article[] {
 export function ArticleShell({
   article,
   faq,
+  howTo,
   children,
 }: {
   article: Article;
   faq?: { q: string; a: string }[];
+  /** Guide procedurali: emette anche lo schema HowTo. */
+  howTo?: { name: string; steps: { name: string; text: string }[] };
   children: React.ReactNode;
 }) {
   const url = `${site.domain}/risorse/${article.slug}`;
@@ -45,6 +48,9 @@ export function ArticleShell({
             { name: article.title, url },
           ]),
           ...(faq ? [faqSchema(faq)] : []),
+          ...(howTo
+            ? [howToSchema({ name: howTo.name, description: article.description, url, steps: howTo.steps })]
+            : []),
         ]}
       />
 
@@ -61,7 +67,11 @@ export function ArticleShell({
         </h1>
         <p className="mt-5 text-lg text-muted">{article.excerpt}</p>
         <p className="mt-4 text-sm text-muted">
-          di <span className="font-semibold text-navy-900">{site.author}</span> ·{" "}
+          di{" "}
+          <Link href="/chi-sono" rel="author" className="font-semibold text-navy-900 hover:text-brand-600">
+            {site.author}
+          </Link>{" "}
+          ·{" "}
           {article.readingTime} di lettura · aggiornato il{" "}
           {new Date(article.date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
         </p>

@@ -45,7 +45,20 @@ const faq = [
 
 export default function Page() {
   return (
-    <ArticleShell article={article} faq={faq}>
+    <ArticleShell
+      article={article}
+      faq={faq}
+      howTo={{
+        name: "Come calcolare il costo orario reale della manodopera edile",
+        steps: [
+          { name: "Parti dal costo aziendale", text: "Al lordo in busta aggiungi contributi, TFR, mensilità aggiuntive, casse edili, DPI e formazione: ottieni il costo aziendale annuo della persona." },
+          { name: "Calcola le ore produttive", text: "Dalle ore contrattuali togli ferie, permessi, festività, malattie, formazione, trasferte, attese e fermi: restano le ore realmente produttive." },
+          { name: "Dividi costo per ore produttive", text: "Costo aziendale annuo diviso ore produttive annue: è il costo orario reale, spesso quasi il doppio della paga oraria." },
+          { name: "Usa un costo per figura", text: "Definisci un costo orario medio per operaio comune, specializzato e capo squadra, e aggiornalo una o due volte l'anno." },
+          { name: "Imputa le ore ai cantieri", text: "Con i rapportini per commessa trasformi il costo orario in margine per cantiere: ore reali per costo reale, sul lavoro giusto." },
+        ],
+      }}
+    >
       <p>
         «Un operaio mi costa 12 euro l'ora». È una delle frasi più pericolose che si possano sentire
         in un'impresa edile — perché è la base di preventivi che <em>sembrano</em> in utile e non lo

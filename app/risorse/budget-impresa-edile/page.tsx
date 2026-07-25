@@ -45,7 +45,20 @@ const faq = [
 
 export default function Page() {
   return (
-    <ArticleShell article={article} faq={faq}>
+    <ArticleShell
+      article={article}
+      faq={faq}
+      howTo={{
+        name: "Come costruire il budget di un'impresa edile",
+        steps: [
+          { name: "Parti dall'utile che vuoi", text: "Il budget si costruisce al contrario: decidi prima l'utile obiettivo dell'anno e il compenso dell'imprenditore." },
+          { name: "Somma i costi di struttura", text: "Aggiungi tutti i costi che l'impresa sostiene comunque: sede, amministrazione, mezzi, assicurazioni, consulenti." },
+          { name: "Ricava il margine necessario", text: "Utile obiettivo più costi di struttura ti dà il margine di commessa complessivo che i cantieri devono generare." },
+          { name: "Traducilo in lavori e margini", text: "Dividi quel margine per la marginalità media realistica: ottieni il volume di lavori da acquisire nell'anno." },
+          { name: "Passa al controllo mensile", text: "Spezza il budget annuale in mesi e confrontalo con i dati reali: gli scostamenti si correggono durante l'anno, non a dicembre." },
+        ],
+      }}
+    >
       <p>
         La parola «budget» evoca uffici, riunioni e fogli di calcolo. In realtà il budget di
         un'impresa edile risponde a una domanda semplicissima: <strong>quanto voglio guadagnare

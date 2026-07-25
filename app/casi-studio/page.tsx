@@ -6,7 +6,6 @@ import { Reveal } from "@/components/Reveal";
 import { DonutStat } from "@/components/Graphics";
 import { PageImage } from "@/components/PageImage";
 import { AdEic } from "@/components/AdEic";
-import { JsonLd, faqSchema } from "@/components/JsonLd";
 import { IconCheck, IconSearch, IconCompass, IconTrend, IconArrow } from "@/components/Icons";
 import { site } from "@/lib/site";
 
@@ -123,8 +122,7 @@ const faq = [
 export default function CasiStudioPage() {
   return (
     <>
-      <JsonLd data={faqSchema(faq)} />
-
+      {/* NB: il FAQPage schema è emesso da <FaqSection> — non duplicarlo qui. */}
       <PageHero
         crumb="Casi studio"
         path="/casi-studio"

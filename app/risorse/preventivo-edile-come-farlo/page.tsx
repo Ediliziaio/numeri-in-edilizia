@@ -45,7 +45,21 @@ const faq = [
 
 export default function Page() {
   return (
-    <ArticleShell article={article} faq={faq}>
+    <ArticleShell
+      article={article}
+      faq={faq}
+      howTo={{
+        name: "Come fare un preventivo edile che difende il margine",
+        steps: [
+          { name: "Calcola i costi diretti", text: "Materiali con sfrido, manodopera al costo orario reale, mezzi e noli, subappalti, trasporti e smaltimenti del lavoro da quotare." },
+          { name: "Aggiungi i costi di struttura", text: "Applica la quota di costi di struttura della tua impresa (tipicamente 10-20% dei costi diretti), calcolata sull'ultimo esercizio." },
+          { name: "Decidi il margine obiettivo", text: "Il margine è una decisione presa prima, non il residuo che resta: fissa la percentuale che l'impresa deve guadagnare su quel lavoro." },
+          { name: "Valuta ribassi e gare", text: "Sapendo costo e margine obiettivo conosci il tuo limite: sotto quella soglia il lavoro va rifiutato, non rincorso." },
+          { name: "Prevedi le varianti", text: "Stabilisci in offerta come verranno quotate e fatturate le varianti in corso d'opera, così il preventivo continua a valere in cantiere." },
+          { name: "Chiudi il ciclo con il consuntivo", text: "A fine lavori confronta consuntivo e preventivo voce per voce e usa gli scostamenti per correggere il preventivo successivo." },
+        ],
+      }}
+    >
       <p>
         Il preventivo è il documento più importante che la tua impresa edile produce. Non è un
         adempimento commerciale: è <strong>il momento esatto in cui decidi se guadagnerai o no</strong>{" "}

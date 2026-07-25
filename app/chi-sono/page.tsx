@@ -5,6 +5,8 @@ import { StatRow, CtaBand, SectionHeading, FaqSection, ProcessSteps } from "@/co
 import { Reveal } from "@/components/Reveal";
 import { AdEic } from "@/components/AdEic";
 import { PageImage } from "@/components/PageImage";
+import { JsonLd, personSchema } from "@/components/JsonLd";
+import { site } from "@/lib/site";
 import { IconBuilding, IconSearch, IconCompass, IconWallet, IconCheck, IconArrow } from "@/components/Icons";
 
 export const metadata: Metadata = {
@@ -70,6 +72,7 @@ const faq = [
 export default function ChiSonoPage() {
   return (
     <>
+      <JsonLd data={personSchema} />
       <PageHero
         crumb="Chi siamo"
         path="/chi-sono"
@@ -234,6 +237,34 @@ export default function ChiSonoPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* CHI FIRMA IL METODO — entità autore (E-E-A-T) */}
+      <section className="container-nie py-20 sm:py-24">
+        <Reveal>
+          <div className="mx-auto max-w-3xl rounded-[1.75rem] border border-line bg-white p-8 sm:p-10">
+            <span className="eyebrow">Chi firma il metodo</span>
+            <h2 className="mt-4 text-[1.7rem] sm:text-[2.1rem] font-bold text-navy-900 leading-tight">
+              {site.author}
+            </h2>
+            <p className="mt-4 text-lg text-muted leading-relaxed">{site.authorBio}</p>
+            <p className="mt-4 text-muted leading-relaxed">
+              Ho passato gli ultimi anni dentro le imprese edili, a guardare i numeri veri: preventivi,
+              rapportini, fatture fornitore, margini di commessa. Numeri in Edilizia nasce da lì — non
+              da un manuale, ma dalla constatazione che quasi nessun imprenditore edile ha in mano gli
+              strumenti per sapere quanto guadagna mentre lavora. Tutte le guide che trovi in questo
+              sito le scrivo io, con la lingua del cantiere.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/risorse" className="btn btn-ghost">
+                Leggi le guide <IconArrow className="arrow h-4 w-4" />
+              </Link>
+              <Link href="/contatti" className="btn btn-primary">
+                {site.cta.primaryLabel} <IconArrow className="arrow h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* MANIFESTO */}
