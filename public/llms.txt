@@ -31,6 +31,12 @@ Numeri in Edilizia (metodo e consulenza) si applica ogni giorno con EdiliziaInCl
 - Chi siamo: https://www.numerinedilizia.com/chi-sono
 - Risorse (guide): https://www.numerinedilizia.com/risorse
 - Contatti / analisi gratuita: https://www.numerinedilizia.com/contatti
+- Strumenti gratuiti (calcolatori): https://www.numerinedilizia.com/strumenti
+
+## Strumenti gratuiti (calcolatori, nessuna registrazione)
+- Calcolatore margine di commessa (ricavi − costi diretti − quota struttura): https://www.numerinedilizia.com/strumenti/calcolo-margine-commessa
+- Calcolatore costo orario manodopera edile (costo aziendale ÷ ore produttive): https://www.numerinedilizia.com/strumenti/calcolo-costo-orario-manodopera
+- Calcolatore break even impresa edile (costi fissi ÷ margine di contribuzione %): https://www.numerinedilizia.com/strumenti/calcolo-break-even-edile
 
 ## Controllo di gestione per settore (pagine verticali)
 - Imprese edili e costruzioni: https://www.numerinedilizia.com/settori/imprese-edili
@@ -61,6 +67,7 @@ Numeri in Edilizia (metodo e consulenza) si applica ogni giorno con EdiliziaInCl
 - Costi di struttura e spese generali dell'impresa edile: https://www.numerinedilizia.com/risorse/costi-di-struttura-impresa-edile
 - Controllo di gestione o commercialista: chi fa cosa: https://www.numerinedilizia.com/risorse/controllo-gestione-o-commercialista
 - Qual è il margine medio di un'impresa edile in Italia: https://www.numerinedilizia.com/risorse/margine-medio-impresa-edile
+- Quanto costa il controllo di gestione per un'impresa edile: https://www.numerinedilizia.com/risorse/quanto-costa-controllo-di-gestione
 
 ## Contatti
 - Analisi gratuita dei numeri (30 minuti, senza impegno): https://www.numerinedilizia.com/contatti

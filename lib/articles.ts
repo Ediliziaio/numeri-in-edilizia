@@ -251,6 +251,18 @@ const rawArticles: Article[] = [
     readingTime: "14 min",
     category: "Marginalità",
   },
+  {
+    slug: "quanto-costa-controllo-di-gestione",
+    title: "Quanto costa il controllo di gestione",
+    h1: "Quanto costa il controllo di gestione per un'impresa edile",
+    description:
+      "Le voci che compongono il costo del controllo di gestione in edilizia, come valutarne il ritorno e quanto costa, ogni anno, non farlo.",
+    excerpt:
+      "La domanda giusta non è «quanto costa», ma «quanto mi costa non averlo». Le voci di spesa reali e come si valuta il ritorno.",
+    date: "2026-07-21",
+    readingTime: "13 min",
+    category: "Controllo di gestione",
+  },
 ];
 
 /* Articoli la cui copertina non è ancora stata prodotta: niente <Image> rotta,
@@ -259,6 +271,7 @@ const rawArticles: Article[] = [
 const SENZA_COVER = new Set<string>([
   "controllo-gestione-o-commercialista",
   "margine-medio-impresa-edile",
+  "quanto-costa-controllo-di-gestione",
 ]);
 
 export const articles: Article[] = rawArticles.map((a) => ({

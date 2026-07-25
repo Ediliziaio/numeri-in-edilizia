@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/chi-sono", priority: 0.6, changeFrequency: "yearly" as const },
     { path: "/risorse", priority: 0.7, changeFrequency: "weekly" as const },
     { path: "/contatti", priority: 0.9, changeFrequency: "yearly" as const },
+    { path: "/strumenti", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/strumenti/calcolo-margine-commessa", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/strumenti/calcolo-costo-orario-manodopera", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/strumenti/calcolo-break-even-edile", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   const now = new Date();

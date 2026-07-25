@@ -53,4 +53,5 @@ export const nav = [
   { label: "Casi studio", href: "/casi-studio" },
   { label: "Chi siamo", href: "/chi-sono" },
   { label: "Risorse", href: "/risorse" },
+  { label: "Strumenti", href: "/strumenti" },
 ] as const;
