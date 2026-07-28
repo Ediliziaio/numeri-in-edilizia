@@ -84,6 +84,19 @@ export function Footer() {
                 <a href={site.social.instagram} className="hover:text-white transition-colors">Instagram</a>
                 <a href={site.social.youtube} className="hover:text-white transition-colors">YouTube</a>
               </li>
+              {/* Link all'entità fondatore: anchor branded costante ("Florin Andriciuc"),
+                  su TUTTE le pagine. È il segnale che consolida la persona come entità
+                  e fa fluire autorità verso il suo dominio. */}
+              <li className="pt-3 text-sm">
+                Un progetto di{" "}
+                <a
+                  href={site.authorUrl}
+                  rel="author"
+                  className="font-semibold text-white hover:text-brand-300 transition-colors"
+                >
+                  {site.author}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
