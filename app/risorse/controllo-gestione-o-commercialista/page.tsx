@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "serve il controllo di gestione se ho il commercialista",
   ],
   alternates: { canonical: "/risorse/controllo-gestione-o-commercialista" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/controllo-gestione-o-commercialista", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

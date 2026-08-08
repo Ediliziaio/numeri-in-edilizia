@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Il controllo di gestione calibrato per settore: costruzioni, ristrutturazioni, serramenti, impianti, carpenteria e movimento terra.",
   alternates: { canonical: "/settori" },
+  openGraph: { url: "/settori", images: ["/opengraph-image"] },
 };
 
 const faq = [

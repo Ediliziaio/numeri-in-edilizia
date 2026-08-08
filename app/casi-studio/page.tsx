@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "case study edilizia",
   ],
   alternates: { canonical: "/casi-studio" },
-  openGraph: {
+  openGraph: { url: "/casi-studio",
     title: "Casi studio di imprese edili",
     description:
       "Risultati misurabili di imprese edili che hanno smesso di navigare a vista e messo i numeri sotto controllo.",

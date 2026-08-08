@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "strumenti gratuiti imprese edili",
   ],
   alternates: { canonical: "/strumenti" },
-  openGraph: {
+  openGraph: { url: "/strumenti",
     title: "Strumenti gratuiti per imprese edili",
     description: "Calcola margine di commessa, costo orario della manodopera e punto di pareggio. Gratis, senza registrazione.",
     type: "website",

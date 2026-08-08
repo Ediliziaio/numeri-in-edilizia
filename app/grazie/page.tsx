@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Abbiamo ricevuto la tua richiesta. Verrai chiamato nelle prossime ore da un nostro consulente.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/grazie" },
+  openGraph: { url: "/grazie", images: ["/opengraph-image"] },
 };
 
 export default function GraziePage() {

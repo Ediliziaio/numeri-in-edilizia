@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   description:
     "Prenota 30 minuti gratuiti con Numeri in Edilizia: analizziamo i numeri della tua impresa edile e ti mostriamo dove recuperare margine. Senza impegno.",
   alternates: { canonical: "/contatti" },
+  openGraph: { url: "/contatti", images: ["/opengraph-image"] },
 };
 
 export default function ContattiPage() {

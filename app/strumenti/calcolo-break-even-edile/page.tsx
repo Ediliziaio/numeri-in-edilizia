@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "fatturato di pareggio",
   ],
   alternates: { canonical: "/strumenti/calcolo-break-even-edile" },
-  openGraph: {
+  openGraph: { url: "/strumenti/calcolo-break-even-edile",
     title: "Calcolo break even impresa edile",
     description: "Quanto devi fatturare per coprire struttura e compenso, e per arrivare all'utile che hai deciso.",
     type: "website",

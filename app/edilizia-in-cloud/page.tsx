@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description:
     "Il gestionale per imprese edili che applica il metodo: margine di commessa, preventivi, DDT, fatturazione e cantieri in un unico posto.",
   alternates: { canonical: "/edilizia-in-cloud" },
+  openGraph: { url: "/edilizia-in-cloud", images: ["/opengraph-image"] },
 };
 
 const FN = "https://ediliziaincloud.com/funzionalita";

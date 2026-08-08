@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "costo aziendale operaio edile",
   ],
   alternates: { canonical: "/strumenti/calcolo-costo-orario-manodopera" },
-  openGraph: {
+  openGraph: { url: "/strumenti/calcolo-costo-orario-manodopera",
     title: "Calcolo costo orario manodopera edile",
     description: "Dal lordo in busta al costo orario reale sulle ore produttive. Gratis, senza registrazione.",
     type: "website",

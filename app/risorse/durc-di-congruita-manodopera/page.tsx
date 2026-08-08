@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "durc di congruità come funziona",
   ],
   alternates: { canonical: "/risorse/durc-di-congruita-manodopera" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/durc-di-congruita-manodopera", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

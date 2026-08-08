@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "aumentare utile impresa costruzioni",
   ],
   alternates: { canonical: "/risorse/aumentare-redditivita-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/aumentare-redditivita-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

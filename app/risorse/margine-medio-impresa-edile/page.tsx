@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "quanto margina un'impresa edile",
   ],
   alternates: { canonical: "/risorse/margine-medio-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/margine-medio-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

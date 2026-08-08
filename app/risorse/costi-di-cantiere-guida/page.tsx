@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "contabilità di cantiere",
   ],
   alternates: { canonical: "/risorse/costi-di-cantiere-guida" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/costi-di-cantiere-guida", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

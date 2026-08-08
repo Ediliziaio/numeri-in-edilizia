@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Nati dall'incontro tra cantiere e controllo di gestione: aiutiamo gli imprenditori edili a trasformare il fatturato in utile reale.",
   alternates: { canonical: "/chi-sono" },
+  openGraph: { url: "/chi-sono", images: ["/opengraph-image"] },
 };
 
 const values = [

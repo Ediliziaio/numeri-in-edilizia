@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "controllo di gestione edilizia costo",
   ],
   alternates: { canonical: "/risorse/quanto-costa-controllo-di-gestione" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/quanto-costa-controllo-di-gestione", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "come calcolare i costi di struttura",
   ],
   alternates: { canonical: "/risorse/costi-di-struttura-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/costi-di-struttura-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

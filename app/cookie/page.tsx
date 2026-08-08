@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Informativa sull'uso dei cookie del sito Numeri in Edilizia: quali cookie utilizziamo e come gestirli.",
   alternates: { canonical: "/cookie" },
+  openGraph: { url: "/cookie", images: ["/opengraph-image"] },
   robots: { index: false, follow: true },
 };
 

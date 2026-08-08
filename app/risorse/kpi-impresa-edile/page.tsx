@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "quali kpi monitorare impresa edile",
   ],
   alternates: { canonical: "/risorse/kpi-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/kpi-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

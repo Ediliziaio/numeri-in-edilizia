@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Guide, articoli e strumenti sul controllo di gestione per l'impresa edile: margine di commessa, preventivi, budget di cantiere e redditività.",
   alternates: { canonical: "/risorse" },
+  openGraph: { url: "/risorse", images: ["/opengraph-image"] },
 };
 
 const categories = ["Tutti", "Controllo di gestione", "Marginalità", "Preventivi", "Cantiere"];

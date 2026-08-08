@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "anticipi e incassi edilizia",
   ],
   alternates: { canonical: "/risorse/liquidita-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/liquidita-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

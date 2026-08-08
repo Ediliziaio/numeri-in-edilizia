@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "SAL lavori privati",
   ],
   alternates: { canonical: "/risorse/sal-stato-avanzamento-lavori" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/sal-stato-avanzamento-lavori", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

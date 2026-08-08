@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "marginalità cantiere calcolo",
   ],
   alternates: { canonical: "/strumenti/calcolo-margine-commessa" },
-  openGraph: {
+  openGraph: { url: "/strumenti/calcolo-margine-commessa",
     title: "Calcolo margine di commessa",
     description: "Ricavi meno costi diretti e quota di struttura: quanto guadagni davvero su un cantiere.",
     type: "website",

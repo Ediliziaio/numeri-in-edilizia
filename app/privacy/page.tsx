@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     "Informativa sul trattamento dei dati personali del sito Numeri in Edilizia, ai sensi del Regolamento UE 2016/679 (GDPR).",
   alternates: { canonical: "/privacy" },
+  openGraph: { url: "/privacy", images: ["/opengraph-image"] },
   robots: { index: false, follow: true },
 };
 

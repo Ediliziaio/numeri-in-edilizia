@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "Leggere i numeri, governare il margine di commessa, decidere sui dati: il metodo di controllo di gestione pensato per l'imprenditore edile.",
   alternates: { canonical: "/metodo" },
+  openGraph: { url: "/metodo", images: ["/opengraph-image"] },
 };
 
 const faq = [

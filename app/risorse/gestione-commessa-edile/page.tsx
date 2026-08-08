@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "come gestire una commessa edile",
   ],
   alternates: { canonical: "/risorse/gestione-commessa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/gestione-commessa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

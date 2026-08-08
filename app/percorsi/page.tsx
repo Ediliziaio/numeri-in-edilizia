@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Percorsi Numeri in Edilizia: dalla formazione sul controllo di gestione all'affiancamento operativo. Scegli il livello giusto per la tua impresa edile.",
   alternates: { canonical: "/percorsi" },
+  openGraph: { url: "/percorsi", images: ["/opengraph-image"] },
 };
 
 const tiers = [

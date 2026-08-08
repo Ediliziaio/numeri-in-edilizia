@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "come gestire i subappaltatori",
   ],
   alternates: { canonical: "/risorse/gestione-subappalti-edilizia" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/gestione-subappalti-edilizia", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

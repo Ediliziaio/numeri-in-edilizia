@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "come calcolare il margine di contribuzione",
   ],
   alternates: { canonical: "/risorse/margine-di-contribuzione-edilizia" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/margine-di-contribuzione-edilizia", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [

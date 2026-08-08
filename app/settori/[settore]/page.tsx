@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ settore: 
     description: s.metaDescription,
     keywords: s.keywords,
     alternates: { canonical: `/settori/${s.slug}` },
-    openGraph: { title: s.metaTitle, description: s.metaDescription, type: "website", images: ["/opengraph-image"] },
+    openGraph: { url: `/settori/${s.slug}`, title: s.metaTitle, description: s.metaDescription, type: "website", images: ["/opengraph-image"] },
   };
 }
 

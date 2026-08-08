@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "quanto si guadagna in edilizia",
   ],
   alternates: { canonical: "/risorse/quanto-guadagna-impresa-edile" },
-  openGraph: { title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
+  openGraph: { url: "/risorse/quanto-guadagna-impresa-edile", title: article.title, description: article.description, type: "article", images: [article.cover ?? "/opengraph-image"] },
 };
 
 const faq = [
