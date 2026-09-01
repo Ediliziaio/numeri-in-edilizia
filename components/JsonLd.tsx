@@ -162,3 +162,22 @@ export function howToSchema(opts: {
     })),
   };
 }
+
+/* SoftwareApplication — per i calcolatori in /strumenti.
+   Segnala a Google e agli LLM che quella pagina È uno strumento utilizzabile
+   (non un articolo che ne parla): è ciò che la rende citabile come risorsa. */
+export function toolSchema(opts: { name: string; description: string; url: string }): Json {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    inLanguage: "it-IT",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    provider: { "@id": `${site.domain}/#organization` },
+  };
+}

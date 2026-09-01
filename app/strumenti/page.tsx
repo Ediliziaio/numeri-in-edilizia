@@ -5,6 +5,7 @@ import { CtaBand, SectionHeading } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { PageImage } from "@/components/PageImage";
 import { IconArrow, IconCompass, IconClock, IconTrend } from "@/components/Icons";
+import { AdEic } from "@/components/AdEic";
 
 export const metadata: Metadata = {
   title: "Strumenti gratuiti per imprese edili",
@@ -104,6 +105,18 @@ export default function StrumentiPage() {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      <section className="container-nie pb-10">
+        <Reveal>
+          <div className="mx-auto max-w-3xl">
+            <p className="mb-4 text-center text-muted">
+              I calcolatori danno la fotografia. Per tenere margini e commesse aggiornati ogni giorno c&apos;è{" "}
+              <strong className="text-navy-900">EdiliziaInCloud</strong>.
+            </p>
+            <AdEic desktop="wide" mobile="box" />
+          </div>
+        </Reveal>
       </section>
 
       <CtaBand

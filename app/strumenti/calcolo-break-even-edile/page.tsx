@@ -5,6 +5,10 @@ import { CtaBand, FaqSection } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { BreakEvenCalc } from "@/components/calc/BreakEvenCalc";
 import { IconArrow } from "@/components/Icons";
+import { AdEic } from "@/components/AdEic";
+import { EicForm } from "@/components/EicForm";
+import { JsonLd, toolSchema } from "@/components/JsonLd";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Calcolo break even impresa edile",
@@ -52,6 +56,7 @@ const faq = [
 export default function Page() {
   return (
     <>
+      <JsonLd data={toolSchema({ name: "Calcolatore break even impresa edile", description: "Calcola il fatturato di pareggio di un impresa edile: costi fissi diviso il margine di contribuzione medio.", url: `${site.domain}/strumenti/calcolo-break-even-edile` })} />
       <PageHero
         crumb="Calcolo break even"
         path="/strumenti/calcolo-break-even-edile"
@@ -103,6 +108,21 @@ export default function Page() {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* Spot EdiliziaInCloud + richiesta analisi */}
+      <section className="container-nie pb-6">
+        <div className="mx-auto max-w-3xl">
+          <AdEic desktop="wide" mobile="box" />
+        </div>
+      </section>
+
+      <section className="container-nie pb-10">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-line bg-bg-soft p-6 sm:p-8">
+          <h2 className="text-center text-2xl font-bold text-navy-900">Vuoi questi numeri sui tuoi cantieri?</h2>
+          <p className="mt-2 text-center text-muted">30 minuti sui numeri della tua impresa edile, senza impegno.</p>
+          <div className="mt-6"><EicForm title="Richiedi la tua analisi gratuita" /></div>
+        </div>
       </section>
 
       <FaqSection title="Domande sul punto di pareggio" items={faq} />
