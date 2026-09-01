@@ -8,13 +8,13 @@ const EIC_URL = "https://www.ediliziaincloud.com/";
 
 const ADS = {
   // strip orizzontale sottile (2.9:1) — ideale dentro articoli e sezioni full-width
-  leaderboard: { src: "/images/ads/eic-leaderboard.png", w: 2139, h: 735 },
+  leaderboard: { src: "/images/ads/eic-leaderboard.jpg", w: 2139, h: 735 },
   // hero-strip (2.4:1)
-  hero: { src: "/images/ads/eic-hero.png", w: 1947, h: 808 },
+  hero: { src: "/images/ads/eic-hero.jpg", w: 1947, h: 808 },
   // feature 2:1
-  wide: { src: "/images/ads/eic-wide.png", w: 1774, h: 887 },
+  wide: { src: "/images/ads/eic-wide.jpg", w: 1774, h: 887 },
   // quadrato (1.2:1) — ideale su mobile e colonne strette
-  box: { src: "/images/ads/eic-box.png", w: 1374, h: 1145 },
+  box: { src: "/images/ads/eic-box.jpg", w: 1374, h: 1145 },
 } as const;
 
 type AdFormat = keyof typeof ADS;

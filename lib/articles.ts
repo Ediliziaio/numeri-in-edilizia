@@ -7,7 +7,7 @@ export type Article = {
   date: string; // ISO
   readingTime: string;
   category: string;
-  cover?: string; // copertina/OG (iniettata da convenzione /images/blog/<slug>.png)
+  cover?: string; // copertina/OG (iniettata da convenzione /images/blog/<slug>.jpg)
 };
 
 const rawArticles: Article[] = [
@@ -291,7 +291,7 @@ const rawArticles: Article[] = [
 
 /* Articoli la cui copertina non è ancora stata prodotta: niente <Image> rotta,
    la card in /risorse mostra il placeholder col titolo. Rimuovi lo slug da qui
-   appena il file /images/blog/<slug>.png esiste. */
+   appena il file /images/blog/<slug>.jpg esiste. */
 const SENZA_COVER = new Set<string>([
   "quanto-marginare-ristrutturazione",
   "excel-o-gestionale-edilizia",
@@ -299,7 +299,7 @@ const SENZA_COVER = new Set<string>([
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
-  cover: SENZA_COVER.has(a.slug) ? undefined : `/images/blog/${a.slug}.png`,
+  cover: SENZA_COVER.has(a.slug) ? undefined : `/images/blog/${a.slug}.jpg`,
 }));
 
 export function getArticle(slug: string) {
