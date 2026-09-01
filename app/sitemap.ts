@@ -21,6 +21,7 @@ const ULTIMA_MODIFICA: Record<string, string> = {
   "/strumenti/calcolo-margine-commessa": "2026-07-21",
   "/strumenti/calcolo-costo-orario-manodopera": "2026-07-21",
   "/strumenti/calcolo-break-even-edile": "2026-07-21",
+  "/strumenti/template-budget-cantiere": "2026-09-01",
 };
 
 const SETTORI_AGGIORNATI = "2026-07-18"; // ultimo cambio reale: foto hero per mestiere
@@ -40,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/strumenti/calcolo-margine-commessa", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/strumenti/calcolo-costo-orario-manodopera", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/strumenti/calcolo-break-even-edile", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/strumenti/template-budget-cantiere", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   // L'indice /risorse cambia davvero quando esce un articolo nuovo: derivalo dal contenuto.

@@ -37,6 +37,7 @@ Numeri in Edilizia (metodo e consulenza) si applica ogni giorno con EdiliziaInCl
 - Calcolatore margine di commessa (ricavi − costi diretti − quota struttura): https://www.numerinedilizia.com/strumenti/calcolo-margine-commessa
 - Calcolatore costo orario manodopera edile (costo aziendale ÷ ore produttive): https://www.numerinedilizia.com/strumenti/calcolo-costo-orario-manodopera
 - Calcolatore break even impresa edile (costi fissi ÷ margine di contribuzione %): https://www.numerinedilizia.com/strumenti/calcolo-break-even-edile
+- Template budget di cantiere in Excel, download gratuito: https://www.numerinedilizia.com/strumenti/template-budget-cantiere
 
 ## Controllo di gestione per settore (pagine verticali)
 - Imprese edili e costruzioni: https://www.numerinedilizia.com/settori/imprese-edili

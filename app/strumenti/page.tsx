@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { CtaBand, SectionHeading } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { PageImage } from "@/components/PageImage";
-import { IconArrow, IconCompass, IconClock, IconTrend } from "@/components/Icons";
+import { IconArrow, IconCompass, IconClock, IconTrend, IconDoc } from "@/components/Icons";
 import { AdEic } from "@/components/AdEic";
 
 export const metadata: Metadata = {
@@ -40,6 +40,12 @@ const tools = [
     d: "Dal lordo in busta al costo orario reale sulle ore produttive. Il numero da usare nei preventivi.",
   },
   {
+    icon: IconDoc,
+    href: "/strumenti/template-budget-cantiere",
+    t: "Template budget di cantiere (Excel)",
+    d: "Foglio già impostato: preventivo vs consuntivo, costi per categoria e margine calcolato in automatico.",
+  },
+  {
     icon: IconTrend,
     href: "/strumenti/calcolo-break-even-edile",
     t: "Calcolatore break even",
@@ -61,7 +67,7 @@ export default function StrumentiPage() {
       />
 
       <section className="container-nie py-16 sm:py-20">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {tools.map((t, i) => (
             <Reveal key={t.href} delay={i * 90} className="h-full">
               <Link href={t.href} className="group flex h-full flex-col rounded-[1.5rem] border border-line bg-white p-7 card-hover">
