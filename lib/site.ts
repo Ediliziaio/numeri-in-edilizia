@@ -38,7 +38,9 @@ export const site = {
     metaPixel: "912028060826443", // Meta (Facebook) Pixel ID
   },
   email: "info@numerinedilizia.com",
-  phone: "+39 000 000 0000",
+  // Numero non ancora attivo: lasciato VUOTO di proposito.
+  // Non pubblicare mai un placeholder finto (finiva in pagina e negli schema).
+  phone: "",
   social: {
     linkedin: "https://www.linkedin.com/company/numeri-in-edilizia",
     instagram: "https://www.instagram.com/numeriinedilizia",

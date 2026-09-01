@@ -263,12 +263,39 @@ const rawArticles: Article[] = [
     readingTime: "13 min",
     category: "Controllo di gestione",
   },
+  {
+    slug: "quanto-marginare-ristrutturazione",
+    title: "Quanto marginare una ristrutturazione",
+    h1: "Quanto deve marginare un lavoro di ristrutturazione",
+    description:
+      "Margini di riferimento per un lavoro di ristrutturazione: quanto deve restare, dove si perde e come quotare per non lavorare in perdita.",
+    excerpt:
+      "Le ristrutturazioni sembrano marginare bene e spesso non lo fanno: imprevisti, extra a voce e ore non tracciate. Ecco i numeri giusti.",
+    date: "2026-08-08",
+    readingTime: "13 min",
+    category: "Marginalità",
+  },
+  {
+    slug: "excel-o-gestionale-edilizia",
+    title: "Excel o gestionale per imprese edili",
+    h1: "Excel o gestionale: quando il foglio di calcolo smette di bastare",
+    description:
+      "Quando conviene passare da Excel a un gestionale in edilizia: la soglia reale, il costo nascosto del foglio e cosa non devi perdere nel passaggio.",
+    excerpt:
+      "Excel funziona, finché non funziona più. La soglia non è il fatturato: sono i cantieri aperti e gli errori che non vedi.",
+    date: "2026-08-08",
+    readingTime: "13 min",
+    category: "Controllo di gestione",
+  },
 ];
 
 /* Articoli la cui copertina non è ancora stata prodotta: niente <Image> rotta,
    la card in /risorse mostra il placeholder col titolo. Rimuovi lo slug da qui
    appena il file /images/blog/<slug>.png esiste. */
-const SENZA_COVER = new Set<string>([]);
+const SENZA_COVER = new Set<string>([
+  "quanto-marginare-ristrutturazione",
+  "excel-o-gestionale-edilizia",
+]);
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
