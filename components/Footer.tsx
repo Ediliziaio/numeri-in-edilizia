@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-navy-900 text-white mt-24">
       <div className="container-nie py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_0.85fr_1fr_1.05fr_0.95fr]">
           <div>
             <Logo variant="light" />
             <p className="mt-5 max-w-sm text-brand-100/80 text-[0.975rem] leading-relaxed">
@@ -63,6 +63,26 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link href={`/settori/${s.slug}`} className="text-brand-100/80 hover:text-white transition-colors">
                     {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-brand-300 mb-4">
+              Strumenti
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { href: "/strumenti/calcolo-margine-commessa", label: "Calcolo margine di commessa" },
+                { href: "/strumenti/calcolo-costo-orario-manodopera", label: "Calcolo costo orario" },
+                { href: "/strumenti/calcolo-break-even-edile", label: "Calcolo break even" },
+                { href: "/strumenti", label: "Tutti gli strumenti" },
+              ].map((t) => (
+                <li key={t.href}>
+                  <Link href={t.href} className="text-brand-100/80 hover:text-white transition-colors">
+                    {t.label}
                   </Link>
                 </li>
               ))}

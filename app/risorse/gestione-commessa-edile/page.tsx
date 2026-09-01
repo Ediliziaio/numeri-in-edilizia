@@ -143,7 +143,7 @@ export default function Page() {
       <h2>Dal foglio al gestionale</h2>
       <p>
         Si può iniziare con un buon foglio di calcolo: una scheda per commessa con budget, costi
-        imputati e avanzamento. Quando i cantieri aperti crescono, un gestionale come{" "}
+        imputati e avanzamento. Quando i cantieri aperti crescono, un <Link href="/risorse/software-per-imprese-edili">gestionale</Link> come{" "}
         <a href="https://ediliziaincloud.com/" target="_blank" rel="noopener noreferrer">EdiliziaInCloud</a>{" "}
         collega DDT, ore, fatture e SAL direttamente alla commessa, e il margine si aggiorna quasi da
         solo. Ma lo strumento viene dopo il metodo, non prima: se non sai <em>cosa</em> guardare, il

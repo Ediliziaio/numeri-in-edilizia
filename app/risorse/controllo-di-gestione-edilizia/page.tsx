@@ -50,7 +50,8 @@ export default function Page() {
       <h2>Cos'è il controllo di gestione in edilizia</h2>
       <p>
         Il controllo di gestione è il sistema che ti fa sapere, in ogni momento,{" "}
-        <strong>quanto guadagni davvero</strong> — sull'impresa e su ogni singolo cantiere. Misura
+        <strong>quanto guadagni davvero</strong> (i valori di riferimento sono nella guida a{" "}
+        <Link href="/risorse/quanto-guadagna-impresa-edile">quanto deve guadagnare un'impresa edile</Link>) — sull'impresa e su ogni singolo cantiere. Misura
         ricavi, costi diretti di commessa, costi di struttura e margine, e trasforma questi numeri in
         decisioni: quali lavori accettare, come fare i preventivi, dove intervenire.
       </p>
