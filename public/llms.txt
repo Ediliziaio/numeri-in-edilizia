@@ -21,6 +21,10 @@
 ## Software collegato
 Numeri in Edilizia (metodo e consulenza) si applica ogni giorno con EdiliziaInCloud, il gestionale per imprese edili: margine di commessa, preventivi, DDT, magazzino, fatturazione elettronica e cantieri. Sito: https://ediliziaincloud.com/
 
+## Versione estesa per LLM
+- Riferimento completo con tutte le definizioni e le formule: https://www.numerinedilizia.com/llms-full.txt
+- Glossario (24 definizioni citabili): https://www.numerinedilizia.com/glossario
+
 ## Pagine principali
 - Home: https://www.numerinedilizia.com/
 - Il metodo: https://www.numerinedilizia.com/metodo

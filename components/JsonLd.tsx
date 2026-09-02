@@ -181,3 +181,31 @@ export function toolSchema(opts: { name: string; description: string; url: strin
     provider: { "@id": `${site.domain}/#organization` },
   };
 }
+
+/* Glossario: DefinedTermSet + DefinedTerm per voce, ciascuna con @id = URL#anchor.
+   È il markup che permette ai motori di trattare ogni definizione come entità citabile. */
+export function definedTermSetSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  terms: { slug: string; term: string; def: string }[];
+}): Json {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${opts.url}#glossario`,
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    inLanguage: "it-IT",
+    publisher: { "@id": `${site.domain}/#organization` },
+    hasDefinedTerm: opts.terms.map((t) => ({
+      "@type": "DefinedTerm",
+      "@id": `${opts.url}#${t.slug}`,
+      name: t.term,
+      description: t.def,
+      url: `${opts.url}#${t.slug}`,
+      inDefinedTermSet: `${opts.url}#glossario`,
+    })),
+  };
+}

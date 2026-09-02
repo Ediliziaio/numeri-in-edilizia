@@ -22,6 +22,7 @@ const ULTIMA_MODIFICA: Record<string, string> = {
   "/strumenti/calcolo-costo-orario-manodopera": "2026-07-21",
   "/strumenti/calcolo-break-even-edile": "2026-07-21",
   "/strumenti/template-budget-cantiere": "2026-09-01",
+  "/glossario": "2026-09-02",
 };
 
 const SETTORI_AGGIORNATI = "2026-07-18"; // ultimo cambio reale: foto hero per mestiere
@@ -42,11 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/strumenti/calcolo-costo-orario-manodopera", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/strumenti/calcolo-break-even-edile", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/strumenti/template-budget-cantiere", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/glossario", priority: 0.85, changeFrequency: "monthly" as const },
   ];
 
   // L'indice /risorse cambia davvero quando esce un articolo nuovo: derivalo dal contenuto.
   const ultimoArticolo = articles
-    .map((a) => a.date)
+    .map((a) => a.updated ?? a.date)
     .sort()
     .at(-1)!;
 
@@ -71,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...articles.map((a) => ({
       url: `${base}/risorse/${a.slug}`,
-      lastModified: new Date(a.date),
+      lastModified: new Date(a.updated ?? a.date),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

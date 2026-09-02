@@ -4,7 +4,8 @@ export type Article = {
   h1?: string; // titolo lungo mostrato in pagina (fallback: title)
   description: string;
   excerpt: string;
-  date: string; // ISO
+  date: string; // ISO — pubblicazione
+  updated?: string; // ISO — ultima revisione REALE del contenuto (freschezza per Google e LLM)
   readingTime: string;
   category: string;
   cover?: string; // copertina/OG (iniettata da convenzione /images/blog/<slug>.jpg)
@@ -32,6 +33,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Non serve un gestionale da ingegnere. Servono pochi numeri, letti nel modo giusto. Ecco da dove partire, passo per passo.",
     date: "2026-07-10",
+    updated: "2026-09-02",
     readingTime: "14 min",
     category: "Controllo di gestione",
   },
@@ -152,6 +154,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Una commessa non si «segue a memoria». Ecco come governare costi, ricavi e margine di ogni cantiere, dall'inizio alla chiusura.",
     date: "2026-07-19",
+    updated: "2026-09-02",
     readingTime: "15 min",
     category: "Controllo di gestione",
   },

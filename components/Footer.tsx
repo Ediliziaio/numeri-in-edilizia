@@ -79,6 +79,7 @@ export function Footer() {
                 { href: "/strumenti/calcolo-costo-orario-manodopera", label: "Calcolo costo orario" },
                 { href: "/strumenti/calcolo-break-even-edile", label: "Calcolo break even" },
                 { href: "/strumenti/template-budget-cantiere", label: "Template budget cantiere" },
+                { href: "/glossario", label: "Glossario" },
                 { href: "/strumenti", label: "Tutti gli strumenti" },
               ].map((t) => (
                 <li key={t.href}>

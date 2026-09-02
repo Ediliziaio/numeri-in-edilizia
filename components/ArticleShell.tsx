@@ -41,6 +41,7 @@ export function ArticleShell({
             description: article.description,
             url,
             datePublished: article.date,
+            dateModified: article.updated ?? article.date,
             image: article.cover ? `${site.domain}${article.cover}` : undefined,
           }),
           breadcrumbSchema([
@@ -74,7 +75,7 @@ export function ArticleShell({
           </Link>{" "}
           ·{" "}
           {article.readingTime} di lettura · aggiornato il{" "}
-          {new Date(article.date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
+          {new Date(article.updated ?? article.date).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
         </p>
 
         {article.cover && (
