@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { MetaPixel } from "@/components/MetaPixel";
+import { SalvaCampagna } from "@/components/SalvaCampagna";
 import { JsonLd, organizationSchema, websiteSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" className={`${wixDisplay.variable} ${wixText.variable} ${lora.variable}`}>
       <body>
+        <SalvaCampagna />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${site.analytics.gtm}`}

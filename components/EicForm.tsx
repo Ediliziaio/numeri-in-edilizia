@@ -1,5 +1,8 @@
+import { EicLeadForm } from "@/components/EicLeadForm";
+
 /* Form ufficiale EdiliziaInCloud (embed). Un solo punto: cambi lo slug/company_id qui
-   e si aggiorna in tutto il sito (contatti, risorse, articoli). */
+   e si aggiorna in tutto il sito (contatti, risorse, articoli). I lead arrivano nel
+   CRM con la campagna di provenienza (UTM, gclid, fbclid), salvata all'atterraggio. */
 
 export function EicForm({
   title = "Richiedi informazioni",
@@ -10,15 +13,5 @@ export function EicForm({
   height?: number;
   className?: string;
 }) {
-  return (
-    <iframe
-      src="https://app.ediliziaincloud.com/f?slug=numeri-in-edilizia&company_id=00000000-0000-0000-0000-000000000001"
-      width="100%"
-      height={height}
-      loading="lazy"
-      title={title}
-      className={className}
-      style={{ border: 0, maxWidth: 640, margin: "0 auto", display: "block" }}
-    />
-  );
+  return <EicLeadForm slug="numeri-in-edilizia" title={title} height={height} className={className} />;
 }
