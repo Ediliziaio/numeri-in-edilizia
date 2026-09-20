@@ -27,7 +27,7 @@ export const settori: Settore[] = [
     nome: "imprese di costruzioni",
     nomeBreve: "Costruzioni",
     h1: "Controllo di gestione per imprese edili e di costruzioni",
-    metaTitle: "Controllo di gestione imprese di costruzioni",
+    metaTitle: "Controllo di gestione imprese edili",
     metaDescription:
       "Margine di commessa, SAL, varianti e costi di struttura sotto controllo: il controllo di gestione per imprese di costruzioni.",
     heroIntro:
@@ -110,7 +110,7 @@ export const settori: Settore[] = [
     nome: "imprese di ristrutturazioni",
     nomeBreve: "Ristrutturazioni",
     h1: "Controllo di gestione per imprese di ristrutturazioni",
-    metaTitle: "Controllo di gestione per ristrutturazioni",
+    metaTitle: "Controllo di gestione ristrutturazioni",
     metaDescription:
       "Controllo di gestione per imprese di ristrutturazioni: margine per cantiere, extra non previsti e preventivi che reggono. Guadagna davvero su ogni lavoro.",
     heroIntro:

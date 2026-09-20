@@ -13,9 +13,12 @@ const URL = `${site.domain}/glossario`;
 const DESC =
   "Glossario del controllo di gestione per imprese edili: margine di commessa, costi diretti e di struttura, costo orario, break even, SAL, varianti. Definizioni chiare, con formule e valori di riferimento.";
 
+const META_DESC =
+  "Glossario del controllo di gestione per imprese edili: margine di commessa, costi di struttura, costo orario, break even, SAL. Definizioni chiare con formule.";
+
 export const metadata: Metadata = {
-  title: "Glossario del controllo di gestione edile",
-  description: DESC,
+  title: "Glossario controllo di gestione edile",
+  description: META_DESC,
   keywords: [
     "glossario controllo di gestione",
     "margine di commessa significato",
@@ -27,8 +30,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/glossario" },
   openGraph: {
     url: "/glossario",
-    title: "Glossario del controllo di gestione edile",
-    description: DESC,
+    title: "Glossario controllo di gestione edile",
+    description: META_DESC,
     type: "website",
     images: ["/opengraph-image"],
   },

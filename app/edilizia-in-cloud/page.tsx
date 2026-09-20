@@ -13,7 +13,7 @@ import {
 const eic = site.partner;
 
 export const metadata: Metadata = {
-  title: "EdiliziaInCloud: il gestionale del metodo",
+  title: "EdiliziaInCloud, il gestionale edile",
   description:
     "Il gestionale per imprese edili che applica il metodo: margine di commessa, preventivi, DDT, fatturazione e cantieri in un unico posto.",
   alternates: { canonical: "/edilizia-in-cloud" },

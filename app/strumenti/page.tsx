@@ -10,7 +10,7 @@ import { AdEic } from "@/components/AdEic";
 export const metadata: Metadata = {
   title: "Strumenti gratuiti per imprese edili",
   description:
-    "Calcolatori gratuiti per imprese edili: margine di commessa, costo orario della manodopera e break even point. Nessuna registrazione.",
+    "Strumenti gratuiti per imprese edili: calcolatori di margine di commessa, costo orario della manodopera e break even, più il template Excel del budget di cantiere.",
   keywords: [
     "calcolatore margine commessa",
     "calcolo costo orario manodopera edile",
@@ -61,7 +61,7 @@ export default function StrumentiPage() {
         path="/strumenti"
         eyebrow="Gratis, senza registrazione"
         title={<>Calcola i numeri della tua impresa edile</>}
-        intro="Tre calcolatori costruiti sul metodo Numeri in Edilizia: margine di commessa, costo orario reale della manodopera e punto di pareggio. Nessuna email richiesta, nessun dato salvato."
+        intro="Tre calcolatori e un template Excel costruiti sul metodo Numeri in Edilizia: margine di commessa, costo orario reale della manodopera, punto di pareggio e budget di cantiere. Nessuna email richiesta, nessun dato salvato."
         visual={<PageImage src="/images/pages/hero-metodo.jpg" alt="Imprenditore edile che calcola i numeri della sua impresa" priority />}
         cta={false}
       />
@@ -75,7 +75,7 @@ export default function StrumentiPage() {
                 <h2 className="mt-5 text-lg font-bold text-navy-900 leading-snug group-hover:text-brand-700">{t.t}</h2>
                 <p className="mt-2 flex-1 text-sm text-muted leading-relaxed">{t.d}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:gap-2.5 transition-all">
-                  Apri il calcolatore <IconArrow className="arrow h-4 w-4" />
+                  Apri lo strumento <IconArrow className="arrow h-4 w-4" />
                 </span>
               </Link>
             </Reveal>
@@ -107,6 +107,14 @@ export default function StrumentiPage() {
                 Infine il <Link href="/strumenti/calcolo-break-even-edile">break even</Link> ti dice a che ritmo
                 deve girare l'impresa perché tutto questo abbia senso. Se il fatturato di pareggio è più alto di
                 quello che stai facendo, hai un problema di margine, non di volume.
+              </p>
+              <p>
+                Quando vuoi passare dal conto al volo al controllo continuo, scarica il{" "}
+                <Link href="/strumenti/template-budget-cantiere">template del budget di cantiere</Link>: mette
+                preventivo e consuntivo uno accanto all'altro e ti mostra lo scostamento voce per voce, mentre il
+                cantiere è ancora aperto. Se un termine non ti è chiaro — margine di contribuzione, incidenza di
+                struttura, ore produttive — lo trovi spiegato nel{" "}
+                <Link href="/glossario">glossario del controllo di gestione</Link>.
               </p>
             </div>
           </Reveal>

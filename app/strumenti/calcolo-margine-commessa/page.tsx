@@ -6,8 +6,9 @@ import { Reveal } from "@/components/Reveal";
 import { MargineCommessaCalc } from "@/components/calc/MargineCommessaCalc";
 import { IconArrow } from "@/components/Icons";
 import { AdEic } from "@/components/AdEic";
+import { EsempioSvolto, ErroriComuni } from "@/components/CalcGuide";
 import { EicForm } from "@/components/EicForm";
-import { JsonLd, toolSchema } from "@/components/JsonLd";
+import { JsonLd, toolSchema, howToSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,6 +58,20 @@ export default function Page() {
   return (
     <>
       <JsonLd data={toolSchema({ name: "Calcolatore margine di commessa", description: "Calcola il margine di commessa di un cantiere edile: ricavi meno costi diretti e quota di costi di struttura.", url: `${site.domain}/strumenti/calcolo-margine-commessa` })} />
+      <JsonLd
+        data={howToSchema({
+          name: "Come calcolare il margine di una commessa edile",
+          description: "Procedura per calcolare il margine di commessa: ricavi meno costi diretti di cantiere meno quota di costi di struttura.",
+          url: `${site.domain}/strumenti/calcolo-margine-commessa`,
+          steps: [
+          { name: "Determina i ricavi della commessa", text: "Somma l'importo di contratto e le sole varianti approvate per iscritto e fatturabili." },
+          { name: "Somma i costi diretti di cantiere", text: "Materiali con sfrido, manodopera al costo orario reale, mezzi e noli, subappalti, trasporti, smaltimenti e oneri di sicurezza specifici." },
+          { name: "Calcola il margine di contribuzione", text: "Sottrai i costi diretti dai ricavi: è quanto il cantiere contribuisce a coprire i costi fissi dell'impresa." },
+          { name: "Sottrai la quota di costi di struttura", text: "Applica ai costi diretti l'incidenza percentuale dei costi di struttura della tua impresa e sottrai l'importo ottenuto." },
+          { name: "Leggi il margine in percentuale sui ricavi", text: "Dividi il margine per i ricavi. Come riferimento: sotto il 10% la commessa è fragile, tra 10% e 15% in equilibrio, oltre il 15% solida." },
+          ],
+        })}
+      />
       <PageHero
         crumb="Calcolo margine di commessa"
         path="/strumenti/calcolo-margine-commessa"
@@ -107,6 +122,44 @@ export default function Page() {
           </div>
         </Reveal>
       </section>
+
+      <EsempioSvolto
+        title="Esempio svolto: una commessa da 120.000 € che sembra sana"
+        intro="Sono i valori che trovi già inseriti nel calcolatore. A colpo d'occhio la commessa guadagna 19.000 €. Caricata la struttura, il quadro cambia."
+        righe={[
+          { voce: "Ricavi della commessa", calcolo: "contratto + varianti fatturabili", valore: "120.000 €" },
+          { voce: "Materiali", valore: "45.000 €" },
+          { voce: "Manodopera", calcolo: "al costo orario reale", valore: "30.000 €" },
+          { voce: "Mezzi e noli", valore: "8.000 €" },
+          { voce: "Subappalti", valore: "15.000 €" },
+          { voce: "Altri costi diretti", calcolo: "trasporti, smaltimenti, sicurezza", valore: "3.000 €" },
+          { voce: "Totale costi diretti", valore: "101.000 €" },
+          { voce: "Margine di contribuzione", calcolo: "120.000 − 101.000 = 15,8% dei ricavi", valore: "19.000 €" },
+          { voce: "Quota di costi di struttura", calcolo: "15% dei costi diretti", valore: "− 15.150 €" },
+        ]}
+        risultato={{ voce: "Margine di commessa (3,2% dei ricavi)", valore: "3.850 €" }}
+      >
+        <p>
+          Dei 19.000 € che sembravano guadagno ne restano <strong className="text-navy-900">3.850</strong>: il 3,2%
+          dei ricavi. È una commessa in <strong className="text-navy-900">zona fragile</strong> — basta un imprevisto
+          da 4.000 €, una variante non fatturata o qualche giornata in più, e va in perdita.
+        </p>
+        <p>
+          È la ragione per cui guardare solo il margine di contribuzione inganna: dice che il cantiere copre i suoi
+          costi, non che l&apos;impresa ci guadagna. La differenza tra i due numeri è spiegata nella guida a{" "}
+          <Link href="/risorse/margine-di-contribuzione-edilizia">margine di contribuzione e margine di commessa</Link>.
+        </p>
+      </EsempioSvolto>
+
+      <ErroriComuni
+        title="I 4 errori che falsano il margine di commessa"
+        errori={[
+          { t: "Non caricare i costi di struttura", d: "Ufficio, amministrazione, assicurazioni e compenso del titolare non si vedono in cantiere, ma li pagano i cantieri. Senza quella quota, una commessa che «pareggia» in realtà perde." },
+          { t: "Valorizzare la manodopera alla paga oraria", d: "La manodopera è quasi sempre la voce più pesante. Inserita alla paga in busta invece che al costo orario reale, gonfia il margine di tutto il cantiere." },
+          { t: "Contare le varianti non ancora approvate", d: "Tra i ricavi vanno solo le varianti approvate per iscritto e fatturabili. Il lavoro extra fatto sulla parola è un costo certo e un ricavo ipotetico." },
+          { t: "Fare il conto solo a fine lavori", d: "A cantiere chiuso il margine è un'autopsia. Il calcolo serve a lavori in corso, quando puoi ancora intervenire su acquisti, squadre e varianti." },
+        ]}
+      />
 
       {/* Spot EdiliziaInCloud + richiesta analisi */}
       <section className="container-nie pb-6">

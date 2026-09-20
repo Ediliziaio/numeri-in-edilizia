@@ -14,7 +14,7 @@ export type Article = {
 const rawArticles: Article[] = [
   {
     slug: "margine-impresa-edile",
-    title: "Impresa edile: fatturi tanto, guadagni poco",
+    title: "Impresa edile: fatturi ma non guadagni",
     h1: "Perché la tua impresa edile fattura tanto ma guadagna poco",
     description:
       "Le 5 ragioni per cui il margine sparisce in cantiere e come recuperarlo con il controllo di gestione. Guida pratica per l'imprenditore edile.",
@@ -26,7 +26,7 @@ const rawArticles: Article[] = [
   },
   {
     slug: "controllo-di-gestione-edilizia",
-    title: "Controllo di gestione in edilizia: guida",
+    title: "Controllo di gestione edilizia: guida",
     h1: "Controllo di gestione in edilizia: la guida per iniziare",
     description:
       "Cos'è il controllo di gestione per un'impresa edile, quali indicatori servono davvero e come partire senza software complicati.",
@@ -135,7 +135,7 @@ const rawArticles: Article[] = [
   },
   {
     slug: "costo-orario-manodopera-edile",
-    title: "Costo orario manodopera edile: il calcolo",
+    title: "Costo orario manodopera edile: calcolo",
     h1: "Costo orario della manodopera edile: come calcolarlo davvero",
     description:
       "Quanto costa davvero un'ora di operaio edile? Costo aziendale, ore produttive, trasferte e tempi morti: la formula completa con esempi.",
@@ -160,7 +160,7 @@ const rawArticles: Article[] = [
   },
   {
     slug: "kpi-impresa-edile",
-    title: "KPI impresa edile: gli indicatori chiave",
+    title: "KPI impresa edile: indicatori chiave",
     h1: "I KPI dell'impresa edile: gli indicatori che contano davvero",
     description:
       "Quali KPI deve monitorare un'impresa edile: margine di commessa, produttività, cassa e scostamenti. Pochi indicatori giusti, letti ogni settimana.",
@@ -208,7 +208,7 @@ const rawArticles: Article[] = [
   },
   {
     slug: "durc-di-congruita-manodopera",
-    title: "DURC di congruità: cos'è e come funziona",
+    title: "DURC di congruità: cos'è, come funziona",
     h1: "DURC di congruità della manodopera: cos'è e come gestirlo",
     description:
       "Cos'è il DURC di congruità, quando serve, come si calcola l'incidenza della manodopera e come evitare il blocco del SAL e dei pagamenti.",

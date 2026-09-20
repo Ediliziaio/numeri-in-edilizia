@@ -6,8 +6,9 @@ import { Reveal } from "@/components/Reveal";
 import { CostoOrarioCalc } from "@/components/calc/CostoOrarioCalc";
 import { IconArrow } from "@/components/Icons";
 import { AdEic } from "@/components/AdEic";
+import { EsempioSvolto, ErroriComuni } from "@/components/CalcGuide";
 import { EicForm } from "@/components/EicForm";
-import { JsonLd, toolSchema } from "@/components/JsonLd";
+import { JsonLd, toolSchema, howToSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,6 +58,20 @@ export default function Page() {
   return (
     <>
       <JsonLd data={toolSchema({ name: "Calcolatore costo orario manodopera edile", description: "Calcola il costo orario reale di un operaio edile: costo aziendale diviso le ore realmente produttive.", url: `${site.domain}/strumenti/calcolo-costo-orario-manodopera` })} />
+      <JsonLd
+        data={howToSchema({
+          name: "Come calcolare il costo orario della manodopera edile",
+          description: "Procedura per calcolare il costo orario reale di un operaio edile: costo aziendale annuo diviso le ore realmente produttive.",
+          url: `${site.domain}/strumenti/calcolo-costo-orario-manodopera`,
+          steps: [
+          { name: "Parti dalla retribuzione lorda annua", text: "Prendi la retribuzione lorda annua dell'operaio, comprese tredicesima ed eventuali mensilità aggiuntive." },
+          { name: "Aggiungi gli oneri a carico dell'azienda", text: "Somma contributi previdenziali, TFR, assicurazione e cassa edile: sono una percentuale del lordo che dipende dal contratto applicato." },
+          { name: "Aggiungi i costi annui per persona", text: "Somma DPI, formazione obbligatoria, visite mediche e attrezzatura individuale. Il totale è il costo aziendale annuo." },
+          { name: "Calcola le ore realmente produttive", text: "Dalle ore contrattuali annue togli ferie, malattia, festività, formazione, spostamenti e tempi morti." },
+          { name: "Dividi il costo aziendale per le ore produttive", text: "Il risultato è il costo orario reale: è il numero da usare nei preventivi, non la paga oraria in busta." },
+          ],
+        })}
+      />
       <PageHero
         crumb="Calcolo costo orario manodopera"
         path="/strumenti/calcolo-costo-orario-manodopera"
@@ -109,6 +124,42 @@ export default function Page() {
           </div>
         </Reveal>
       </section>
+
+      <EsempioSvolto
+        title="Esempio svolto: da 16 € a 29 € l'ora"
+        intro="Sono i valori che trovi già inseriti nel calcolatore: un operaio con 28.000 € di retribuzione lorda annua. Ecco il conto riga per riga."
+        righe={[
+          { voce: "Retribuzione lorda annua", valore: "28.000 €" },
+          { voce: "Oneri a carico dell'azienda", calcolo: "45% del lordo: contributi, TFR, assicurazione, cassa edile", valore: "12.600 €" },
+          { voce: "Altri costi annui per persona", calcolo: "DPI, formazione, visite mediche, attrezzatura", valore: "1.200 €" },
+          { voce: "Costo aziendale annuo", calcolo: "28.000 + 12.600 + 1.200", valore: "41.800 €" },
+          { voce: "Ore contrattuali annue", valore: "1.750 ore" },
+          { voce: "Ore non produttive", calcolo: "18%: ferie, malattia, festività, spostamenti, tempi morti", valore: "− 315 ore" },
+          { voce: "Ore realmente produttive", calcolo: "1.750 − 315", valore: "1.435 ore" },
+        ]}
+        risultato={{ voce: "Costo orario reale (41.800 ÷ 1.435)", valore: "29,13 €/ora" }}
+      >
+        <p>
+          La paga oraria nominale di questo operaio è <strong className="text-navy-900">16 €</strong> (28.000 ÷ 1.750).
+          Il costo su ore teoriche è 23,89 €. Il costo reale è <strong className="text-navy-900">29,13 €</strong>:
+          l&apos;82% in più della paga in busta. Chi fa i preventivi a 16 o anche a 24 € l&apos;ora sta vendendo
+          la manodopera sotto costo, su ogni cantiere, senza vederlo.
+        </p>
+        <p>
+          Nota che è un esempio: oneri e ore non produttive cambiano con il contratto applicato, il livello e
+          l&apos;organizzazione dell&apos;impresa. Il punto non sono questi numeri, ma rifare il conto con i tuoi.
+        </p>
+      </EsempioSvolto>
+
+      <ErroriComuni
+        title="I 4 errori più comuni nel calcolo del costo orario"
+        errori={[
+          { t: "Usare la paga oraria in busta", d: "È l'errore più diffuso e il più costoso: la paga oraria non contiene contributi, TFR, ferie, né le ore pagate e non lavorate. Non è un costo, è una voce del cedolino." },
+          { t: "Dividere per le ore contrattuali", d: "Le ore che paghi non sono le ore che produci. Ferie, malattia, festività, formazione e spostamenti vanno tolti dal divisore: meno ore produttive significa un costo orario più alto." },
+          { t: "Dimenticare i costi per persona", d: "DPI, formazione obbligatoria, visite mediche, attrezzatura individuale, telefono, mezzo. Sono costi che esistono solo perché esiste quell'operaio, e vanno nel suo costo orario." },
+          { t: "Usare un solo costo per tutta la squadra", d: "Un operaio specializzato e un manovale non costano uguale. Se le lavorazioni richiedono profili diversi, servono costi orari diversi, altrimenti sbagli il preventivo in entrambe le direzioni." },
+        ]}
+      />
 
       {/* Spot EdiliziaInCloud + richiesta analisi */}
       <section className="container-nie pb-6">

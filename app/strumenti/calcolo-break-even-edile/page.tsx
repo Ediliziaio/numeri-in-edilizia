@@ -6,8 +6,9 @@ import { Reveal } from "@/components/Reveal";
 import { BreakEvenCalc } from "@/components/calc/BreakEvenCalc";
 import { IconArrow } from "@/components/Icons";
 import { AdEic } from "@/components/AdEic";
+import { EsempioSvolto, ErroriComuni } from "@/components/CalcGuide";
 import { EicForm } from "@/components/EicForm";
-import { JsonLd, toolSchema } from "@/components/JsonLd";
+import { JsonLd, toolSchema, howToSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -57,6 +58,19 @@ export default function Page() {
   return (
     <>
       <JsonLd data={toolSchema({ name: "Calcolatore break even impresa edile", description: "Calcola il fatturato di pareggio di un impresa edile: costi fissi diviso il margine di contribuzione medio.", url: `${site.domain}/strumenti/calcolo-break-even-edile` })} />
+      <JsonLd
+        data={howToSchema({
+          name: "Come calcolare il break even di un'impresa edile",
+          description: "Procedura per calcolare il fatturato di pareggio: costi fissi annui diviso il margine di contribuzione medio in percentuale.",
+          url: `${site.domain}/strumenti/calcolo-break-even-edile`,
+          steps: [
+          { name: "Somma i costi fissi annui", text: "Costi di struttura dell'impresa più il compenso dell'imprenditore, che va sempre incluso." },
+          { name: "Calcola il margine di contribuzione medio", text: "Ricavi meno soli costi diretti, in percentuale sui ricavi, come media ponderata di tutte le commesse dell'anno." },
+          { name: "Dividi i costi fissi per il margine percentuale", text: "Il risultato è il fatturato di pareggio: sotto quella cifra l'impresa lavora in perdita." },
+          { name: "Aggiungi l'utile obiettivo", text: "Per sapere quanto fatturare per un certo utile, somma l'utile ai costi fissi prima di dividere per il margine percentuale." },
+          ],
+        })}
+      />
       <PageHero
         crumb="Calcolo break even"
         path="/strumenti/calcolo-break-even-edile"
@@ -109,6 +123,42 @@ export default function Page() {
           </div>
         </Reveal>
       </section>
+
+      <EsempioSvolto
+        title="Esempio svolto: un'impresa che deve fatturare 1,09 milioni per non perdere"
+        intro="Sono i valori che trovi già inseriti nel calcolatore: 180.000 € di struttura, 60.000 € di compenso del titolare, margine di contribuzione medio del 22%."
+        righe={[
+          { voce: "Costi di struttura annui", valore: "180.000 €" },
+          { voce: "Compenso dell'imprenditore", valore: "60.000 €" },
+          { voce: "Costi fissi totali", calcolo: "180.000 + 60.000", valore: "240.000 €" },
+          { voce: "Margine di contribuzione medio", valore: "22%" },
+          { voce: "Fatturato di pareggio", calcolo: "240.000 ÷ 0,22", valore: "1.090.909 €" },
+          { voce: "Pari a, ogni mese", calcolo: "1.090.909 ÷ 12", valore: "90.909 €" },
+        ]}
+        risultato={{ voce: "Fatturato per un utile di 50.000 € (290.000 ÷ 0,22)", valore: "1.318.182 €" }}
+      >
+        <p>
+          Sotto 1,09 milioni questa impresa lavora in perdita, anche con tutti i cantieri aperti. Ora la parte
+          interessante: se il margine di contribuzione sale dal 22% al{" "}
+          <strong className="text-navy-900">24%</strong>, il pareggio scende a 1.000.000 €. Due punti di margine
+          valgono <strong className="text-navy-900">quasi 91.000 € di fatturato in meno</strong> da andare a cercare —
+          un mese intero di lavoro.
+        </p>
+        <p>
+          È il motivo per cui il metodo mette il margine prima del volume: recuperare due punti sui cantieri che hai
+          già è quasi sempre più rapido, e meno rischioso, che trovare 91.000 € di nuovi lavori.
+        </p>
+      </EsempioSvolto>
+
+      <ErroriComuni
+        title="I 4 errori più comuni sul punto di pareggio"
+        errori={[
+          { t: "Lasciare fuori il compenso del titolare", d: "Se lo stipendio dell'imprenditore non è tra i costi fissi, il pareggio risulta più basso del reale: l'impresa sembra in equilibrio mentre il titolare lavora gratis." },
+          { t: "Usare il margine di commessa al posto di quello di contribuzione", d: "Nella formula va il margine di contribuzione — ricavi meno soli costi diretti. Usando il margine già al netto della struttura, la struttura viene contata due volte." },
+          { t: "Prendere il margine migliore invece di quello medio", d: "Il pareggio si calcola sul margine medio ponderato di tutte le commesse dell'anno, comprese quelle andate male. Usare il cantiere migliore dà un numero che non raggiungerai." },
+          { t: "Calcolarlo una volta e dimenticarlo", d: "Il pareggio si sposta ogni volta che cambia la struttura: un'assunzione in ufficio, un nuovo mezzo, un affitto. Va ricalcolato a ogni decisione che tocca i costi fissi." },
+        ]}
+      />
 
       {/* Spot EdiliziaInCloud + richiesta analisi */}
       <section className="container-nie pb-6">
