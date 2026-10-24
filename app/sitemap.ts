@@ -9,7 +9,7 @@ import { settori } from "@/lib/settori";
    Qui ogni pagina porta la data del suo ultimo cambiamento REALE: va aggiornata a mano
    solo quando se ne modifica il contenuto. */
 const ULTIMA_MODIFICA: Record<string, string> = {
-  "/": "2026-07-18",
+  "/": "2026-10-24",
   "/metodo": "2026-07-18",
   "/settori": "2026-07-18",
   "/percorsi": "2026-07-18",
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: `${base}/risorse`,
-      lastModified: new Date(ultimoArticolo),
+      lastModified: new Date([ultimoArticolo, "2026-10-24"].sort().at(-1)!),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },

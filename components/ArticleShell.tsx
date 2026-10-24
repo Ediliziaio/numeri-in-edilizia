@@ -1,3 +1,4 @@
+import { articleAnswers } from "@/lib/answers";
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
@@ -92,6 +93,7 @@ export function ArticleShell({
           </div>
         )}
 
+        {articleAnswers[article.slug] && <section className="mt-8 rounded-2xl border border-line bg-bg-soft p-6" aria-label="Risposta in breve"><h2 className="text-lg font-bold text-navy-900">In breve</h2><p className="mt-3 leading-relaxed text-muted">{articleAnswers[article.slug]}</p></section>}
         <div className="prose-nie mt-10">{children}</div>
 
         {/* Spot EdiliziaInCloud — fine lettura, alta intenzione */}

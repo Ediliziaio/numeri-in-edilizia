@@ -1,3 +1,4 @@
+import { ReadingPaths } from "@/components/ReadingPaths";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { SectionHeading, StatRow, CtaBand, FaqSection, Pill, TrustBar, ProcessSteps } from "@/components/ui";
@@ -101,6 +102,7 @@ export default function HomePage() {
       </section>
 
       <TrustBar />
+      <ReadingPaths />
 
       {/* SOCIAL PROOF STATS */}
       <section className="container-nie py-16 sm:py-24">

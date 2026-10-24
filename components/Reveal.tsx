@@ -14,7 +14,7 @@ export function Reveal({
   className?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -36,6 +36,7 @@ export function Reveal({
       return;
     }
 
+    setShown(false);
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -55,7 +56,7 @@ export function Reveal({
     <Tag
       ref={ref}
       className={`reveal-item ${shown ? "is-visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${Math.min(delay, 240)}ms` }}
     >
       {children}
     </Tag>

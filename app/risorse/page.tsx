@@ -1,3 +1,4 @@
+import { ReadingPaths } from "@/components/ReadingPaths";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,6 +31,7 @@ export default function RisorsePage() {
         cta={false}
       />
 
+      <ReadingPaths />
       <section className="container-nie py-16 sm:py-20">
         {/* categorie */}
         <div className="flex flex-wrap gap-2.5">

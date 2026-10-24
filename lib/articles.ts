@@ -33,7 +33,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Non serve un gestionale da ingegnere. Servono pochi numeri, letti nel modo giusto. Ecco da dove partire, passo per passo.",
     date: "2026-07-10",
-    updated: "2026-09-02",
+    updated: "2026-10-24",
     readingTime: "14 min",
     category: "Controllo di gestione",
   },
@@ -58,6 +58,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Materiali, manodopera, mezzi, subappalti, struttura: se non sai dove finiscono i costi, non sai quanto guadagni. La mappa completa.",
     date: "2026-07-15",
+    updated: "2026-10-24",
     readingTime: "16 min",
     category: "Controllo di gestione",
   },
@@ -275,6 +276,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Le ristrutturazioni sembrano marginare bene e spesso non lo fanno: imprevisti, extra a voce e ore non tracciate. Ecco i numeri giusti.",
     date: "2026-08-08",
+    updated: "2026-10-24",
     readingTime: "13 min",
     category: "Marginalità",
   },
@@ -287,6 +289,7 @@ const rawArticles: Article[] = [
     excerpt:
       "Excel funziona, finché non funziona più. La soglia non è il fatturato: sono i cantieri aperti e gli errori che non vedi.",
     date: "2026-08-08",
+    updated: "2026-10-24",
     readingTime: "13 min",
     category: "Controllo di gestione",
   },
