@@ -72,9 +72,9 @@ export default function HomePage() {
                 <span className="text-gradient">quanto ti resta davvero?</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
-                L'80% degli imprenditori edili lavora 12 ore al giorno e guadagna meno di un
-                dipendente. Non è colpa del mercato: è che nessuno ti ha insegnato a leggere i numeri
-                della tua impresa. Noi sì.
+                Lavorare tanto e fatturare di più non basta a capire quanto resta.
+                Mettiamo in relazione costi, ricavi e incassi per leggere ogni commessa
+                e decidere con numeri che puoi ricostruire.
               </p>
               <div className="mt-9 flex flex-col sm:flex-row gap-3">
                 <Link href="/contatti" className="btn btn-primary text-lg px-7 py-4">

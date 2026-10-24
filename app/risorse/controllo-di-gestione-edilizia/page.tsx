@@ -63,7 +63,7 @@ export default function Page() {
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
         <div className="grid gap-8 sm:grid-cols-[auto_1fr] sm:items-center">
-          <DonutStat percent={14} sublabel="margine sotto controllo" />
+          <DonutStat percent={14} sublabel="esempio illustrativo, non benchmark" />
           <div>
             <p className="font-display text-lg font-bold text-navy-900">Dal «non lo so» al numero preciso</p>
             <p className="mt-2 text-muted">

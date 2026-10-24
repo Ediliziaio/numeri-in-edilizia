@@ -10,7 +10,7 @@ import { settori } from "@/lib/settori";
    solo quando se ne modifica il contenuto. */
 const ULTIMA_MODIFICA: Record<string, string> = {
   "/": "2026-10-24",
-  "/metodo": "2026-07-18",
+  "/metodo": "2026-10-24",
   "/settori": "2026-07-18",
   "/percorsi": "2026-07-18",
   "/edilizia-in-cloud": "2026-07-19",

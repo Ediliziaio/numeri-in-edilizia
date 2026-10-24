@@ -11,9 +11,9 @@ import { site } from "@/lib/site";
 import { IconSearch, IconCompass, IconTrend, IconCheck, IconArrow, IconShield, IconWallet, IconClock, IconExternal } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Il metodo: controllo di gestione edile",
+  title: "Controllo di gestione impresa edile: il metodo",
   description:
-    "Leggere i numeri, governare il margine di commessa, decidere sui dati: il metodo di controllo di gestione pensato per l'imprenditore edile.",
+    "Controllo di gestione per la tua impresa edile: dati necessari, margine previsto e reale, costi da sostenere e cassa. Scopri il percorso operativo.",
   alternates: { canonical: "/metodo" },
   openGraph: { url: "/metodo", images: ["/opengraph-image"] },
 };
@@ -29,19 +29,19 @@ const faq = [
   },
   {
     q: "Qual è la differenza con quello che fa il mio commercialista?",
-    a: "Il commercialista fotografa il passato con il bilancio. Il controllo di gestione ti fa guidare il presente: margine per commessa, in tempo reale, per decidere prima che il cantiere chiuda.",
+    a: "Il controllo di gestione affianca il lavoro contabile e fiscale: usa anche budget, ore, acquisti e costi ancora da sostenere per decidere sui cantieri aperti. Non sostituisce il commercialista e richiede dati aggiornati.",
   },
 ];
 
 const pillars = [
   {
     icon: IconSearch, n: "01", t: "Leggi i tuoi numeri", lead: "Prima di controllare, bisogna vedere.",
-    body: "Mettiamo ordine nei dati che già produci: ricavi per commessa, costi diretti di cantiere (materiali, manodopera, mezzi, subappalti), costi di struttura. Ti diamo un quadro pulito con pochi indicatori, non un cruscotto da ingegnere gestionale. In poche settimane sai finalmente da dove arrivano — e dove se ne vanno — i tuoi soldi.",
+    body: "Mettiamo ordine nei dati che già produci: ricavi per commessa, costi diretti di cantiere (materiali, manodopera, mezzi, subappalti), costi di struttura. Ti diamo un quadro pulito con pochi indicatori, non un cruscotto da ingegnere gestionale. Dopo aver verificato la completezza dei dati sai da dove arrivano — e dove se ne vanno — i tuoi soldi.",
     points: ["Riclassificazione dei costi in logica di cantiere", "Un set di indicatori leggibile in 10 minuti", "Nessun software nuovo da imparare"],
   },
   {
     icon: IconCompass, n: "02", t: "Governa il margine di commessa", lead: "Il margine non si scopre a fine lavori. Si guida.",
-    body: "Analizziamo il margine cantiere per cantiere e lo confrontiamo con il preventivo. Vedi in tempo reale quali commesse guadagnano, quali erodono utile e dove intervenire mentre puoi ancora farlo: rinegoziare, ribaltare una variante, correggere la manodopera. Il margine smette di essere una sorpresa.",
+    body: "Analizziamo il margine cantiere per cantiere e lo confrontiamo con il preventivo. Vedi alla data dell’ultimo aggiornamento quali commesse guadagnano, quali erodono utile e dove intervenire mentre puoi ancora farlo: rinegoziare, ribaltare una variante, correggere la manodopera. Il margine smette di essere una sorpresa.",
     points: ["Margine reale vs preventivo, per commessa", "Alert sui cantieri che stanno perdendo", "Varianti tracciate e fatturate al committente"],
   },
   {
@@ -59,10 +59,32 @@ export default function MetodoPage() {
         crumb="Il metodo"
         path="/metodo"
         eyebrow="Il metodo Numeri in Edilizia"
-        title={<>Da «quanto ho fatturato?» a «quanto ho guadagnato, su ogni cantiere»</>}
+        title={<>Controllo di gestione per la tua impresa edile, commessa per commessa</>}
         intro="Non è teoria da manuale. È un sistema in tre passi per far parlare i numeri della tua impresa e trasformarli in decisioni che aumentano il margine."
         visual={<PageImage src="/images/pages/hero-metodo.jpg" alt="Imprenditore edile che analizza i numeri della sua impresa su un tablet in cantiere" priority />}
       />
+
+      <section className="container-nie py-14">
+        <h2 className="text-3xl font-bold text-navy-900">Che cosa serve, che cosa ottieni</h2>
+        <p className="mt-5 text-muted leading-relaxed">Si parte da una commessa riconoscibile. Ogni numero deve avere una fonte e una data: un costo mancante resta da completare, non diventa zero. Il responsabile amministrativo e quello di cantiere concordano chi aggiorna acquisti, ore e varianti, con una cadenza compatibile con il lavoro.</p>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {[
+            { title: "1. Dati di partenza", text: "Preventivo accettato e varianti approvate, budget delle lavorazioni, ore registrate, acquisti e documenti ricevuti. DDT senza prezzo e ordini non fatturati restano evidenziati tra i valori da stimare o completare." },
+            { title: "2. Quadro economico", text: "Venduto al netto IVA, costo previsto iniziale, consuntivo registrato e costo ancora da sostenere sono separati. La previsione a finire combina costi già sostenuti e stima residua, senza sommare di nuovo il budget iniziale." },
+            { title: "3. Decisioni e cassa", text: "Ogni scostamento ha un motivo, un referente e un prossimo controllo. Incassi e pagamenti hanno un prospetto distinto: un margine positivo non significa che la liquidità sia già disponibile." }
+          ].map(item => <article key={item.title} className="rounded-2xl border border-line bg-white p-6"><h3 className="text-xl font-bold text-navy-900">{item.title}</h3><p className="mt-4 text-muted leading-relaxed">{item.text}</p></article>)}
+        </div>
+        <div className="mt-8 rounded-2xl bg-bg-soft p-6">
+          <h3 className="text-xl font-bold">Un esempio, con valori ipotetici</h3>
+          <p className="mt-4 leading-relaxed">Venduto netto 100.000 €, costi sostenuti 40.000 €, costi residui stimati 35.000 €: costo finale previsto 75.000 €, margine di commessa previsto 25.000 €, pari al 25% del venduto. I costi generali, se non inclusi, vanno ancora considerati prima di parlare di utile aziendale. Incassi e IVA seguono un conto separato.</p>
+        </div>
+        <nav aria-label="Approfondimenti sul metodo" className="mt-8 flex flex-col gap-3 text-brand-600 font-semibold">
+          <Link href="/risorse/controllo-di-gestione-edilizia">La guida al controllo di gestione →</Link>
+          <Link href="/risorse/costi-di-cantiere-guida">Quali costi attribuire al cantiere →</Link>
+          <Link href="/strumenti/calcolo-margine-commessa">Prova il calcolo del margine →</Link>
+          <Link href="/strumenti/template-budget-cantiere">Parti dal modello di budget →</Link>
+        </nav>
+      </section>
 
       {/* 3 PILASTRI dettagliati */}
       <section className="container-nie py-20 sm:py-28 space-y-20">
@@ -83,7 +105,7 @@ export default function MetodoPage() {
                   <div className="mb-4 rounded-2xl border border-line bg-white p-6">
                     <div className="flex items-center justify-between">
                       <p className="text-sm font-semibold text-navy-900">Margine per commessa</p>
-                      <span className="rounded-full bg-brand-100 px-2.5 py-1 text-xs font-semibold text-brand-700">in tempo reale</span>
+                      <span className="rounded-full bg-brand-100 px-2.5 py-1 text-xs font-semibold text-brand-700">alla data dell’ultimo aggiornamento</span>
                     </div>
                     <div className="mt-4"><AreaTrend labels={["Gen", "", "Mar", "", "Mag", "", "Lug", ""]} /></div>
                   </div>
@@ -110,10 +132,10 @@ export default function MetodoPage() {
           </Reveal>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: IconTrend, t: "Più margine", d: "Recuperi punti di marginalità già sui cantieri aperti." },
+              { icon: IconTrend, t: "Più margine", d: "Individui gli scostamenti e valuti le azioni possibili sui cantieri aperti." },
               { icon: IconShield, t: "Meno rischio", d: "Individui le commesse in perdita prima che pesino sull'anno." },
               { icon: IconWallet, t: "Il tuo stipendio", d: "Il compenso dell'imprenditore diventa pianificato, non un avanzo." },
-              { icon: IconClock, t: "10 minuti a settimana", d: "Bastano pochi indicatori letti con costanza per decidere sui dati." },
+              { icon: IconClock, t: "Una revisione regolare", d: "Bastano pochi indicatori letti con costanza per decidere sui dati." },
             ].map((o, i) => (
               <Reveal key={o.t} delay={i * 90}>
                 <div className="h-full rounded-[1.5rem] bg-white p-7 border border-line card-hover">
