@@ -38,15 +38,15 @@ const faq = [
   },
   {
     q: "Qual è un buon margine di commessa?",
-    a: "Come riferimento: sotto il 10% la commessa è fragile, perché un solo imprevisto la porta in perdita; tra il 10% e il 15% l'impresa è in equilibrio, copre struttura e compenso e lascia utile; oltre il 15% c'è spazio per investire e assorbire errori.",
+    a: "Non esiste una soglia valida per ogni impresa. Confronta il saldo con costi effettivamente inclusi, rischi, durata del lavoro e obiettivi della tua azienda. Un risultato positivo non equivale a utile netto né a liquidità disponibile.",
   },
   {
     q: "Che percentuale di costi di struttura devo inserire?",
-    a: "Va calcolata sulla tua impresa: costi di struttura di un esercizio diviso i costi diretti dello stesso periodo. Nelle PMI edili l'incidenza tipica è tra il 10% e il 20%. Se non l'hai mai calcolata, parti dal 15% e affinala appena hai il dato reale.",
+    a: "Va calcolata sulla tua impresa: costi di struttura di un esercizio diviso i costi diretti dello stesso periodo. Il 15% precompilato è soltanto un'ipotesi di esempio, non un valore raccomandato per la tua impresa.",
   },
   {
     q: "Che differenza c'è tra margine di contribuzione e margine di commessa?",
-    a: "Il margine di contribuzione toglie solo i costi variabili diretti e dice quanto quel cantiere contribuisce a coprire i costi fissi. Il margine di commessa toglie anche la quota di struttura e dice se, caricato tutto, resta utile. Il calcolatore ti mostra entrambi.",
+    a: "Il margine di contribuzione è ricavi meno costi variabili. Il calcolatore sottrae prima i costi diretti che inserisci e poi la quota di struttura: la prima differenza coincide con la contribuzione soltanto se le voci inserite sono tutte variabili. La classificazione va verificata sui dati aziendali.",
   },
   {
     q: "Posso usarlo su un cantiere già in corso?",
@@ -68,7 +68,7 @@ export default function Page() {
           { name: "Somma i costi diretti di cantiere", text: "Materiali con sfrido, manodopera al costo orario reale, mezzi e noli, subappalti, trasporti, smaltimenti e oneri di sicurezza specifici." },
           { name: "Calcola il margine di contribuzione", text: "Sottrai i costi diretti dai ricavi: è quanto il cantiere contribuisce a coprire i costi fissi dell'impresa." },
           { name: "Sottrai la quota di costi di struttura", text: "Applica ai costi diretti l'incidenza percentuale dei costi di struttura della tua impresa e sottrai l'importo ottenuto." },
-          { name: "Leggi il margine in percentuale sui ricavi", text: "Dividi il margine per i ricavi. Come riferimento: sotto il 10% la commessa è fragile, tra 10% e 15% in equilibrio, oltre il 15% solida." },
+          { name: "Leggi il margine in percentuale sui ricavi", text: "Dividi il margine per i ricavi solo se maggiori di zero. Valuta il risultato con le ipotesi e i costi inclusi, senza applicare soglie universali." },
           ],
         })}
       />
@@ -77,7 +77,7 @@ export default function Page() {
         path="/strumenti/calcolo-margine-commessa"
         eyebrow="Calcolatore gratuito"
         title={<>Quanto stai guadagnando davvero su questo cantiere</>}
-        intro="Inserisci ricavi e costi di una commessa e ottieni margine di contribuzione e margine di commessa, in euro e in percentuale. Con la quota di struttura inclusa, come dovrebbe essere sempre."
+        intro="Inserisci ricavi, costi diretti e quota di struttura: ottieni il margine di commessa in euro e sui ricavi. Puoi scaricare ipotesi e risultati in un riepilogo CSV."
         cta={false}
       />
 
@@ -125,7 +125,7 @@ export default function Page() {
 
       <EsempioSvolto
         title="Esempio svolto: una commessa da 120.000 € che sembra sana"
-        intro="Sono i valori che trovi già inseriti nel calcolatore. A colpo d'occhio la commessa guadagna 19.000 €. Caricata la struttura, il quadro cambia."
+        intro="Esempio illustrativo, non dati di un cliente: sono i valori che trovi già inseriti nel calcolatore. A colpo d'occhio la commessa guadagna 19.000 €. Caricata la struttura, il quadro cambia."
         righe={[
           { voce: "Ricavi della commessa", calcolo: "contratto + varianti fatturabili", valore: "120.000 €" },
           { voce: "Materiali", valore: "45.000 €" },
@@ -134,7 +134,7 @@ export default function Page() {
           { voce: "Subappalti", valore: "15.000 €" },
           { voce: "Altri costi diretti", calcolo: "trasporti, smaltimenti, sicurezza", valore: "3.000 €" },
           { voce: "Totale costi diretti", valore: "101.000 €" },
-          { voce: "Margine di contribuzione", calcolo: "120.000 − 101.000 = 15,8% dei ricavi", valore: "19.000 €" },
+          { voce: "Margine prima della struttura", calcolo: "120.000 − 101.000 = 15,8% dei ricavi", valore: "19.000 €" },
           { voce: "Quota di costi di struttura", calcolo: "15% dei costi diretti", valore: "− 15.150 €" },
         ]}
         risultato={{ voce: "Margine di commessa (3,2% dei ricavi)", valore: "3.850 €" }}
@@ -145,9 +145,10 @@ export default function Page() {
           da 4.000 €, una variante non fatturata o qualche giornata in più, e va in perdita.
         </p>
         <p>
-          È la ragione per cui guardare solo il margine di contribuzione inganna: dice che il cantiere copre i suoi
+          È il motivo per cui considerare solo ricavi meno costi diretti non basta: il primo saldo può coprire i suoi
           costi, non che l&apos;impresa ci guadagna. La differenza tra i due numeri è spiegata nella guida a{" "}
           <Link href="/risorse/margine-di-contribuzione-edilizia">margine di contribuzione e margine di commessa</Link>.
+          {" "}Per la definizione di contribuzione e la distinzione fra costi variabili e fissi, consulta anche la <a href="https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/CVP-analysis.html">guida ACCA alla relazione fra costi, volumi e risultati</a>.
         </p>
       </EsempioSvolto>
 
