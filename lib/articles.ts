@@ -12,6 +12,16 @@ export type Article = {
 };
 
 const rawArticles: Article[] = [
+{
+  "slug": "costo-a-finire-commessa-edile",
+  "title": "Costo a finire commessa: calcolo ed esempio",
+  "h1": "Costo a finire di una commessa edile: come stimare il margine prima della chiusura",
+  "description": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
+  "excerpt": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
+  "date": "2026-11-07",
+  "readingTime": "8 min",
+  "category": "Controllo di gestione"
+},
   {
     slug: "margine-impresa-edile",
     title: "Impresa edile: fatturi ma non guadagni",
