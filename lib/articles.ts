@@ -13,6 +13,16 @@ export type Article = {
 
 const rawArticles: Article[] = [
 {
+  "slug": "registro-scostamenti-commessa-edile",
+  "title": "Scostamenti di commessa: registro ed esempio",
+  "h1": "Registro degli scostamenti di commessa: capire perché il costo cambia",
+  "description": "Organizza gli scostamenti di una commessa edile per quantità, prezzi e tempi. Un registro pratico per distinguere cause, stime e decisioni.",
+  "excerpt": "Organizza gli scostamenti di una commessa edile per quantità, prezzi e tempi. Un registro pratico per distinguere cause, stime e decisioni.",
+  "date": "2026-11-07",
+  "readingTime": "7 min",
+  "category": "Controllo di gestione"
+},
+{
   "slug": "costo-a-finire-commessa-edile",
   "title": "Costo a finire commessa: calcolo ed esempio",
   "h1": "Costo a finire di una commessa edile: come stimare il margine prima della chiusura",
