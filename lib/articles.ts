@@ -19,8 +19,9 @@ const rawArticles: Article[] = [
   "description": "Organizza gli scostamenti di una commessa edile per quantità, prezzi e tempi. Un registro pratico per distinguere cause, stime e decisioni.",
   "excerpt": "Organizza gli scostamenti di una commessa edile per quantità, prezzi e tempi. Un registro pratico per distinguere cause, stime e decisioni.",
   "date": "2026-11-07",
-  "readingTime": "7 min",
-  "category": "Controllo di gestione"
+  "readingTime": "12 min",
+  "category": "Controllo di gestione",
+  "updated": "2026-11-08"
 },
 {
   "slug": "costo-a-finire-commessa-edile",
@@ -29,8 +30,9 @@ const rawArticles: Article[] = [
   "description": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
   "excerpt": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
   "date": "2026-11-07",
-  "readingTime": "8 min",
-  "category": "Controllo di gestione"
+  "readingTime": "12 min",
+  "category": "Controllo di gestione",
+  "updated": "2026-11-08"
 },
   {
     slug: "margine-impresa-edile",
