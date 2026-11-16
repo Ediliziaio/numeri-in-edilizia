@@ -1,3 +1,4 @@
+import { PriorityReading } from "@/components/PriorityReading";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -133,6 +134,7 @@ export default function StrumentiPage() {
         </Reveal>
       </section>
 
+      <PriorityReading current="/strumenti" />
       <CtaBand
         title="I calcolatori danno il numero. Il metodo ti dice cosa farci."
         text="Prenota l'analisi gratuita: trenta minuti sui tuoi numeri reali per capire dove stai perdendo margine."

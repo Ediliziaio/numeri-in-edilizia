@@ -1,3 +1,4 @@
+import { PriorityReading } from "@/components/PriorityReading";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -171,6 +172,7 @@ export default function Page() {
       </section>
 
       <FaqSection title="Domande sul template" items={faq} />
+      <PriorityReading current="/strumenti/template-budget-cantiere" />
       <CtaBand />
       <div className="h-20" />
     </>

@@ -13,6 +13,26 @@ export type Article = {
 
 const rawArticles: Article[] = [
 {
+  "slug": "scostamento-ore-manodopera-commessa",
+  "title": "Scostamento ore manodopera: calcolo ed esempio",
+  "h1": "Scostamento delle ore di manodopera: confronto per quantità completata",
+  "description": "Confronta ore e quantità della commessa: base equivalente, scarto e limiti. Con esempio, calcolatore e scheda di raccolta scaricabile.",
+  "excerpt": "Confronta ore e quantità della commessa: base equivalente, scarto e limiti. Con esempio, calcolatore e scheda di raccolta scaricabile.",
+  "date": "2026-11-16",
+  "readingTime": "11 min",
+  "category": "Controllo di gestione"
+},
+{
+  "slug": "confrontare-commesse-edili-perimetro-numeri",
+  "title": "Confrontare commesse edili: perimetro e numeri",
+  "h1": "Confrontare due commesse edili: perimetro, margini e dati omogenei",
+  "description": "Confronta due commesse edili con dati omogenei: perimetro, stato, formula del margine e fonti. Esempio numerico e scheda scaricabile.",
+  "excerpt": "Confronta due commesse edili con dati omogenei: perimetro, stato, formula del margine e fonti. Esempio numerico e scheda scaricabile.",
+  "date": "2026-11-16",
+  "readingTime": "11 min",
+  "category": "Controllo di gestione"
+},
+{
   "slug": "budget-marketing-impresa-edile-2027",
   "title": "Budget marketing edile 2027: costi e margine",
   "h1": "Budget marketing 2027 per imprese edili: dal contatto al margine",

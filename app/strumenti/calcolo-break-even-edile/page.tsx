@@ -1,3 +1,4 @@
+import { PriorityReading } from "@/components/PriorityReading";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -176,6 +177,7 @@ export default function Page() {
       </section>
 
       <FaqSection title="Domande sul punto di pareggio" items={faq} />
+      <PriorityReading current="/strumenti/calcolo-break-even-edile" />
       <CtaBand />
       <div className="h-20" />
     </>

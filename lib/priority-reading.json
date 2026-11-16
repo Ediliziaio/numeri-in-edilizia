@@ -1,0 +1,118 @@
+{
+  "pages": [
+    "/strumenti",
+    "/strumenti/calcolo-margine-commessa",
+    "/strumenti/calcolo-costo-orario-manodopera",
+    "/strumenti/calcolo-break-even-edile",
+    "/strumenti/template-budget-cantiere",
+    "/risorse",
+    "/risorse/budget-marketing-impresa-edile-2027",
+    "/risorse/costo-a-finire-commessa-edile",
+    "/risorse/scostamento-ore-manodopera-commessa",
+    "/risorse/confrontare-commesse-edili-perimetro-numeri"
+  ],
+  "cards": [
+    {
+      "href": "/risorse/scostamento-ore-manodopera-commessa",
+      "title": "Le ore sono confrontabili?",
+      "text": "Quantità completata, ore equivalenti e scarto, con calcolatore illustrativo."
+    },
+    {
+      "href": "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "title": "Confrontare due commesse",
+      "text": "Stessa formula, stato e perimetro prima di interpretare le differenze."
+    },
+    {
+      "href": "/strumenti/calcolo-costo-orario-manodopera",
+      "title": "Dalle ore al costo orario",
+      "text": "Esplicitare la base economica usata per valorizzare il tempo."
+    },
+    {
+      "href": "/risorse/costo-a-finire-commessa-edile",
+      "title": "Il lavoro ancora da completare",
+      "text": "Tenere distinta la lettura delle ore già rilevate dalla stima del residuo."
+    },
+    {
+      "href": "/strumenti/calcolo-margine-commessa",
+      "title": "Il margine della commessa",
+      "text": "Leggere importo e percentuale con una formula riconoscibile."
+    },
+    {
+      "href": "/strumenti/calcolo-break-even-edile",
+      "title": "La copertura della struttura",
+      "text": "Collocare il contributo dei lavori nella lettura dell’impresa."
+    },
+    {
+      "href": "/strumenti/template-budget-cantiere",
+      "title": "La base del confronto",
+      "text": "Preparare un budget e mantenere distinguibili stime e rilevazioni."
+    },
+    {
+      "href": "/risorse/budget-marketing-impresa-edile-2027",
+      "title": "Dal costo commerciale al margine",
+      "text": "Collegare il piano marketing alle commesse e alle ipotesi del budget."
+    },
+    {
+      "href": "/risorse",
+      "title": "Le guide del controllo di gestione",
+      "text": "Approfondire formule, costi e organizzazione dei dati dell’impresa."
+    },
+    {
+      "href": "/strumenti",
+      "title": "Scegliere il calcolo pertinente",
+      "text": "La raccolta dei calcolatori e del modello di budget di cantiere."
+    }
+  ],
+  "contexts": {
+    "/strumenti": [
+      "/risorse/scostamento-ore-manodopera-commessa",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/strumenti/template-budget-cantiere"
+    ],
+    "/strumenti/calcolo-margine-commessa": [
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/risorse/costo-a-finire-commessa-edile",
+      "/strumenti/template-budget-cantiere"
+    ],
+    "/strumenti/calcolo-costo-orario-manodopera": [
+      "/risorse/scostamento-ore-manodopera-commessa",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/risorse/costo-a-finire-commessa-edile"
+    ],
+    "/strumenti/calcolo-break-even-edile": [
+      "/strumenti/calcolo-margine-commessa",
+      "/risorse/budget-marketing-impresa-edile-2027",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri"
+    ],
+    "/strumenti/template-budget-cantiere": [
+      "/risorse/costo-a-finire-commessa-edile",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/risorse/scostamento-ore-manodopera-commessa"
+    ],
+    "/risorse": [
+      "/risorse/scostamento-ore-manodopera-commessa",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/strumenti"
+    ],
+    "/risorse/budget-marketing-impresa-edile-2027": [
+      "/strumenti/calcolo-margine-commessa",
+      "/strumenti/calcolo-break-even-edile",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri"
+    ],
+    "/risorse/costo-a-finire-commessa-edile": [
+      "/risorse/scostamento-ore-manodopera-commessa",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri",
+      "/strumenti/template-budget-cantiere"
+    ],
+    "/risorse/scostamento-ore-manodopera-commessa": [
+      "/strumenti/calcolo-costo-orario-manodopera",
+      "/risorse/costo-a-finire-commessa-edile",
+      "/risorse/confrontare-commesse-edili-perimetro-numeri"
+    ],
+    "/risorse/confrontare-commesse-edili-perimetro-numeri": [
+      "/strumenti/calcolo-margine-commessa",
+      "/risorse/scostamento-ore-manodopera-commessa",
+      "/strumenti/template-budget-cantiere"
+    ]
+  }
+}

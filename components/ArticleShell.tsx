@@ -1,3 +1,4 @@
+import { PriorityReading } from "./PriorityReading";
 import { articleAnswers } from "@/lib/answers";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,12 +25,14 @@ export function ArticleShell({
   faq,
   howTo,
   children,
+  beforeBody,
 }: {
   article: Article;
   faq?: { q: string; a: string }[];
   /** Guide procedurali: emette anche lo schema HowTo. */
   howTo?: { name: string; steps: { name: string; text: string }[] };
   children: React.ReactNode;
+  beforeBody?: React.ReactNode;
 }) {
   const url = `${site.domain}/risorse/${article.slug}`;
   const related = relatedArticles(article);
@@ -94,7 +97,10 @@ export function ArticleShell({
         )}
 
         {articleAnswers[article.slug] && <section className="mt-8 rounded-2xl border border-line bg-bg-soft p-6" aria-label="Risposta in breve"><h2 className="text-lg font-bold text-navy-900">In breve</h2><p className="mt-3 leading-relaxed text-muted">{articleAnswers[article.slug]}</p></section>}
+        {beforeBody}
         <div data-editorial-body className="prose-nie mt-10">{children}</div>
+
+        <PriorityReading current={`/risorse/${article.slug}`} />
 
         {/* Spot EdiliziaInCloud — fine lettura, alta intenzione */}
         <AdEic className="mt-12" desktop="leaderboard" mobile="box" />

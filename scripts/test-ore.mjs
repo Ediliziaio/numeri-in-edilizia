@@ -1,0 +1,16 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+import ts from 'typescript';
+const source = readFileSync(new URL('../lib/ore-variance.ts', import.meta.url), 'utf8');
+const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText;
+const { calculateOre } = await import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
+const base = { budgetHours:'120', budgetQuantity:'400', completedQuantity:'300', actualHours:'100' };
+let r=calculateOre(base); assert.equal(r.ok,true); assert.equal(r.equivalentHours,90); assert.equal(r.differenceHours,10); assert.ok(Math.abs(r.percentage-100/9)<1e-10);
+r=calculateOre({...base,completedQuantity:'400',actualHours:'120'});assert.equal(r.ok,true);assert.equal(r.differenceHours,0);assert.equal(r.percentage,0);
+r=calculateOre({...base,completedQuantity:'0',actualHours:'20'});assert.equal(r.ok,true);assert.equal(r.equivalentHours,0);assert.equal(r.percentage,null);
+r=calculateOre({...base,budgetHours:'120,5'});assert.equal(r.ok,true);assert.equal(r.equivalentHours,90.375);
+r=calculateOre({...base,completedQuantity:'500',actualHours:'160'});assert.equal(r.ok,true);assert.equal(r.equivalentHours,150);assert.equal(r.differenceHours,10);
+for(const value of ['', '-1', 'Infinity', 'abc', '1.000,5']) assert.equal(calculateOre({...base,actualHours:value}).ok,false);
+assert.equal(calculateOre({...base,budgetQuantity:'0'}).ok,false);
+assert.equal(calculateOre({...base,budgetHours:'9'.repeat(400)}).ok,false);
+console.log('Ore comparison: equivalent output, zero base, decimal input, changed volume and invalid data verified.');

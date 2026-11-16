@@ -1,3 +1,4 @@
+import { PriorityReading } from "@/components/PriorityReading";
 import { ReadingPaths } from "@/components/ReadingPaths";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -63,6 +64,7 @@ export default function RisorsePage() {
           </div>
         </Reveal>
       </section>
+      <PriorityReading current="/risorse" />
     </>
   );
 }

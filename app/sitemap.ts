@@ -9,7 +9,7 @@ import { settori } from "@/lib/settori";
    Qui ogni pagina porta la data del suo ultimo cambiamento REALE: va aggiornata a mano
    solo quando se ne modifica il contenuto. */
 const ULTIMA_MODIFICA: Record<string, string> = {
-  "/": "2026-10-24",
+  "/": "2026-11-16",
   "/metodo": "2026-10-24",
   "/settori": "2026-07-18",
   "/percorsi": "2026-07-18",
@@ -17,11 +17,11 @@ const ULTIMA_MODIFICA: Record<string, string> = {
   "/casi-studio": "2026-07-19",
   "/chi-sono": "2026-07-25",
   "/contatti": "2026-07-17",
-  "/strumenti": "2026-09-20",
-  "/strumenti/calcolo-margine-commessa": "2026-09-20",
-  "/strumenti/calcolo-costo-orario-manodopera": "2026-09-20",
-  "/strumenti/calcolo-break-even-edile": "2026-09-20",
-  "/strumenti/template-budget-cantiere": "2026-09-01",
+  "/strumenti": "2026-11-16",
+  "/strumenti/calcolo-margine-commessa": "2026-11-16",
+  "/strumenti/calcolo-costo-orario-manodopera": "2026-11-16",
+  "/strumenti/calcolo-break-even-edile": "2026-11-16",
+  "/strumenti/template-budget-cantiere": "2026-11-16",
   "/glossario": "2026-09-02",
 };
 

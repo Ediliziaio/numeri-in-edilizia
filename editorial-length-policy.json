@@ -4,6 +4,8 @@
   "requiredSlugs": [
     "costo-a-finire-commessa-edile",
     "registro-scostamenti-commessa-edile",
-    "budget-marketing-impresa-edile-2027"
+    "budget-marketing-impresa-edile-2027",
+    "scostamento-ore-manodopera-commessa",
+    "confrontare-commesse-edili-perimetro-numeri"
   ]
 }
