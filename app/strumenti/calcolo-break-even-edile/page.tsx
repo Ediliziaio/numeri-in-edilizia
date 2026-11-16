@@ -39,7 +39,7 @@ const faq = [
   },
   {
     q: "Il compenso dell'imprenditore va incluso nei costi fissi?",
-    a: "Sì, sempre. Se il titolare non mette il proprio stipendio tra i costi, il punto di pareggio risulta più basso del reale e l'impresa sembra sana quando non lo è. Il compenso è un costo di struttura da mettere a budget, non l'avanzo che resta a fine anno.",
+    a: "Nella pianificazione va reso esplicito il costo del suo lavoro. Inserisci in questa voce soltanto la quota non già presente nei costi di struttura, verificando il trattamento con i referenti competenti.",
   },
   {
     q: "Che margine di contribuzione medio devo inserire?",
@@ -65,7 +65,7 @@ export default function Page() {
           description: "Procedura per calcolare il fatturato di pareggio: costi fissi annui diviso il margine di contribuzione medio in percentuale.",
           url: `${site.domain}/strumenti/calcolo-break-even-edile`,
           steps: [
-          { name: "Somma i costi fissi annui", text: "Costi di struttura dell'impresa più il compenso dell'imprenditore, che va sempre incluso." },
+          { name: "Somma i costi fissi annui", text: "Costi di struttura e quota del compenso non già compresa, senza duplicare le voci." },
           { name: "Calcola il margine di contribuzione medio", text: "Ricavi meno soli costi diretti, in percentuale sui ricavi, come media ponderata di tutte le commesse dell'anno." },
           { name: "Dividi i costi fissi per il margine percentuale", text: "Il risultato è il fatturato di pareggio: sotto quella cifra l'impresa lavora in perdita." },
           { name: "Aggiungi l'utile obiettivo", text: "Per sapere quanto fatturare per un certo utile, somma l'utile ai costi fissi prima di dividere per il margine percentuale." },

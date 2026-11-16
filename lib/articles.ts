@@ -160,14 +160,13 @@ const rawArticles: Article[] = [
   },
   {
     slug: "quanto-guadagna-impresa-edile",
-    title: "Quanto deve guadagnare un'impresa edile",
-    h1: "Quanto deve guadagnare un'impresa edile? Utile, margini e stipendio",
-    description:
-      "Quanto dovrebbe guadagnare un'impresa edile: margini di riferimento per settore, utile netto, compenso dell'imprenditore e come alzarli.",
-    excerpt:
-      "«Guadagno abbastanza?» è la domanda che ogni imprenditore edile si fa. Ecco i numeri di riferimento e come capire dove sei tu.",
+    title: "Quanto guadagna un’impresa edile? Calcolo ed esempi",
+    h1: "Quanto guadagna un’impresa edile: margine, utile e compenso",
+    description: "Distingui margine, utile e compenso del titolare. Formule, esempi illustrativi, calcolatori e scheda CSV per leggere il risultato dell’impresa.",
+    excerpt: "Ricostruisci il risultato con un perimetro chiaro: costi della commessa, struttura, compenso e incassi. Con esempi, strumenti e scheda scaricabile.",
     date: "2026-07-16",
-    readingTime: "13 min",
+    updated: "2026-11-16",
+    readingTime: "11 min",
     category: "Marginalità",
   },
   {

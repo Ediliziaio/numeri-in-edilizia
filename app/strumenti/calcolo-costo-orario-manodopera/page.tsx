@@ -39,11 +39,11 @@ const faq = [
   },
   {
     q: "Cosa sono le ore produttive?",
-    a: "Sono le ore effettivamente lavorate in cantiere su attività che producono valore. Dalle ore contrattuali vanno tolte ferie, permessi, festività, malattie, formazione, trasferte e spostamenti, attese per materiali o mezzi, maltempo e fermi. In edilizia sono spesso il 70-80% delle ore pagate.",
+    a: "Sono le ore effettivamente lavorate in cantiere su attività che producono valore. Dalle ore contrattuali vanno tolte ferie, permessi, festività, malattie, formazione, trasferte e spostamenti, attese per materiali o mezzi, maltempo e fermi. La quota va ricostruita sui dati della persona e del periodo considerati.",
   },
   {
     q: "Che percentuale di oneri devo inserire?",
-    a: "Dipende dall'inquadramento e dal contratto applicato: come ordine di grandezza, nelle imprese edili gli oneri a carico azienda si collocano tipicamente tra il 40% e il 55% del lordo. Per un calcolo preciso chiedi il costo aziendale esatto al tuo consulente del lavoro.",
+    a: "Usa gli oneri pertinenti non già inclusi nella retribuzione lorda annua. La percentuale dimostrativa va sostituita con i dati verificati insieme al consulente del lavoro, evitando di contare due volte le stesse componenti.",
   },
   {
     q: "Perché il costo orario reale è più alto della paga oraria?",
@@ -65,7 +65,7 @@ export default function Page() {
           description: "Procedura per calcolare il costo orario reale di un operaio edile: costo aziendale annuo diviso le ore realmente produttive.",
           url: `${site.domain}/strumenti/calcolo-costo-orario-manodopera`,
           steps: [
-          { name: "Parti dalla retribuzione lorda annua", text: "Prendi la retribuzione lorda annua dell'operaio, comprese tredicesima ed eventuali mensilità aggiuntive." },
+          { name: "Parti dalla retribuzione lorda annua", text: "Prendi la retribuzione lorda annua dell'operaio, verificando quali mensilità e componenti siano già comprese nel dato." },
           { name: "Aggiungi gli oneri a carico dell'azienda", text: "Somma contributi previdenziali, TFR, assicurazione e cassa edile: sono una percentuale del lordo che dipende dal contratto applicato." },
           { name: "Aggiungi i costi annui per persona", text: "Somma DPI, formazione obbligatoria, visite mediche e attrezzatura individuale. Il totale è il costo aziendale annuo." },
           { name: "Calcola le ore realmente produttive", text: "Dalle ore contrattuali annue togli ferie, malattia, festività, formazione, spostamenti e tempi morti." },

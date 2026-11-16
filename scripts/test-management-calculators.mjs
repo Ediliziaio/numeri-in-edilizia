@@ -1,0 +1,23 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+import ts from 'typescript';
+const source=readFileSync(new URL('../lib/management-calculators.ts',import.meta.url),'utf8');
+const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText;
+const {calculateLabour,calculateBreakEven,calculationCsv}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+const labour={lordo:'28000',oneri:'45',extra:'1200',oreContratto:'1750',nonProduttive:'18'};
+let r=calculateLabour(labour);assert.equal(r.ok,true);assert.equal(r.costoAziendale,41800);assert.equal(r.oreProduttive,1435);assert.ok(Math.abs(r.costoReale-41800/1435)<1e-10);
+assert.equal(calculateLabour({...labour,oreContratto:'0'}).ok,false);
+assert.equal(calculateLabour({...labour,nonProduttive:'100'}).ok,false);
+assert.equal(calculateLabour({...labour,nonProduttive:'101'}).ok,false);
+r=calculateLabour({...labour,nonProduttive:'99'});assert.equal(r.ok,true);assert.ok(Math.abs(r.oreProduttive-17.5)<1e-8);
+r=calculateLabour({...labour,lordo:'0',oneri:'0',extra:'1000'});assert.equal(r.ok,true);assert.equal(r.scarto,null);
+assert.equal(calculateLabour({...labour,lordo:'28000,5'}).ok,true);
+const breakEven={struttura:'180000',compenso:'60000',mdc:'22',utile:'50000'};
+r=calculateBreakEven(breakEven);assert.equal(r.ok,true);assert.ok(Math.abs(r.pareggio-240000/.22)<1e-8);assert.equal(r.scenarioPareggio,1000000);assert.ok(Math.abs(r.perUtile-290000/.22)<1e-8);
+r=calculateBreakEven({...breakEven,mdc:'100'});assert.equal(r.ok,true);assert.equal(r.scenarioPareggio,null);
+assert.equal(calculateBreakEven({...breakEven,mdc:'0'}).ok,false);assert.equal(calculateBreakEven({...breakEven,mdc:'101'}).ok,false);
+for(const value of ['', '-1','Infinity','12abc','1.000,5','9'.repeat(400)]){assert.equal(calculateLabour({...labour,lordo:value}).ok,false);assert.equal(calculateBreakEven({...breakEven,struttura:value}).ok,false);}
+assert.equal(calculateLabour({...labour,lordo:'1'+'0'.repeat(300),oneri:'1'+'0'.repeat(300)}).ok,false);
+const csv=calculationCsv(calculateLabour(labour).rows);assert.ok(csv.startsWith('\ufeff'));assert.ok(csv.includes('"28000";"EUR"'));assert.ok(csv.includes('"41800";"EUR"'));assert.ok(csv.includes('"1435";"ore"'));assert.equal(csv.split('\r\n').filter(Boolean).length,9);
+assert.ok(calculationCsv([{label:'Voce "speciale"',value:12.5,unit:'EUR'}]).includes('"Voce ""speciale""";"12,5";"EUR"'));
+console.log('Labour, break-even, zero/invalid bases, decimal input, overflow, 100% boundary and CSV assumptions/results verified.');

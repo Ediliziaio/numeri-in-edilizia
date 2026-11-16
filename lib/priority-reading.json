@@ -9,7 +9,8 @@
     "/risorse/budget-marketing-impresa-edile-2027",
     "/risorse/costo-a-finire-commessa-edile",
     "/risorse/scostamento-ore-manodopera-commessa",
-    "/risorse/confrontare-commesse-edili-perimetro-numeri"
+    "/risorse/confrontare-commesse-edili-perimetro-numeri",
+    "/risorse/quanto-guadagna-impresa-edile"
   ],
   "cards": [
     {
@@ -113,6 +114,11 @@
       "/strumenti/calcolo-margine-commessa",
       "/risorse/scostamento-ore-manodopera-commessa",
       "/strumenti/template-budget-cantiere"
+    ],
+    "/risorse/quanto-guadagna-impresa-edile": [
+      "/strumenti/calcolo-margine-commessa",
+      "/strumenti/calcolo-costo-orario-manodopera",
+      "/strumenti/calcolo-break-even-edile"
     ]
   }
 }

@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { CalcField, CalcResult, CalcCard, nf, toNum } from "../CalcUI";
+import { CalcField, CalcResult, CalcCard, nf } from "../CalcUI";
+
+import { calculateBreakEven } from "@/lib/management-calculators";
+import { CalculationDownload } from "./CalculationDownload";
 
 /* Break even point: quanto devi fatturare per coprire i costi fissi
    e per raggiungere l'utile obiettivo, dato il margine di contribuzione medio. */
@@ -12,13 +15,8 @@ export function BreakEvenCalc() {
   const [mdc, setMdc] = useState("22");
   const [utile, setUtile] = useState("50000");
 
-  const costiFissi = toNum(struttura) + toNum(compenso);
-  const pctMdc = toNum(mdc);
-  const valido = pctMdc > 0;
-
-  const pareggio = valido ? costiFissi / (pctMdc / 100) : 0;
-  const perUtile = valido ? (costiFissi + toNum(utile)) / (pctMdc / 100) : 0;
-  const mensile = pareggio / 12;
+  const result = calculateBreakEven({ struttura, compenso, mdc, utile });
+  const { costiFissi, pareggio, perUtile, mensile } = result.ok ? result : { costiFissi: 0, pareggio: 0, perUtile: 0, mensile: 0 };
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -36,7 +34,7 @@ export function BreakEvenCalc() {
             label="Compenso dell'imprenditore"
             value={compenso}
             onChange={setCompenso}
-            hint="Il tuo stipendio annuo: è un costo da mettere a budget, non l'avanzo di fine anno."
+            hint="Importo gestionale annuo: inserisci solo la quota non già compresa nei costi di struttura."
           />
           <CalcField
             id="mdc"
@@ -51,41 +49,43 @@ export function BreakEvenCalc() {
             label="Utile obiettivo (facoltativo)"
             value={utile}
             onChange={setUtile}
-            hint="Quanto vuoi che resti all'impresa oltre al tuo compenso."
+            hint="Risultato gestionale obiettivo prima delle imposte. Inserisci zero se vuoi solo il pareggio."
           />
         </div>
       </CalcCard>
 
-      <div className="space-y-4">
+      <div className="space-y-4" aria-live="polite">
+        {result.ok ? <>
         <CalcResult
           label="Fatturato di pareggio"
-          value={valido ? `${nf(pareggio)} €` : "—"}
+          value={result.ok ? `${nf(pareggio)} €` : "—"}
           tone="highlight"
           hint="Sotto questa cifra l'impresa lavora in perdita, anche con i cantieri pieni."
         />
         <div className="grid gap-4 sm:grid-cols-2">
           <CalcResult label="Costi fissi da coprire" value={`${nf(costiFissi)} €`} hint="Struttura più il tuo compenso." />
-          <CalcResult label="Pareggio mensile" value={valido ? `${nf(mensile)} €` : "—"} hint="Il ritmo di produzione che devi tenere ogni mese." />
+          <CalcResult label="Pareggio mensile" value={result.ok ? `${nf(mensile)} €` : "—"} hint="Il ritmo di produzione che devi tenere ogni mese." />
         </div>
         <CalcResult
           label="Fatturato per l'utile obiettivo"
-          value={valido ? `${nf(perUtile)} €` : "—"}
+          value={result.ok ? `${nf(perUtile)} €` : "—"}
           hint="Quanto serve fatturare, a questo margine, per portare a casa anche l'utile che hai deciso."
         />
         <div className="rounded-2xl border-2 border-brand-300 bg-brand-100/40 p-5">
           <p className="text-sm text-navy-900 leading-relaxed">
-            {valido ? (
+            {result.scenarioPareggio !== null ? (
               <>
-                Alzare il margine di contribuzione anche di <strong>2 punti</strong> abbassa il
+                A parità di altri dati, aumentare il margine di contribuzione anche di <strong>2 punti</strong> abbassa il
                 fatturato di pareggio a{" "}
-                <strong>{nf(costiFissi / ((pctMdc + 2) / 100))} €</strong>: guadagni lo stesso
-                lavorando meno, invece di rincorrere volume.
+                <strong>{nf(result.scenarioPareggio!)} €</strong>. È una simulazione: nella realtà possono cambiare mix dei lavori, prezzi e costi.
               </>
             ) : (
-              <>Inserisci un margine di contribuzione maggiore di zero per vedere il calcolo.</>
+              <>Il confronto di due punti aggiuntivi non viene mostrato quando supererebbe il 100%.</>
             )}
           </p>
         </div>
+        <CalculationDownload rows={result.rows} filename="punto-pareggio-impresa-edile.csv" />
+        </> : <p role="status" className="rounded-2xl border border-line bg-bg-soft p-5 text-navy-900">{result.message}</p>}
       </div>
     </div>
   );
