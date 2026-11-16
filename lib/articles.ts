@@ -8,12 +8,17 @@ export type Article = {
   updated?: string; // ISO — ultima revisione REALE del contenuto (freschezza per Google e LLM)
   readingTime: string;
   category: string;
+  coverAlt?: string;
+  coverCaption?: string;
   cover?: string; // copertina/OG (iniettata da convenzione /images/blog/<slug>.jpg)
 };
 
 const rawArticles: Article[] = [
 {
   "slug": "scostamento-ore-manodopera-commessa",
+  "cover": "/images/blog/scostamento-ore-manodopera-commessa-editoriale.jpg",
+  "coverAlt": "Cronometro, strumento di misura e campione di materiale su una planimetria.",
+  "coverCaption": "Immagine illustrativa generata con AI.",
   "title": "Scostamento ore manodopera: calcolo ed esempio",
   "h1": "Scostamento delle ore di manodopera: confronto per quantità completata",
   "description": "Confronta ore e quantità della commessa: base equivalente, scarto e limiti. Con esempio, calcolatore e scheda di raccolta scaricabile.",
@@ -24,6 +29,9 @@ const rawArticles: Article[] = [
 },
 {
   "slug": "confrontare-commesse-edili-perimetro-numeri",
+  "cover": "/images/blog/confrontare-commesse-edili-perimetro-numeri-editoriale.jpg",
+  "coverAlt": "Due modelli architettonici su basi uguali affiancati a cartelle di progetto.",
+  "coverCaption": "Immagine illustrativa generata con AI.",
   "title": "Confrontare commesse edili: perimetro e numeri",
   "h1": "Confrontare due commesse edili: perimetro, margini e dati omogenei",
   "description": "Confronta due commesse edili con dati omogenei: perimetro, stato, formula del margine e fonti. Esempio numerico e scheda scaricabile.",
@@ -357,7 +365,7 @@ const SENZA_COVER = new Set<string>([
 
 export const articles: Article[] = rawArticles.map((a) => ({
   ...a,
-  cover: SENZA_COVER.has(a.slug) ? undefined : `/images/blog/${a.slug}.jpg`,
+  cover: a.cover ?? (SENZA_COVER.has(a.slug) ? undefined : `/images/blog/${a.slug}.jpg`),
 }));
 
 export function getArticle(slug: string) {

@@ -86,13 +86,14 @@ export function ArticleShell({
           <div className="mt-8 overflow-hidden rounded-2xl border border-line">
             <Image
               src={article.cover}
-              alt={article.h1 ?? article.title}
+              alt={article.coverAlt ?? article.h1 ?? article.title}
               width={1200}
               height={630}
               sizes="(min-width: 768px) 768px, 100vw"
               priority
               className="h-auto w-full"
             />
+            {article.coverCaption && <p className="px-4 py-3 text-xs leading-relaxed text-muted">{article.coverCaption}</p>}
           </div>
         )}
 
