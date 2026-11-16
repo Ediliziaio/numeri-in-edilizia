@@ -13,6 +13,16 @@ export type Article = {
 
 const rawArticles: Article[] = [
 {
+  "slug": "budget-marketing-impresa-edile-2027",
+  "title": "Budget marketing edile 2027: costi e margine",
+  "h1": "Budget marketing 2027 per imprese edili: dal contatto al margine",
+  "description": "Costruisci il budget marketing 2027 della tua impresa edile: costo di acquisizione, margine, cassa e scenari con un esempio numerico illustrativo.",
+  "excerpt": "Dalla richiesta al lavoro acquisito: un metodo per collegare spesa commerciale, contributo della commessa e capacità dell’impresa.",
+  "date": "2026-11-16",
+  "readingTime": "12 min",
+  "category": "Controllo di gestione"
+},
+{
   "slug": "registro-scostamenti-commessa-edile",
   "title": "Scostamenti di commessa: registro ed esempio",
   "h1": "Registro degli scostamenti di commessa: capire perché il costo cambia",
