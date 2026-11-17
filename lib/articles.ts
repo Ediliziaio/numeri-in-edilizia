@@ -15,6 +15,19 @@ export type Article = {
 
 const rawArticles: Article[] = [
 {
+  "slug": "ordini-ddt-fatture-commessa-riconciliazione",
+  "title": "Ordini, DDT e fatture: controllo di commessa",
+  "h1": "Ordini, DDT e fatture di commessa: riconciliazione e registro anomalie",
+  "description": "Collega ordini, DDT e fatture per commessa: quantità, consegne parziali e differenze. Metodo pratico con esempio e registro CSV scaricabile.",
+  "excerpt": "Un controllo per righe confrontabili: documenti, quantità, consegne e domande aperte. Con esempio illustrativo e registro scaricabile.",
+  "date": "2026-11-17",
+  "readingTime": "13 min",
+  "category": "Controllo di gestione",
+  "cover": "/images/blog/ordini-ddt-fatture-commessa-riconciliazione.jpg",
+  "coverAlt": "Tre fogli astratti collegati da fermagli accanto a campioni di laterizio.",
+  "coverCaption": "Immagine illustrativa originale generata con AI; non rappresenta documenti o forniture reali."
+},
+{
   "slug": "scostamento-ore-manodopera-commessa",
   "cover": "/images/blog/scostamento-ore-manodopera-commessa-editoriale.jpg",
   "coverAlt": "Cronometro, strumento di misura e campione di materiale su una planimetria.",
@@ -63,14 +76,14 @@ const rawArticles: Article[] = [
 },
 {
   "slug": "costo-a-finire-commessa-edile",
+  "updated": "2026-11-17",
   "title": "Costo a finire commessa: calcolo ed esempio",
   "h1": "Costo a finire di una commessa edile: come stimare il margine prima della chiusura",
   "description": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
   "excerpt": "Costo a finire della commessa edile: dati, impegni e stima del lavoro residuo, con esempio numerico e controlli per evitare doppi conteggi.",
   "date": "2026-11-07",
   "readingTime": "12 min",
-  "category": "Controllo di gestione",
-  "updated": "2026-11-08"
+  "category": "Controllo di gestione"
 },
   {
     slug: "margine-impresa-edile",
