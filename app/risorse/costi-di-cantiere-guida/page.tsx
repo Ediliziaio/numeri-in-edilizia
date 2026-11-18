@@ -35,7 +35,7 @@ const faq = [
   },
   {
     q: "Quanto incidono i costi di struttura su una commessa?",
-    a: "Dipende dalla dimensione dell'impresa, ma nelle PMI edili l'incidenza tipica va dal 10% al 20% dei costi diretti. Il punto non è la percentuale esatta: è calcolarla per la propria impresa e applicarla a ogni preventivo e a ogni consuntivo.",
+    a: "L’incidenza va calcolata sui dati dell’impresa e su un criterio di ripartizione dichiarato. Se la base scelta sono i costi diretti, confronta struttura e costi diretti dello stesso periodo. Una percentuale d’esempio non è una media di settore; evita di includere due volte una voce già attribuita alla commessa.",
   },
   {
     q: "Che differenza c'è tra contabilità generale e contabilità di cantiere?",
@@ -90,13 +90,14 @@ export default function Page() {
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
         <div className="grid gap-8 sm:grid-cols-[auto_1fr] sm:items-center">
-          <DonutStat percent={15} sublabel="incidenza tipica struttura" />
+          <DonutStat percent={15} sublabel="esempio illustrativo, non benchmark" />
           <div>
             <p className="font-display text-lg font-bold text-navy-900">Il peso della struttura</p>
             <p className="mt-2 text-muted">
-              Nelle PMI edili i costi di struttura incidono tipicamente per il 10–20% dei costi
-              diretti. Ignorarli nei preventivi significa regalare esattamente quella percentuale di
-              margine, su ogni commessa.
+              Se, in un esempio, la struttura vale 15.000 € e i costi diretti dello stesso periodo
+              sono 100.000 €, l’incidenza sui diretti è il 15%. La quota attribuita a un lavoro
+              dipende dal criterio scelto. Il 15% sui costi non equivale a quindici punti di margine
+              sui ricavi: il denominatore è diverso.
             </p>
           </div>
         </div>

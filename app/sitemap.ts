@@ -21,8 +21,8 @@ const ULTIMA_MODIFICA: Record<string, string> = {
   "/strumenti/calcolo-margine-commessa": "2026-11-16",
   "/strumenti/calcolo-costo-orario-manodopera": "2026-11-16",
   "/strumenti/calcolo-break-even-edile": "2026-11-16",
-  "/strumenti/template-budget-cantiere": "2026-11-16",
-  "/glossario": "2026-09-02",
+  "/strumenti/template-budget-cantiere": "2026-11-18",
+  "/glossario": "2026-11-18",
 };
 
 const SETTORI_AGGIORNATI = "2026-07-18"; // ultimo cambio reale: foto hero per mestiere

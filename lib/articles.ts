@@ -131,8 +131,8 @@ const rawArticles: Article[] = [
     excerpt:
       "Materiali, manodopera, mezzi, subappalti, struttura: se non sai dove finiscono i costi, non sai quanto guadagni. La mappa completa.",
     date: "2026-07-15",
-    updated: "2026-10-24",
-    readingTime: "16 min",
+    updated: "2026-11-18",
+    readingTime: "5 min",
     category: "Controllo di gestione",
   },
   {
@@ -341,15 +341,15 @@ const rawArticles: Article[] = [
   },
   {
     slug: "quanto-marginare-ristrutturazione",
-    title: "Quanto marginare una ristrutturazione",
-    h1: "Quanto deve marginare un lavoro di ristrutturazione",
+    title: "Margine ristrutturazione: formula ed esempio",
+    h1: "Come calcolare il margine di una ristrutturazione",
     description:
-      "Margini di riferimento per un lavoro di ristrutturazione: quanto deve restare, dove si perde e come quotare per non lavorare in perdita.",
+      "Calcola il margine di una ristrutturazione: ricavi, costi diretti e struttura. Esempio illustrativo, differenza dal ricarico e verifica del preventivo.",
     excerpt:
-      "Le ristrutturazioni sembrano marginare bene e spesso non lo fanno: imprevisti, extra a voce e ore non tracciate. Ecco i numeri giusti.",
+      "Dichiara i costi inclusi e il denominatore: un esempio per distinguere obiettivo, risultato prima della struttura e margine del lavoro.",
     date: "2026-08-08",
-    updated: "2026-10-24",
-    readingTime: "13 min",
+    updated: "2026-11-18",
+    readingTime: "5 min",
     category: "Marginalità",
   },
   {
@@ -357,12 +357,12 @@ const rawArticles: Article[] = [
     title: "Excel o gestionale per imprese edili",
     h1: "Excel o gestionale: quando il foglio di calcolo smette di bastare",
     description:
-      "Quando conviene passare da Excel a un gestionale in edilizia: la soglia reale, il costo nascosto del foglio e cosa non devi perdere nel passaggio.",
+      "Excel o gestionale per l’impresa edile: persone, documenti, controlli e costo del flusso. Criteri per valutare il passaggio senza soglie universali.",
     excerpt:
-      "Excel funziona, finché non funziona più. La soglia non è il fatturato: sono i cantieri aperti e gli errori che non vedi.",
+      "Confronta il flusso da mantenere, i controlli e il costo complessivo: il numero dei cantieri, da solo, non decide quale strumento usare.",
     date: "2026-08-08",
-    updated: "2026-10-24",
-    readingTime: "13 min",
+    updated: "2026-11-18",
+    readingTime: "5 min",
     category: "Controllo di gestione",
   },
 ];

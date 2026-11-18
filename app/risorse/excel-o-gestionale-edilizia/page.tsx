@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
-import { AreaTrend, DonutStat } from "@/components/Graphics";
+import { AreaTrend } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
 
 const article = getArticle("excel-o-gestionale-edilizia")!;
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Excel basta per gestire i cantieri di un'impresa edile?",
-    a: "Sì, finché i cantieri aperti contemporaneamente sono pochi — indicativamente sotto i cinque — e una sola persona aggiorna il file. Oltre quella soglia il costo non è la licenza del gestionale: è il tempo di aggiornamento e soprattutto l'errore che nessuno vede, perché in un foglio non c'è nulla che ti avvisi quando un dato è sbagliato.",
+    a: "Può bastare se il flusso è gestibile, il responsabile è definito e i dati vengono controllati. Non esiste una soglia universale di cinque cantieri: contano quantità dei documenti, persone coinvolte, complessità e tempo necessario ad aggiornare e verificare il file.",
   },
   {
     q: "Quando conviene passare a un gestionale?",
@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: "Qual è il vero costo di Excel?",
-    a: "Non è zero. È fatto di tre voci: il tempo di aggiornamento manuale, gli errori di formula o di copia-incolla che nessuno intercetta, e le decisioni prese su dati vecchi. Su un'impresa con diversi cantieri aperti, queste tre voci superano rapidamente il costo di una licenza.",
+    a: "Considera licenze, tempo di aggiornamento, controlli e correzione degli errori. Per confrontarlo con un gestionale, considera anche configurazione, formazione, migrazione e assistenza. La convenienza richiede una stima sul flusso della tua impresa, non il confronto tra una sola licenza e zero.",
   },
   {
     q: "Se passo a un gestionale devo buttare il lavoro fatto su Excel?",
@@ -58,9 +58,8 @@ export default function Page() {
     <ArticleShell article={article} faq={faq}>
       <p>
         <strong>
-          Excel funziona finché i cantieri aperti sono pochi e a toccare il file c&apos;è una persona
-          sola. Oltre quella soglia, l&apos;errore di aggiornamento costa più della licenza di un
-          gestionale.
+          La scelta tra Excel e gestionale dipende da chi aggiorna i dati, da come vengono verificati
+          e dal tempo richiesto al flusso. Il numero di cantieri, da solo, non stabilisce il momento del passaggio.
         </strong>{" "}
         La domanda giusta non è «Excel o gestionale», ma: <em>a che punto sono?</em> Perché il
         passaggio ha un momento giusto, e farlo troppo presto è uno spreco quanto farlo troppo tardi.
@@ -71,20 +70,22 @@ export default function Page() {
         Partiamo da una cosa che quasi nessun venditore di software ti dirà: <strong>un foglio di
         calcolo ben impostato è un ottimo strumento di controllo di gestione</strong>. Molte imprese
         edili hanno iniziato — e fatto il salto di qualità — con un foglio. Excel è flessibile, lo
-        controlli tu, costa zero e ti costringe a capire come sono fatti i tuoi numeri.
+        puoi adattarlo al tuo metodo e usarlo per capire come sono fatti i tuoi numeri. Licenze e
+        tempo di gestione restano voci da valutare.
       </p>
       <p>
-        Il problema di Excel non è la potenza: è che <strong>non si difende dagli errori</strong>. Una
-        formula trascinata male, una riga incollata sopra un&apos;altra, un file aggiornato ieri che
-        credi di oggi. Nessuno ti avvisa. E in edilizia le decisioni si prendono su quei numeri.
+        Una formula trascinata male, una riga sovrascritta o una copia non aggiornata possono
+        alterare una decisione. Protezioni, convalide e cronologia aiutano, ma vanno configurate
+        e usate: non sostituiscono il controllo delle fonti e delle formule.
       </p>
 
       <h2>Le tre soglie che dicono «è ora»</h2>
       <h3>1. Più di una persona deve aggiornare</h3>
       <p>
-        È la soglia più netta. Quando il capo cantiere deve inserire le ore, l&apos;amministrazione le
-        fatture e tu vuoi leggere il margine, un file condiviso diventa una fonte di conflitti: chi ha
-        sovrascritto cosa, quale versione è quella buona.
+        Quando il capo cantiere inserisce le ore e l’amministrazione registra le fatture, verifica
+        modalità di collaborazione, permessi e cronologia. Excel supporta la <a href="https://support.microsoft.com/en-us/excel/get-started/collaborate-on-excel-workbooks-at-the-same-time-with-co-authoring" target="_blank" rel="noopener noreferrer">creazione condivisa</a> nelle
+        condizioni previste da Microsoft: più persone non significano automaticamente che il foglio
+        sia inadeguato. Il problema emerge quando non riesci a mantenere un flusso controllato.
       </p>
       <h3>2. I cantieri aperti superano la manciata</h3>
       <p>
@@ -101,13 +102,13 @@ export default function Page() {
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
         <div className="grid gap-8 sm:grid-cols-[auto_1fr] sm:items-center">
-          <DonutStat percent={5} sublabel="cantieri aperti" />
+          <div className="rounded-2xl bg-bg-soft p-5 text-sm font-semibold text-navy-900">Persone<br />Documenti<br />Aggiornamenti</div>
           <div>
             <p className="font-display text-lg font-bold text-navy-900">La soglia non è il fatturato</p>
             <p className="mt-2 text-muted">
-              Un&apos;impresa da 2 milioni con tre commesse lunghe può stare benissimo su un foglio.
-              Una da 600 mila con dodici cantieri piccoli no. Quello che conta è quante cose devi
-              tenere aggiornate insieme, non quanto fatturi.
+              Verifica chi inserisce le informazioni, quanti passaggi richiedono una copia manuale
+              e quanto tempo passa prima che il dato sia disponibile per decidere. Questi controlli
+              sono più utili di una soglia fissa di fatturato o di cantieri.
             </p>
           </div>
         </div>
@@ -148,8 +149,8 @@ export default function Page() {
       </p>
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
-        <p className="font-display text-lg font-bold text-navy-900">Il costo del foglio cresce, quello dello strumento no</p>
-        <p className="mt-1 text-sm text-muted">Tempo di aggiornamento ed errori crescono con i cantieri aperti; la licenza resta piatta.</p>
+        <p className="font-display text-lg font-bold text-navy-900">Valuta il costo del flusso completo</p>
+        <p className="mt-1 text-sm text-muted">Grafico schematico illustrativo, senza dati misurati: documenti e aggiornamenti possono aumentare il lavoro manuale. Anche un gestionale richiede configurazione, formazione e manutenzione.</p>
         <div className="mt-6"><AreaTrend points={[8, 12, 18, 26, 38, 52, 68, 88]} labels={["2 cant.", "", "4", "", "8", "", "12", ""]} /></div>
       </figure>
 
@@ -158,7 +159,7 @@ export default function Page() {
       <ol>
         <li>
           <strong>Collega i documenti alla commessa</strong> — DDT, fatture fornitore, rapportini ore
-          devono «sapere» a quale cantiere appartengono. È il 90% del lavoro della{" "}
+          devono riportare il riferimento del lavoro. È un passaggio della{" "}
           <Link href="/risorse/gestione-commessa-edile">gestione di commessa</Link>.
         </li>
         <li>

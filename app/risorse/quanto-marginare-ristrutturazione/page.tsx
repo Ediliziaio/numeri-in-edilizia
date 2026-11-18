@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "Quanto deve marginare un lavoro di ristrutturazione?",
-    a: "Come riferimento, un lavoro di ristrutturazione dovrebbe lasciare un margine di commessa tra il 12% e il 18% dopo i costi diretti e la quota di struttura. Sotto il 10% il lavoro è fragile: un solo imprevisto dietro un muro lo porta in perdita. Le ristrutturazioni sopportano più imprevisti delle nuove costruzioni, quindi vogliono un margine più alto, non più basso.",
+    a: "Non esiste una percentuale valida per tutte le ristrutturazioni. Parti dai costi del lavoro, dalla quota di struttura attribuita e dai rischi da coprire. Dichiara se stai calcolando il margine sui ricavi o il ricarico sui costi; verifica anche come una variazione dei costi modifica il risultato.",
   },
   {
     q: "Perché le ristrutturazioni marginano meno di quanto sembra?",
@@ -58,9 +58,9 @@ export default function Page() {
     <ArticleShell article={article} faq={faq}>
       <p>
         <strong>
-          Un lavoro di ristrutturazione dovrebbe lasciare un margine di commessa tra il 12% e il 18%
-          dopo costi diretti e quota di struttura. Sotto il 10% è fragile: basta un imprevisto dietro
-          un muro per portarlo in perdita.
+          Il margine di una ristrutturazione si calcola sul ricavo e sui costi del lavoro,
+          dichiarando il perimetro: costi diretti, quota di struttura ed eventuali altri oneri.
+          Non c’è una percentuale di settore che renda automaticamente sostenibile ogni preventivo.
         </strong>{" "}
         Il problema è che le ristrutturazioni <em>sembrano</em> marginare bene — e quasi sempre
         marginano meno di quanto l&apos;imprenditore crede. Vediamo perché, e come quotarle.
@@ -101,13 +101,14 @@ export default function Page() {
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
         <div className="grid gap-8 sm:grid-cols-[auto_1fr] sm:items-center">
-          <DonutStat percent={15} sublabel="margine obiettivo" />
+          <DonutStat percent={15} sublabel="esempio di obiettivo, non benchmark" />
           <div>
             <p className="font-display text-lg font-bold text-navy-900">Il margine è una decisione, non un residuo</p>
             <p className="mt-2 text-muted">
-              Un 15% deciso <em>prima</em> e difeso in trattativa è un margine. Quello che resta a
-              fine lavori dopo aver assorbito imprevisti ed extra non è un margine: è un avanzo, e
-              spesso non c&apos;è.
+              Un obiettivo del 15% è soltanto un’ipotesi illustrativa da verificare sui propri costi.
+              Il margine previsto e quello a consuntivo possono differire: confrontarli serve a
+              capire l’effetto di ore, prezzi, varianti e altri costi, senza confondere l’obiettivo
+              con un risultato già ottenuto.
             </p>
           </div>
         </div>
@@ -115,8 +116,8 @@ export default function Page() {
 
       <h2>Un esempio numerico</h2>
       <p>
-        Ristrutturazione completa di un appartamento. Preventivo <strong>85.000 €</strong>, margine
-        atteso dall&apos;imprenditore: «circa il 20%».
+        Esempio illustrativo, non caso cliente: una ristrutturazione ha ricavi di <strong>85.000 €</strong>.
+        Si vuole verificare un’ipotesi iniziale di margine del 20% confrontandola con tutti i costi rilevati.
       </p>
       <p>A consuntivo, imputando tutto correttamente:</p>
       <ul>
@@ -124,22 +125,25 @@ export default function Page() {
         <li>Manodopera al costo reale (non alla paga oraria): <strong>31.000 €</strong></li>
         <li>Subappalti (impianti, cartongesso): <strong>14.000 €</strong></li>
         <li>Noli, trasporti, smaltimenti: <strong>3.500 €</strong></li>
-        <li>Extra eseguiti e <em>non</em> fatturati: <strong>4.200 €</strong></li>
+        <li>Ulteriori costi per extra senza ricavi aggiuntivi, non già inclusi nelle voci precedenti: <strong>4.200 €</strong></li>
       </ul>
       <p>
-        Costi diretti totali: <strong>80.700 €</strong>. Restano 4.300 €, cioè il <strong>5%</strong>{" "}
-        — e da lì deve ancora uscire la quota di{" "}
+        Costi diretti totali: <strong>80.700 €</strong>. Restano 4.300 €, circa il <strong>5,06% dei ricavi</strong>{" "}
+        prima della quota di{" "}
         <Link href="/risorse/costi-di-struttura-impresa-edile">costi di struttura</Link>. Con
-        un&apos;incidenza del 15% sui diretti, il lavoro chiude <strong>sotto zero</strong>.
+        un’incidenza illustrativa del 15% sui diretti, la quota è 12.105 €: il risultato diventa
+        <strong> −7.805 €</strong>, circa il <strong>−9,18% dei ricavi</strong>. Non è l’utile netto
+        fiscale dell’impresa: è il risultato del lavoro nel perimetro di costi dichiarato.
       </p>
       <p>
-        Il preventivo non era sbagliato di venti punti: era sbagliato di tre cose. Gli extra non
-        fatturati, il costo orario sottostimato e la struttura non caricata. Le stesse tre di sempre.
+        Il confronto aiuta a cercare le differenze tra stima e consuntivo. Non basta il totale per
+        attribuire la perdita a una sola causa: occorre ricostruire quantità, ore, prezzi e attività
+        incluse nel preventivo. Per organizzare questi dati puoi usare il <Link href="/strumenti/template-budget-cantiere">template budget di cantiere</Link>.
       </p>
 
       <figure className="not-prose my-10 rounded-2xl border border-line bg-white p-8">
-        <p className="font-display text-lg font-bold text-navy-900">Margine creduto e margine reale</p>
-        <p className="mt-1 text-sm text-muted">Stesso cantiere: quello che l&apos;imprenditore pensava di guadagnare e quello che resta davvero.</p>
+        <p className="font-display text-lg font-bold text-navy-900">Obiettivo e risultato prima della struttura</p>
+        <p className="mt-1 text-sm text-muted">Esempio illustrativo: obiettivo iniziale del 20% e circa 5% prima della struttura. Il risultato dopo la struttura è negativo, come calcolato sopra.</p>
         <div className="mt-6 max-w-sm"><CompareBars before={20} after={5} unit="%" /></div>
       </figure>
 
@@ -154,7 +158,7 @@ export default function Page() {
           calcolarlo con il{" "}
           <Link href="/strumenti/calcolo-costo-orario-manodopera">calcolatore del costo orario</Link>.
         </li>
-        <li><strong>Carica la quota di struttura</strong> (tipicamente 10-20% dei costi diretti).</li>
+        <li><strong>Attribuisci la quota di struttura</strong> con un criterio calcolato sui dati della tua impresa, senza duplicare costi già conteggiati.</li>
         <li><strong>Aggiungi una riserva per imprevisti</strong> esplicita, non nascosta nei prezzi.</li>
         <li><strong>Metti per iscritto come si quotano le varianti</strong>, prima di iniziare.</li>
         <li><strong>Fissa il margine obiettivo</strong> e difendilo: è una decisione, non un residuo.</li>
@@ -179,7 +183,7 @@ export default function Page() {
 
       <h2>In sintesi</h2>
       <ol>
-        <li>Margine di riferimento su una ristrutturazione: 12-18%; sotto il 10% è fragile.</li>
+        <li>Dichiara il perimetro dei costi e calcola il margine sui ricavi; il ricarico ha come base i costi.</li>
         <li>Più incertezza significa margine più alto, non più basso.</li>
         <li>I tre buchi tipici: imprevisti non prezzati, extra a voce, ore non imputate.</li>
         <li>La manodopera è la voce dominante: sbagliarne il costo qui è l&apos;errore più caro.</li>

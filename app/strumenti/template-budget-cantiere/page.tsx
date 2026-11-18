@@ -55,7 +55,7 @@ const faq = [
   },
   {
     q: "Che percentuale di costi di struttura devo inserire?",
-    a: "Nel template è preimpostata al 15%, che è un valore tipico per le PMI edili, ma va calcolata sulla tua impresa: costi di struttura di un esercizio diviso i costi diretti dello stesso periodo. È una delle prime cose da sistemare, perché se non carichi la struttura ogni cantiere che «pareggia» in realtà perde quella percentuale.",
+    a: "Il 15% preimpostato è un esempio da sostituire, non una media di settore. Se scegli di ripartire la struttura sui costi diretti, calcola costi di struttura diviso costi diretti dello stesso periodo e applica il criterio in modo coerente. Non aggiungere di nuovo costi già inclusi nelle singole voci.",
   },
   {
     q: "Perché la manodopera va inserita in modo diverso?",
@@ -133,8 +133,8 @@ export default function Page() {
               <p>
                 Compili il <strong className="text-navy-900">preventivo</strong> prima di partire — ed
                 è lì che decidi il margine, non alla fine. Poi aggiorni il{" "}
-                <strong className="text-navy-900">consuntivo</strong> mentre lavori. Se una voce
-                supera il 10% di scostamento, hai un problema da affrontare adesso.
+                <strong className="text-navy-900">consuntivo</strong> mentre lavori. Leggi gli scostamenti sia in euro sia in percentuale:
+                la priorità dipende dall’importo, dalla causa e dal lavoro ancora da svolgere.
               </p>
               <p>
                 Due avvertenze che valgono più di tutto il resto: la{" "}
@@ -149,6 +149,23 @@ export default function Page() {
                 Il metodo completo è nella guida alla{" "}
                 <Link href="/risorse/gestione-commessa-edile">gestione della commessa</Link> e nel{" "}
                 <Link href="/risorse/budget-impresa-edile">budget dell&apos;impresa edile</Link>.
+              </p>
+              <h3 className="pt-4 text-xl font-bold text-navy-900">Un esempio illustrativo di lettura</h3>
+              <p>
+                Ipotizza 50.000 € di ricavi e 35.000 € di costi diretti. Con una quota di struttura
+                illustrativa del 15% sui diretti, attribuisci 5.250 €: il risultato nel perimetro del
+                modello è 9.750 €, pari al 19,5% dei ricavi. Il 15% e il 19,5% hanno denominatori
+                diversi e non sono valori consigliati per la tua impresa. Sono un esempio di calcolo,
+                non un caso cliente o una previsione di guadagno.
+              </p>
+              <p>
+                Se il cantiere è ancora aperto, il consuntivo registra soltanto quanto hai già rilevato.
+                Non confrontarlo con il ricavo totale per dichiarare un risultato finale: considera anche
+                impegni e <Link href="/risorse/costo-a-finire-commessa-edile">costi ancora da sostenere</Link>.
+                La <Link href="/risorse/costi-di-cantiere-guida">guida ai costi di cantiere</Link> aiuta
+                a classificare le voci; il <Link href="/glossario#margine-di-commessa">glossario del margine</Link>
+                chiarisce il perimetro. Per decidere se mantenere il foglio o cambiare strumento, usa i
+                criteri della guida <Link href="/risorse/excel-o-gestionale-edilizia">Excel o gestionale</Link>.
               </p>
             </div>
           </div>

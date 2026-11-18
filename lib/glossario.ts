@@ -27,7 +27,7 @@ export const glossario: Voce[] = [
   {
     slug: "margine-di-commessa",
     term: "Margine di commessa",
-    def: "Quello che resta dei ricavi di una commessa dopo aver tolto i costi diretti di cantiere e la quota di costi di struttura attribuita a quel lavoro. Formula: ricavi − costi diretti − quota di struttura. Come riferimento per le PMI edili: sotto il 10% la commessa è fragile, tra il 10% e il 15% è in equilibrio, oltre il 15% è solida.",
+    def: "Nel perimetro usato da questo sito è il risultato dei ricavi di una commessa meno i costi diretti e la quota di struttura attribuita. In percentuale: (ricavi − costi diretti − quota di struttura) ÷ ricavi × 100. La sostenibilità dipende da costi inclusi, rischi e lavoro ancora da svolgere: una soglia percentuale isolata non certifica che la commessa sia solida.",
     more: { href: "/strumenti/calcolo-margine-commessa", label: "Calcolatore del margine di commessa" },
   },
   {
@@ -57,7 +57,7 @@ export const glossario: Voce[] = [
   {
     slug: "incidenza-costi-di-struttura",
     term: "Incidenza dei costi di struttura",
-    def: "Percentuale con cui i costi di struttura vengono caricati su ogni commessa. Si calcola dividendo i costi di struttura di un esercizio per i costi diretti dello stesso periodo. Nelle PMI edili si colloca tipicamente tra il 10% e il 20%, ma va calcolata sui numeri della propria impresa e non presa da una tabella.",
+    def: "Rapporto usato per attribuire i costi di struttura alle commesse, specificando la base scelta. Se la base sono i costi diretti: costi di struttura del periodo ÷ costi diretti dello stesso periodo × 100. Si applica soltanto alle voci coerenti con quella base, evitando doppie imputazioni. Non è una percentuale universale del settore e non coincide con il margine sui ricavi.",
     more: { href: "/risorse/costi-di-struttura-impresa-edile", label: "Come calcolare la tua incidenza" },
   },
   {
