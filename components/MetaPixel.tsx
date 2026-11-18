@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
+import { SITE_ANALYTICS_CONFIG } from "@/lib/analytics-config";
 
-/* Meta (Facebook) Pixel — caricato subito al primo render (NON gated dal consenso).
-   PageView iniziale + su ogni cambio pagina della navigazione SPA. */
+/* Existing Meta Pixel, only after the site's marketing consent. */
 
 // Parametri per attribuire gli eventi A QUESTO sito (Pixel condiviso tra più siti).
 const SITE_PARAMS = { site: "numerinedilizia.com", site_name: site.name };
@@ -30,6 +30,8 @@ function initPixel(id: string) {
     s = b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t, s);
   })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+  w.fbq!("set", "autoConfig", false, id);
+  w.fbq!("consent", "grant");
   w.fbq!("init", id);
   w.fbq!("track", "PageView", SITE_PARAMS);
   w.fbq!("trackCustom", "Pv_Numeriinedilizia", SITE_PARAMS);
@@ -38,19 +40,34 @@ function initPixel(id: string) {
 export function MetaPixel() {
   const pathname = usePathname();
   const loaded = useRef(false);
+  const allowed = useRef(false);
   const lastPath = useRef<string | null>(null);
 
   useEffect(() => {
-    if (!loaded.current) {
-      initPixel(site.analytics.metaPixel);
-      loaded.current = true;
-      lastPath.current = window.location.pathname;
-    }
+    const sync = (event?: Event) => {
+      let marketing = false;
+      const detail = (event as CustomEvent<{ marketing?: unknown }> | undefined)?.detail;
+      try { marketing = JSON.parse(localStorage.getItem("nie_consent") || "null")?.marketing === true; } catch { /* No implicit consent. */ }
+      if (detail?.marketing === false) marketing = false;
+      allowed.current = marketing && window.location.protocol === "https:" && SITE_ANALYTICS_CONFIG.allowedHosts.includes(window.location.hostname);
+      const w = window as unknown as { fbq?: (...a: unknown[]) => void };
+      if (!allowed.current) { if (loaded.current) w.fbq?.("consent", "revoke"); return; }
+      if (!loaded.current) {
+        initPixel(site.analytics.metaPixel);
+        loaded.current = true;
+        lastPath.current = window.location.pathname;
+      } else w.fbq?.("consent", "grant");
+    };
+    sync();
+    window.addEventListener("nie:consent-updated", sync);
+    const stored = (event: StorageEvent) => { if (event.key === "nie_consent" || event.key === null) sync(); };
+    window.addEventListener("storage", stored);
+    return () => { window.removeEventListener("nie:consent-updated", sync); window.removeEventListener("storage", stored); };
   }, []);
 
   useEffect(() => {
     const w = window as unknown as { fbq?: (...a: unknown[]) => void };
-    if (loaded.current && lastPath.current !== pathname && typeof w.fbq === "function") {
+    if (allowed.current && loaded.current && lastPath.current !== pathname && typeof w.fbq === "function") {
       w.fbq("track", "PageView", SITE_PARAMS);
       w.fbq("trackCustom", "Pv_Numeriinedilizia", SITE_PARAMS);
       lastPath.current = pathname;

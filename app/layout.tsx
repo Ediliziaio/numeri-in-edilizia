@@ -1,24 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Wix_Madefor_Display, Wix_Madefor_Text, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
+import { SiteAnalytics } from "@/components/SiteAnalytics";
 import { MetaPixel } from "@/components/MetaPixel";
 import { SalvaCampagna } from "@/components/SalvaCampagna";
 import { JsonLd, organizationSchema, websiteSchema } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
-// Google Consent Mode v2 — stato di default NEGATO, impostato prima che GA4 parta.
-// Se l'utente ha già scelto (localStorage), riapplichiamo subito la sua preferenza.
-const CONSENT_DEFAULT = `
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
-try{var c=JSON.parse(localStorage.getItem('nie_consent'));if(c){gtag('consent','update',{analytics_storage:c.analytics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied'});}}catch(e){}
-`;
 
 const wixDisplay = Wix_Madefor_Display({
   subsets: ["latin"],
@@ -96,24 +87,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it" className={`${wixDisplay.variable} ${wixText.variable} ${lora.variable}`}>
       <body>
         <SalvaCampagna />
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${site.analytics.gtm}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
-        <Script id="consent-default" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT }} />
-        <GoogleTagManager gtmId={site.analytics.gtm} />
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <Header />
         <main>{children}</main>
         <Footer />
         <CookieBanner />
         <MetaPixel />
-        <GoogleAnalytics gaId={site.analytics.ga4} />
+        <SiteAnalytics />
       </body>
     </html>
   );

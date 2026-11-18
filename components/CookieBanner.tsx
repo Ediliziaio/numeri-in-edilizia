@@ -10,22 +10,10 @@ import Link from "next/link";
 type Consent = { analytics: boolean; marketing: boolean };
 const STORAGE_KEY = "nie_consent";
 
-function updateGtag(c: Consent) {
-  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
-  if (typeof w.gtag === "function") {
-    w.gtag("consent", "update", {
-      analytics_storage: c.analytics ? "granted" : "denied",
-      ad_storage: c.marketing ? "granted" : "denied",
-      ad_user_data: c.marketing ? "granted" : "denied",
-      ad_personalization: c.marketing ? "granted" : "denied",
-    });
-  }
-}
-
 export function CookieBanner() {
   const [open, setOpen] = useState(false);
   const [showPrefs, setShowPrefs] = useState(false);
-  const [analytics, setAnalytics] = useState(true);
+  const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
@@ -60,7 +48,6 @@ export function CookieBanner() {
     } catch {
       /* ignore */
     }
-    updateGtag(c);
     // Avvisa gli altri script (es. Meta Pixel) che il consenso è cambiato.
     window.dispatchEvent(new CustomEvent("nie:consent-updated", { detail: c }));
     setOpen(false);
