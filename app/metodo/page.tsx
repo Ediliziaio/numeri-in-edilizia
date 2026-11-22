@@ -5,6 +5,8 @@ import { SectionHeading, CtaBand, FaqSection, ProcessSteps } from "@/components/
 import { JsonLd, serviceSchema } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { AreaTrend } from "@/components/Graphics";
+import CascataMargine from "@/components/vivo/CascataMargine";
+import CassaViva from "@/components/vivo/CassaViva";
 import { EicLogo } from "@/components/EicLogo";
 import { PageImage } from "@/components/PageImage";
 import { site } from "@/lib/site";
@@ -67,7 +69,7 @@ export default function MetodoPage() {
       <section className="container-nie py-14">
         <h2 className="text-3xl font-bold text-navy-900">Che cosa serve, che cosa ottieni</h2>
         <p className="mt-5 text-muted leading-relaxed">Si parte da una commessa riconoscibile. Ogni numero deve avere una fonte e una data: un costo mancante resta da completare, non diventa zero. Il responsabile amministrativo e quello di cantiere concordano chi aggiorna acquisti, ore e varianti, con una cadenza compatibile con il lavoro.</p>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <div className="scorri-mobile mt-8 grid gap-5 md:grid-cols-3">
           {[
             { title: "1. Dati di partenza", text: "Preventivo accettato e varianti approvate, budget delle lavorazioni, ore registrate, acquisti e documenti ricevuti. DDT senza prezzo e ordini non fatturati restano evidenziati tra i valori da stimare o completare." },
             { title: "2. Quadro economico", text: "Venduto al netto IVA, costo previsto iniziale, consuntivo registrato e costo ancora da sostenere sono separati. La previsione a finire combina costi già sostenuti e stima residua, senza sommare di nuovo il budget iniziale." },
@@ -122,6 +124,23 @@ export default function MetodoPage() {
             </div>
           </Reveal>
         ))}
+      </section>
+
+      {/* I DUE NUMERI DEL METODO */}
+      <section className="container-nie py-16 sm:py-24">
+        <Reveal>
+          <SectionHeading
+            align="center"
+            eyebrow="Cosa guardiamo insieme"
+            title="Il margine di ogni commessa e la cassa di ogni mese"
+            intro="Due letture che il bilancio non ti dà in tempo: dove va ogni euro del lavoro, e quando i soldi escono prima di entrare."
+            className="mb-12"
+          />
+        </Reveal>
+        <div className="scorri-mobile grid gap-6 lg:grid-cols-2">
+          <CascataMargine />
+          <CassaViva />
+        </div>
       </section>
 
       {/* COSA OTTIENI */}

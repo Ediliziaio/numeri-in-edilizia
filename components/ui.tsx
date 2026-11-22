@@ -3,6 +3,9 @@ import { site } from "@/lib/site";
 import { JsonLd, faqSchema } from "./JsonLd";
 import { Reveal } from "./Reveal";
 import { IconArrow } from "./Icons";
+import PassiVivi from "./vivo/PassiVivi";
+import ReteViva from "./vivo/ReteViva";
+import NumeroVivo from "./vivo/NumeroVivo";
 
 export function SectionHeading({
   eyebrow,
@@ -50,7 +53,7 @@ export function StatRow({
       {items.map((it, i) => (
         <Reveal key={it.label} delay={i * 80}>
           <div className={`stat-num text-[2.75rem] sm:text-[3.25rem] ${dark ? "!text-brand-300" : ""}`}>
-            {it.value}
+            <NumeroVivo value={it.value} />
           </div>
           <div className={`mt-2 text-sm leading-snug ${dark ? "text-brand-100/70" : "text-muted"}`}>
             {it.label}
@@ -73,6 +76,7 @@ export function CtaBand({
       <Reveal>
         <div className="relative overflow-hidden rounded-[2rem] bg-navy-900 px-7 py-16 sm:px-16 sm:py-20 text-center">
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-dots opacity-60" />
+          <ReteViva accento="143,178,224" base="255,255,255" fili={0.16} />
           <div aria-hidden className="pointer-events-none absolute -right-16 -top-20 h-72 w-72 rounded-full bg-brand-500/25 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -left-16 -bottom-24 h-72 w-72 rounded-full bg-brand-600/20 blur-3xl" />
           <div className="relative mx-auto max-w-2xl">
@@ -166,20 +170,6 @@ export function ProcessSteps({
 }: {
   steps: { n: string; title: string; text: string }[];
 }) {
-  return (
-    <div className="relative grid gap-6 md:grid-cols-3">
-      <div aria-hidden className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px bg-line md:block" />
-      {steps.map((s, i) => (
-        <Reveal key={s.n} delay={i * 120}>
-          <div className="relative">
-            <div className="grid h-14 w-14 place-items-center rounded-2xl bg-navy-900 font-display text-lg font-bold text-white shadow-soft">
-              {s.n}
-            </div>
-            <h3 className="mt-5 text-lg font-bold text-navy-900">{s.title}</h3>
-            <p className="mt-2 text-muted leading-relaxed">{s.text}</p>
-          </div>
-        </Reveal>
-      ))}
-    </div>
-  );
+  // I passi si accendono uno alla volta (components/vivo/PassiVivi).
+  return <PassiVivi steps={steps} />;
 }

@@ -1,3 +1,7 @@
+import CascataMargine, { type VoceCascata } from "@/components/vivo/CascataMargine";
+import NumeroVivo from "@/components/vivo/NumeroVivo";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
+import ScostamentoVivo from "@/components/vivo/ScostamentoVivo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,6 +32,25 @@ export async function generateMetadata({ params }: { params: Promise<{ settore: 
     openGraph: { url: `/settori/${s.slug}`, title: s.metaTitle, description: s.metaDescription, type: "website", images: ["/opengraph-image"] },
   };
 }
+
+const DIRETTA_SETTORE: Record<string, { titolo: string; materiale: string }> = {
+  "imprese-edili": { titolo: "Palazzina 6 alloggi · Via Manzoni", materiale: "cemento e ferro" },
+  ristrutturazioni: { titolo: "Ristrutturazione Via dei Mille", materiale: "piastrelle e sanitari" },
+  serramentisti: { titolo: "Infissi · Condominio Verdi", materiale: "profili e vetri" },
+  impiantisti: { titolo: "Impianto termico · Scuola media", materiale: "tubi e caldaia" },
+  "carpenteria-metallica": { titolo: "Capannone in acciaio · Lotto 3", materiale: "travi in acciaio" },
+  "movimento-terra": { titolo: "Scavo e sbancamento · Lotto 4", materiale: "gasolio dei mezzi" },
+};
+
+const v = (nome: string, prev: number, reale: number): VoceCascata => ({ nome, prev, reale });
+const CASCATA_SETTORE: Record<string, VoceCascata[]> = {
+  "imprese-edili": [v("Calcestruzzo e ferro", 34, 36), v("Manodopera", 28, 33), v("Noli e gru", 10, 11), v("Spese generali", 14, 14)],
+  ristrutturazioni: [v("Materiali e finiture", 36, 39), v("Manodopera", 30, 34), v("Smaltimenti", 5, 6), v("Spese generali", 14, 14)],
+  serramentisti: [v("Profili e vetri", 44, 45), v("Posa", 18, 23), v("Trasporto", 5, 6), v("Spese generali", 13, 13)],
+  impiantisti: [v("Componenti", 40, 41), v("Ore impiantisti", 26, 31), v("Certificazioni", 4, 4), v("Spese generali", 14, 14)],
+  "carpenteria-metallica": [v("Acciaio", 42, 46), v("Officina e montaggio", 26, 29), v("Zincatura e trasporti", 8, 9), v("Spese generali", 12, 12)],
+  "movimento-terra": [v("Gasolio", 18, 22), v("Operatori", 26, 28), v("Mezzi e manutenzione", 22, 24), v("Discarica e trasporti", 18, 19)],
+};
 
 export default async function SettorePage({ params }: { params: Promise<{ settore: string }> }) {
   const { settore } = await params;
@@ -60,6 +83,34 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
         intro={s.heroIntro}
         visual={<PageImage src={`/images/pages/settore-${s.slug}.jpg`} alt={s.h1} priority />}
       />
+
+      <section className="container-nie py-14 sm:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          <SectionHeading
+            eyebrow="Dove si forma il margine"
+            title={<>Su 100 € di lavoro, quanti ne restano?</>}
+            intro="Materiali, ore, mezzi e spese generali: se ogni voce finisce sulla commessa giusta, il margine lo leggi mentre lavori. Se no, lo scopri dal commercialista."
+          />
+          <CascataMargine voci={CASCATA_SETTORE[s.slug]} titolo={`Dove va ogni euro: ${s.navLabel.toLowerCase()}`} />
+        </div>
+      </section>
+
+      {/* LA COMMESSA IN DIRETTA */}
+      <section className="bg-bg-soft py-14 sm:py-20">
+        <div className="container-nie">
+          <SectionHeading
+            align="center"
+            eyebrow="Il margine, mentre lavori"
+            title={<>Ogni movimento del cantiere sposta il margine.</>}
+            intro="Un DDT, una giornata di squadra, un nolo, un SAL: se finiscono subito sulla commessa giusta, vedi lo sforamento quando puoi ancora correggerlo."
+            className="mb-10"
+          />
+          <div className="scorri-mobile grid gap-6 lg:grid-cols-2">
+            <CruscottoVivo {...(DIRETTA_SETTORE[s.slug] ?? {})} />
+            <ScostamentoVivo />
+          </div>
+        </div>
+      </section>
 
       {/* APPROFONDIMENTO + CHART */}
       <section className="container-nie py-20 sm:py-24">
@@ -103,7 +154,7 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
               <div className="mt-4 flex items-center gap-4 border-t border-line pt-4">
                 <DonutStat percent={donutPct} size={72} />
                 <div>
-                  <div className="stat-num text-2xl">{s.esempio.metric}</div>
+                  <div className="stat-num text-2xl"><NumeroVivo value={s.esempio.metric} /></div>
                   <div className="text-xs text-muted">{s.esempio.metricLabel}</div>
                 </div>
               </div>
@@ -219,7 +270,7 @@ export default async function SettorePage({ params }: { params: Promise<{ settor
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-semibold text-brand-600">Esempio: margine di commessa</p>
-                  <p className="mt-1 font-serif text-3xl font-semibold text-navy-900">{s.esempio.metric}</p>
+                  <p className="mt-1 font-serif text-3xl font-semibold text-navy-900"><NumeroVivo value={s.esempio.metric} /></p>
                   <p className="text-xs text-muted">{s.esempio.metricLabel}</p>
                 </div>
                 <DonutStat percent={donutPct} size={96} />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, CompareBars, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CascataMargine from "@/components/vivo/CascataMargine";
 
 const article = getArticle("margine-impresa-edile")!;
 
@@ -78,6 +79,10 @@ export default function Page() {
         mentre il cantiere è ancora aperto</strong>, non solo a consuntivo.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CascataMargine />
+      </figure>
       <h2>1. Fai preventivi «a sensazione»</h2>
       <p>
         Il preventivo è il momento in cui decidi se guadagnerai o no. Se lo costruisci sull'esperienza

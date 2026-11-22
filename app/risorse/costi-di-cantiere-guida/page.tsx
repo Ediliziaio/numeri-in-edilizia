@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import ScostamentoVivo from "@/components/vivo/ScostamentoVivo";
 
 const article = getArticle("costi-di-cantiere-guida")!;
 
@@ -103,6 +104,10 @@ export default function Page() {
         </div>
       </figure>
 
+
+      <figure className="not-prose my-10">
+        <ScostamentoVivo />
+      </figure>
       <h2>L'imputazione: ogni costo al suo cantiere</h2>
       <p>
         Classificare non basta: bisogna che ogni costo <strong>finisca sul cantiere che lo ha

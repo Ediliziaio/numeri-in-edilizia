@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { CompareBars, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CascataMargine from "@/components/vivo/CascataMargine";
 
 const article = getArticle("quanto-marginare-ristrutturazione")!;
 
@@ -75,6 +76,10 @@ export default function Page() {
         apri. Più incertezza significa più margine necessario, non meno.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CascataMargine />
+      </figure>
       <h2>Dove si perde il margine, nelle ristrutturazioni</h2>
       <h3>1. Gli imprevisti che emergono aprendo</h3>
       <p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 
 const article = getArticle("controllo-di-gestione-edilizia")!;
 
@@ -74,6 +75,10 @@ export default function Page() {
         </div>
       </figure>
 
+
+      <figure className="not-prose my-10">
+        <CruscottoVivo />
+      </figure>
       <h2>Perché non basta il commercialista</h2>
       <p>
         Il commercialista fa un lavoro essenziale, ma diverso: <strong>fotografa il passato</strong>.

@@ -1,3 +1,4 @@
+import NumeroVivo from "@/components/vivo/NumeroVivo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -193,7 +194,7 @@ export default function CasiStudioPage() {
               <div className="grid grid-cols-3 gap-3 self-center lg:grid-cols-1">
                 {c.metrics.map((m) => (
                   <div key={m.l} className="rounded-2xl bg-bg-soft p-4 text-center lg:flex lg:items-center lg:justify-between lg:text-left">
-                    <div className="stat-num text-xl sm:text-2xl lg:order-2">{m.v}</div>
+                    <div className="stat-num text-xl sm:text-2xl lg:order-2"><NumeroVivo value={m.v} /></div>
                     <div className="mt-2 text-[0.7rem] text-muted leading-tight lg:mt-0 lg:order-1 lg:text-sm">{m.l}</div>
                   </div>
                 ))}
@@ -220,7 +221,7 @@ export default function CasiStudioPage() {
               className="mb-14"
             />
           </Reveal>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="scorri-mobile grid gap-6 md:grid-cols-3">
             {filoComune.map((f, i) => (
               <Reveal key={f.t} delay={i * 90}>
                 <div className="h-full rounded-[1.5rem] border border-line bg-white p-7 card-hover">

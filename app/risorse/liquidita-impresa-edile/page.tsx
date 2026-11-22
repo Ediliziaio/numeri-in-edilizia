@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CassaViva from "@/components/vivo/CassaViva";
 
 const article = getArticle("liquidita-impresa-edile")!;
 
@@ -83,6 +84,10 @@ export default function Page() {
         </div>
       </figure>
 
+
+      <figure className="not-prose my-10">
+        <CassaViva />
+      </figure>
       <h2>Il ciclo di cassa del cantiere, voce per voce</h2>
       <p>
         Il ciclo di cassa è la distanza temporale tra uscite ed entrate. Per governarlo bisogna

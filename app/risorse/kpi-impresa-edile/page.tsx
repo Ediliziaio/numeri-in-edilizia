@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 
 const article = getArticle("kpi-impresa-edile")!;
 
@@ -63,6 +64,10 @@ export default function Page() {
         fa decidere nulla, non è un KPI, è rumore.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CruscottoVivo />
+      </figure>
       <h2>I 6 KPI che contano per un'impresa edile</h2>
       <h3>1. Margine di commessa (reale vs preventivo)</h3>
       <p>

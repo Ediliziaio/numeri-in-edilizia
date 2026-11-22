@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CascataMargine from "@/components/vivo/CascataMargine";
 
 const article = getArticle("margine-di-contribuzione-edilizia")!;
 
@@ -70,6 +71,10 @@ export default function Page() {
         amministrazione, il tuo stipendio) e, una volta coperti quelli, a formare l'utile.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CascataMargine />
+      </figure>
       <h2>Un esempio concreto</h2>
       <p>Cantiere da 120.000 € di ricavi. Costi variabili diretti:</p>
       <ul>

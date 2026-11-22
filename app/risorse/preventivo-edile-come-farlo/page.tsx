@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, CompareBars, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CascataMargine from "@/components/vivo/CascataMargine";
 
 const article = getArticle("preventivo-edile-come-farlo")!;
 
@@ -102,6 +103,10 @@ export default function Page() {
         <Link href="/risorse/margine-impresa-edile">perché l'impresa edile fattura tanto ma guadagna poco</Link>.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CascataMargine />
+      </figure>
       <h2>L'anatomia di un preventivo edile fatto bene</h2>
       <p>Un preventivo solido è costruito a strati, dal basso verso l'alto:</p>
       <ol>

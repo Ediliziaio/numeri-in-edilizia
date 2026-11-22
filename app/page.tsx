@@ -1,3 +1,8 @@
+import ReteViva from "@/components/vivo/ReteViva";
+import CascataMargine from "@/components/vivo/CascataMargine";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
+import CassaViva from "@/components/vivo/CassaViva";
+import ScostamentoVivo from "@/components/vivo/ScostamentoVivo";
 import { ReadingPaths } from "@/components/ReadingPaths";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -57,6 +62,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-x-0 -top-40 h-[560px] bg-gradient-to-b from-bg-softer to-transparent" />
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-0 bg-grid h-[560px]" />
+        <ReteViva className="opacity-60 [mask-image:linear-gradient(180deg,black_55%,transparent)]" />
         <div className="container-nie relative pt-14 pb-10 sm:pt-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="reveal">
@@ -161,6 +167,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* LA COMMESSA IN DIRETTA */}
+      <section className="container-nie pb-16 sm:pb-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+          <div className="order-2 min-w-0 lg:order-1">
+            <CruscottoVivo />
+          </div>
+          <Reveal className="order-1 lg:order-2">
+            <SectionHeading
+              eyebrow="Il margine si muove ogni giorno"
+              title={<>Tu lo vedi mentre succede, o a marzo dell'anno dopo?</>}
+              intro="Un DDT, una giornata di squadra, un nolo, un SAL: ogni movimento sposta il margine della commessa. Se lo leggi oggi puoi correggere; se lo scopri a bilancio puoi solo prenderne atto."
+            />
+          </Reveal>
+        </div>
+      </section>
+
       {/* THE METHOD — 3 PILLARS */}
       <section className="bg-bg-soft py-20 sm:py-28">
         <div className="container-nie">
@@ -172,7 +194,7 @@ export default function HomePage() {
               intro="Tre pilastri per trasformare la tua impresa da «tanto fatturato, poco utile» a un'azienda che sa esattamente quanto guadagna, su ogni cantiere."
             />
           </Reveal>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="scorri-mobile mt-14 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.n} delay={i * 100}>
                 <div className="group h-full rounded-[1.5rem] bg-white p-8 border border-line card-hover">
@@ -195,6 +217,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* DOVE VA OGNI EURO — cascata del margine */}
+      <section className="container-nie py-16 sm:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Dove si forma il margine"
+              title={<>Su 100 € di lavoro, quanti ne restano davvero?</>}
+              intro="Il margine si forma voce per voce, mentre il cantiere va avanti. Sulla carta il preventivo tiene; a fine lavori bastano qualche ora in più e un rincaro per portarsi via metà dell'utile."
+            />
+          </Reveal>
+          <CascataMargine />
+        </div>
+      </section>
+
       {/* SETTORI */}
       <section className="container-nie py-20 sm:py-28">
         <Reveal>
@@ -206,7 +242,7 @@ export default function HomePage() {
             className="mb-14"
           />
         </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="scorri-mobile grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {settori.map((s, i) => (
             <Reveal key={s.slug} delay={i * 60} className="h-full">
               <Link
@@ -353,6 +389,10 @@ export default function HomePage() {
               </div>
             </Reveal>
           </div>
+          <div className="scorri-mobile mt-6 grid gap-6 lg:grid-cols-2">
+            <ScostamentoVivo />
+            <CassaViva />
+          </div>
           <p className="mt-10 text-center text-muted">
             Grafici come questi li hai ogni giorno con{" "}
             <a href={site.partner.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-600 hover:underline inline-flex items-center gap-1">
@@ -413,7 +453,7 @@ export default function HomePage() {
               intro="Non promesse: parole di chi ha smesso di navigare a vista e ha messo i numeri sotto controllo."
             />
           </Reveal>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="scorri-mobile mt-14 grid gap-6 md:grid-cols-3">
             {[
               { q: "Fatturavo 2 milioni e non capivo perché non restava niente. In sei mesi ho scoperto che due commesse su cinque erano in perdita. Ora non parto senza margine.", a: "Impresa edile, 14 dipendenti · Veneto" },
               { q: "Ho smesso di fare preventivi a sensazione. Il margine adesso lo decido io prima, non me lo ritrovo (o non me lo ritrovo) dopo.", a: "Ristrutturazioni, 8 dipendenti · Lombardia" },

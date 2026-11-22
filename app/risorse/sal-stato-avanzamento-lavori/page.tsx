@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CassaViva from "@/components/vivo/CassaViva";
 
 const article = getArticle("sal-stato-avanzamento-lavori")!;
 
@@ -70,6 +71,10 @@ export default function Page() {
         governano il margine da quelle che lo scoprono a fine lavori.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CassaViva />
+      </figure>
       <h2>Come si redige un SAL fatto bene</h2>
       <ol>
         <li><strong>Parti dal computo</strong> — il SAL misura l'avanzamento rispetto al computo metrico del contratto: senza un computo chiaro, ogni SAL diventa una trattativa.</li>

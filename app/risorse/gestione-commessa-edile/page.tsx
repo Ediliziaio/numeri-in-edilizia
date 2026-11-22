@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArticleShell } from "@/components/ArticleShell";
 import { AreaTrend, DonutStat } from "@/components/Graphics";
 import { getArticle } from "@/lib/articles";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 
 const article = getArticle("gestione-commessa-edile")!;
 
@@ -65,6 +66,10 @@ export default function Page() {
         singolo lavoro.
       </p>
 
+
+      <figure className="not-prose my-10">
+        <CruscottoVivo />
+      </figure>
       <h2>Le quattro fasi di una commessa sotto controllo</h2>
       <h3>1. Preventivo: si decide qui</h3>
       <p>

@@ -1,3 +1,4 @@
+import ReteViva from "./vivo/ReteViva";
 import Link from "next/link";
 import { JsonLd, breadcrumbSchema } from "./JsonLd";
 import { site } from "@/lib/site";
@@ -36,6 +37,7 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-300/25 blur-3xl"
       />
+      <ReteViva className="opacity-70 [mask-image:linear-gradient(90deg,transparent,black_35%)]" />
       <div className="container-nie relative py-16 sm:py-24">
         <div className={visual ? "grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]" : ""}>
           <div>

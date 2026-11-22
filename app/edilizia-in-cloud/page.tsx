@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading, CtaBand, FaqSection, ProcessSteps } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
+import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 import { EicLogo } from "@/components/EicLogo";
 import { site } from "@/lib/site";
 import {
@@ -143,6 +144,20 @@ export default function EdiliziaInCloudPage() {
               Esplora tutte le funzioni su ediliziaincloud.com <IconExternal className="h-4 w-4" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* LA COMMESSA IN DIRETTA */}
+      <section className="bg-bg-soft py-16 sm:py-24">
+        <div className="container-nie grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Cosa vedi ogni giorno"
+              title={<>La commessa che si aggiorna da sola.</>}
+              intro="DDT, ore della squadra, noli e SAL entrano nel gestionale mentre succedono. Il margine a finire si ricalcola, e quando una voce sfora te ne accorgi subito."
+            />
+          </Reveal>
+          <CruscottoVivo />
         </div>
       </section>
 
