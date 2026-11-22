@@ -4,6 +4,7 @@ import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 import CassaViva from "@/components/vivo/CassaViva";
 import ScostamentoVivo from "@/components/vivo/ScostamentoVivo";
 import FunzioniVive from "@/components/vivo/FunzioniVive";
+import LavagnaFlusso from "@/components/vivo/LavagnaFlusso";
 import { ReadingPaths } from "@/components/ReadingPaths";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -406,6 +407,19 @@ export default function HomePage() {
       {/* IL METODO, COLLEGATO */}
       <section className="container-nie py-12 sm:py-20">
         <FunzioniVive />
+      </section>
+
+      {/* LA COMMESSA, MENTRE LAVORA */}
+      <section className="container-nie pb-12 sm:pb-20">
+        <SectionHeading
+          align="center"
+          eyebrow="Il metodo, mentre lavora"
+          title={<>Guarda un DDT diventare margine.</>}
+          intro="Il materiale arriva, il costo va sulla commessa giusta, si confronta col preventivo e il margine si aggiorna: i passaggi si accendono uno dopo l'altro. Puoi spostarli o aggiungerne altri dalla colonna a destra."
+        />
+        <div className="mt-10">
+          <LavagnaFlusso />
+        </div>
       </section>
 
       {/* AUTHORITY / PERCHÉ NOI */}
