@@ -3,6 +3,7 @@ import CascataMargine from "@/components/vivo/CascataMargine";
 import CruscottoVivo from "@/components/vivo/CruscottoVivo";
 import CassaViva from "@/components/vivo/CassaViva";
 import ScostamentoVivo from "@/components/vivo/ScostamentoVivo";
+import FunzioniVive from "@/components/vivo/FunzioniVive";
 import { ReadingPaths } from "@/components/ReadingPaths";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -400,6 +401,11 @@ export default function HomePage() {
             </a>
           </p>
         </div>
+      </section>
+
+      {/* IL METODO, COLLEGATO */}
+      <section className="container-nie py-12 sm:py-20">
+        <FunzioniVive />
       </section>
 
       {/* AUTHORITY / PERCHÉ NOI */}
