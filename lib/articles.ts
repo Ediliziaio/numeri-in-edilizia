@@ -15,6 +15,19 @@ export type Article = {
 
 const rawArticles: Article[] = [
 {
+  "slug": "sconto-preventivo-edile-calcolo-margine",
+  "title": "Sconto preventivo edile: calcolo del margine",
+  "h1": "Sconto sul preventivo edile: quanto margine rimane davvero",
+  "description": "Calcola come uno sconto cambia il margine del preventivo edile. Formule, sei scenari numerici e modello CSV per confrontare le offerte.",
+  "excerpt": "Prima di accettare un ribasso, confronta prezzo, costi e contributo. Un metodo con esempi riproducibili e modello scaricabile.",
+  "date": "2026-11-28",
+  "readingTime": "12 min",
+  "category": "Marginalità",
+  "cover": "/images/blog/sconto-preventivo-edile-calcolo-margine.jpg",
+  "coverAlt": "Fogli di preventivo, calcolatrice e campioni di materiali su un tavolo di lavoro.",
+  "coverCaption": "Immagine illustrativa originale generata con AI."
+},
+{
   "slug": "ordini-ddt-fatture-commessa-riconciliazione",
   "title": "Ordini, DDT e fatture: controllo di commessa",
   "h1": "Ordini, DDT e fatture di commessa: riconciliazione e registro anomalie",

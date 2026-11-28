@@ -148,6 +148,7 @@ export default function Page() {
         davvero guadagnare? È tra le prime cose che vediamo insieme nell'{" "}
         <Link href="/contatti">analisi gratuita</Link>: 30 minuti sui tuoi numeri, senza impegno.
       </p>
-    </ArticleShell>
+    <p>Se il cliente chiede un ribasso, confronta il risultato con gli esempi della guida allo <Link href="/risorse/sconto-preventivo-edile-calcolo-margine">sconto sul preventivo edile e al margine che rimane</Link>.</p>
+</ArticleShell>
   );
 }
